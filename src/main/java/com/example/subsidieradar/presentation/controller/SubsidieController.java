@@ -1,5 +1,6 @@
 package com.example.subsidieradar.presentation.controller;
 
+import com.example.subsidieradar.presentation.dto.subsidieDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -9,7 +10,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class SubsidieController {
 
     @GetMapping
-    public String Hello() {
-        return "hello world";
+    public subsidieDTO Hello() {
+        return new subsidieDTO("hello world");
     }
 }
