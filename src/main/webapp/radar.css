@@ -1,0 +1,44 @@
+#radar{
+    position:relative;
+    overflow:hidden;
+    width:321px; height:321px;
+    background:rgb(60, 59, 59) url(http://i.stack.imgur.com/vY6Tl.png);
+    border-radius: 50%;
+}
+
+.obj{
+    background:rgb(0, 255, 42);
+    position:absolute;
+    border-radius: 50%;
+    width:5px; height:5px; margin:-2px;
+    box-shadow:0 0 10px 5px rgba(126, 239, 50, 0.5);
+}
+
+.blauw{
+    background:rgb(255, 0, 21) !important;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}

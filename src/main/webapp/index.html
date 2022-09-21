@@ -3,11 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>SubsidieRadar</title>
+    <script src="customService.js"></script>
+    <link rel="stylesheet" href="radar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="radar.js"></script>
 </head>
 <body>
-test
-    <template id="firstLog">
-        <div class="logName">log</div>
-    </template>
+<div id="radar">
+    <div class="obj tooltip blauw" data-x="150" data-y="65"><span class="tooltiptext">Tooltip text</span></div>
+    <div class="obj tooltip" data-x="140" data-y="185"><span class="tooltiptext">Tooltip text</span></div>
+    <div class="obj tooltip" data-x="220" data-y="35"><span class="tooltiptext">Tooltip text</span></div>
+    <div class="obj tooltip" data-x="120" data-y="235"><span class="tooltiptext">Tooltip text</span></div>
+</div>
+<button onclick="getData()">mini button</button>
 </body>
 </html>
+
