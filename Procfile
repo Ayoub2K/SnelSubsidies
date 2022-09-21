@@ -1,1 +1,1 @@
-web: java -cp "target/dependency/*" $JAVA_OPTS webapp.runner.launch.Main  --port $PORT target/*.war
+web: java -jar target/SubsidieRadar-1.0.0.jar
