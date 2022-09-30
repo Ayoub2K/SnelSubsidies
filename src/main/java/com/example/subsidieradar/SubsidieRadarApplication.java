@@ -6,6 +6,5 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SubsidieRadarApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(SubsidieRadarApplication.class, args);
-	}
+		SpringApplication.run(SubsidieR
 }
