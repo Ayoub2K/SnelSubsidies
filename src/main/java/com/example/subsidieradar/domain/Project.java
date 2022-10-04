@@ -1,5 +1,9 @@
 package com.example.subsidieradar.domain;
 
+import com.example.subsidieradar.domain.Enums.Activiteit;
+import com.example.subsidieradar.domain.Enums.OrganisatieType;
+import com.example.subsidieradar.domain.Enums.Samenwerking;
+
 import java.util.Date;
 
 public class Project {

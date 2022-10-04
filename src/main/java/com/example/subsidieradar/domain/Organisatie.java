@@ -1,5 +1,7 @@
 package com.example.subsidieradar.domain;
 
+import com.example.subsidieradar.domain.Enums.OrganisatieType;
+
 import java.util.ArrayList;
 
 public class Organisatie {
