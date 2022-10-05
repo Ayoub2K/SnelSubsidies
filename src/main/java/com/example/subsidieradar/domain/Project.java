@@ -1,5 +1,6 @@
 package com.example.subsidieradar.domain;
 
+
 import com.example.subsidieradar.domain.enums.Activiteit;
 import com.example.subsidieradar.domain.enums.OrganisatieType;
 import com.example.subsidieradar.domain.enums.Samenwerking;
