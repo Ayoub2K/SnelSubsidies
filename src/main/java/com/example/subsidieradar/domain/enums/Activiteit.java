@@ -1,4 +1,4 @@
-package com.example.subsidieradar.domain.Enums;
+package com.example.subsidieradar.domain.enums;
 
 public enum Activiteit {
     ONDERZOEKONTWIKKELING,

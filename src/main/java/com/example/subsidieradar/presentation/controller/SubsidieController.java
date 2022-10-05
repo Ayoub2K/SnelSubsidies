@@ -1,6 +1,6 @@
 package com.example.subsidieradar.presentation.controller;
 
-import com.example.subsidieradar.presentation.dto.subsidieDTO;
+import com.example.subsidieradar.presentation.dto.SubsidieDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class SubsidieController {
 
     @GetMapping
-    public subsidieDTO Hello() {
-        return new subsidieDTO("hello world");
+    public SubsidieDTO Hello() {
+        return new SubsidieDTO("hello world");
     }
 }

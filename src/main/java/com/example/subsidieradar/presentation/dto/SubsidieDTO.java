@@ -1,9 +1,9 @@
 package com.example.subsidieradar.presentation.dto;
 
-public class subsidieDTO {
+public class SubsidieDTO {
     public String subsidieNaam;
 
-    public subsidieDTO(String subsidienaam) {
+    public SubsidieDTO(String subsidienaam) {
         this.subsidieNaam = subsidienaam;
     }
 }
