@@ -32,3 +32,8 @@ First, make sure the database is set up, started and reachable.
 
 Start the application via your IDE by running the `SubsidieRadarApplication`
 class. Alternatively, run `mvn spring-boot:start`.
+
+for the frontend run de volgende commands in terminal
+
+`cd webapp`
+`npm run serve`
