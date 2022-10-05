@@ -13,4 +13,5 @@ public class Subsidie {
     String beoordelingssystematiek;
     String subsidieWebsiteLink;
     int matchPercentage;
+    iMatch match;
 }
