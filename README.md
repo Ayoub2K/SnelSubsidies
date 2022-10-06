@@ -22,9 +22,9 @@ or use the supplied `mvnw` or `mvnw.cmd`.
 
 You need to install node.js & vue.js for the frontend 
 
-For [Node.js](https://nodejs.org/en/download/) install the latest LTS
+For [Node.js](https://nodejs.org/en/download/) install the latest LTS `npm install`
 
-For Vue.js type in the next command in your terminal `npm install -g @vue/cli`
+For Vue.js type in the next command `npm install -g @vue/cli` in your terminal 
 
 
 ## Booting
