@@ -12,10 +12,8 @@ public class Subsidie {
     Date deadline;
     String beoordelingssystematiek;
     String subsidieWebsiteLink;
-    int matchPercentage;
-    iMatch match;
 
-    public Subsidie(String naam, String subsidieverstrekker, String subsidialeActiviteiten, Date maxLooptijd, double subsidieBudget, Date startDatum, Date deadline, String beoordelingssystematiek, String subsidieWebsiteLink, int matchPercentage, iMatch match) {
+    public Subsidie(String naam, String subsidieverstrekker, String subsidialeActiviteiten, Date maxLooptijd, double subsidieBudget, Date startDatum, Date deadline, String beoordelingssystematiek, String subsidieWebsiteLink) {
         this.naam = naam;
         this.subsidieverstrekker = subsidieverstrekker;
         this.subsidialeActiviteiten = subsidialeActiviteiten;
@@ -25,7 +23,5 @@ public class Subsidie {
         this.deadline = deadline;
         this.beoordelingssystematiek = beoordelingssystematiek;
         this.subsidieWebsiteLink = subsidieWebsiteLink;
-        this.matchPercentage = matchPercentage;
-        this.match = match;
     }
 }
