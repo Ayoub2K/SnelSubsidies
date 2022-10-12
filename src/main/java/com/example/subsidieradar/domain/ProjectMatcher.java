@@ -1,6 +1,8 @@
 package com.example.subsidieradar.domain;
 
-public class ProjectMatcher {
+import java.io.Serializable;
+
+public class ProjectMatcher implements Serializable {
     Project project;
 
     public ProjectMatcher(Project project) {

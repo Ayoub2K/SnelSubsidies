@@ -1,6 +1,8 @@
 package com.example.subsidieradar.domain.enums;
 
-public enum Activiteit {
+import java.io.Serializable;
+
+public enum Activiteit implements Serializable {
     ONDERZOEKONTWIKKELING,
     DEMONSTRATIEENPILOTS,
     INVESTERENENUITROLLEN

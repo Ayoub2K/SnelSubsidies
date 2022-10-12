@@ -1,6 +1,8 @@
 package com.example.subsidieradar.domain;
 
-public class SubsidieMatch {
+import java.io.Serializable;
+
+public class SubsidieMatch implements Serializable {
     Subsidie subsidie;
     int matchPercentage;
     iMatch match;

@@ -1,10 +1,22 @@
 package com.example.subsidieradar.domain;
 
 import com.example.subsidieradar.domain.exceptions.AlreadyExistsException;
+import org.hibernate.annotations.Cascade;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Contactpersoon {
+@Entity
+public class Contactpersoon implements Serializable {
+    @Id
+    @GeneratedValue
+    private Long id;
+
     String naam;
     String adres;
     String woonplaats;
@@ -12,7 +24,8 @@ public class Contactpersoon {
     String email;
     int telnr;
 
-    ArrayList<Organisatie> organisaties = new ArrayList<Organisatie>();
+    @OneToMany
+    List<Organisatie> organisaties = new ArrayList<Organisatie>();
 
     public Contactpersoon(String naam, String adres, String woonplaats, String functie, String email, int telnr) {
         this.naam = naam;
@@ -21,6 +34,10 @@ public class Contactpersoon {
         this.functie = functie;
         this.email = email;
         this.telnr = telnr;
+    }
+
+    public Contactpersoon() {
+
     }
 
     public void voegOrganisatieToe(Organisatie organisatie) throws AlreadyExistsException {

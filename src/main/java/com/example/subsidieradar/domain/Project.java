@@ -5,9 +5,19 @@ import com.example.subsidieradar.domain.enums.Activiteit;
 import com.example.subsidieradar.domain.enums.OrganisatieType;
 import com.example.subsidieradar.domain.enums.Samenwerking;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Project {
+@Entity
+public class Project implements Serializable {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
     OrganisatieType organisatieType;
     String sector;
     String thema;
@@ -30,5 +40,9 @@ public class Project {
         this.startdatum = startdatum;
         this.activiteit = activiteit;
         this.samenwerking = samenwerking;
+    }
+
+    public Project() {
+
     }
 }

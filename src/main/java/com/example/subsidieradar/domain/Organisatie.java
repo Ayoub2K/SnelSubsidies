@@ -3,9 +3,21 @@ package com.example.subsidieradar.domain;
 import com.example.subsidieradar.domain.enums.OrganisatieType;
 import com.example.subsidieradar.domain.exceptions.AlreadyExistsException;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Organisatie {
+@Entity
+public class Organisatie implements Serializable {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
     String naam;
     String rechtsvorm;
     String adres;
@@ -14,7 +26,8 @@ public class Organisatie {
     int kvkNummer;
     OrganisatieType organisatieType;
 
-    ArrayList<Project> projecten = new ArrayList<>();
+    @OneToMany
+    List<Project> projecten = new ArrayList<>();
 
     public Organisatie(String naam, String rechtsvorm, String adres, String vestigingsplaats, String website, int kvkNummer, OrganisatieType organisatieType) {
         this.naam = naam;
@@ -24,6 +37,10 @@ public class Organisatie {
         this.website = website;
         this.kvkNummer = kvkNummer;
         this.organisatieType = organisatieType;
+    }
+
+    public Organisatie() {
+
     }
 
     public void voegProjectToe(Project project) throws AlreadyExistsException {
