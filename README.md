@@ -22,9 +22,12 @@ or use the supplied `mvnw` or `mvnw.cmd`.
 
 You need to install node.js & vue.js for the frontend 
 
+Firstly make sure you have the `package.json` file in your project. If not, run the `npm init` command
+
 For [Node.js](https://nodejs.org/en/download/) install the latest LTS `npm install`
 
 For Vue.js type in the next command `npm install -g @vue/cli` in your terminal 
+
 
 
 ## Booting
@@ -33,7 +36,7 @@ First, make sure the database is set up, started and reachable.
 Start the application via your IDE by running the `SubsidieRadarApplication`
 class. Alternatively, run `mvn spring-boot:start`.
 
-for the frontend run de volgende commands in terminal
+For the frontend run the following commands in terminal
 
 `cd webapp`
 `npm run serve`
