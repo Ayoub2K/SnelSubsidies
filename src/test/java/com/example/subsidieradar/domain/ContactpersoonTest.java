@@ -14,7 +14,7 @@ class ContactpersoonTest {
 
     @BeforeEach
     void initilaize(){
-        this.persoon = new Contactpersoon("Kelly", "Blekerij 120", "Veenendaal", "Student", "kelly@student.hu.nl", 646136136);
+        this.persoon = new Contactpersoon("Ayoub", "Clownstraat 69", "Gouda", "Student", "kelly@student.hu.nl", 646136136);
         this.organisatie = new Organisatie("Hogeschool Utrecht", "Onderwijs", "Heidelberglaan 15", "Utrecht", "hu.nl", 34, OrganisatieType.ONDERWIJSINSTELLING);
     }
 

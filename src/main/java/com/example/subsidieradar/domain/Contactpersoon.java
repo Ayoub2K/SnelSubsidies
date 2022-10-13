@@ -22,6 +22,7 @@ public class Contactpersoon implements Serializable {
     String woonplaats;
     String functie;
     String email;
+    String wachtwoord;
     int telnr;
 
     @OneToMany
@@ -36,8 +37,12 @@ public class Contactpersoon implements Serializable {
         this.telnr = telnr;
     }
 
-    public Contactpersoon() {
+    public Contactpersoon(String email, String wachtwoord) {
+        this.email = email;
+        this.wachtwoord = wachtwoord;
+    }
 
+    public Contactpersoon() {
     }
 
     public void voegOrganisatieToe(Organisatie organisatie) throws AlreadyExistsException {
