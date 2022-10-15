@@ -6,6 +6,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:8080/")
 @RequestMapping("/user")
 public class GebruikerController {
     private final GebruikerService gebruikerService;
