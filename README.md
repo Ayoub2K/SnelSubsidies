@@ -20,13 +20,15 @@ For [Maven](https://maven.apache.org/guides/getting-started/maven-in-five-minute
 you can use your IDE, install it [globally](https://maven.apache.org/download.cgi),
 or use the supplied `mvnw` or `mvnw.cmd`.
 
-You need to install node.js & vue.js for the frontend 
+You need to install node.js, vue.js and axios.js for the frontend 
 
 Firstly make sure you have the `package.json` file in your project. If not, run the `npm init` command
 
 For [Node.js](https://nodejs.org/en/download/) install the latest LTS `npm install`
 
 For Vue.js type in the next command `npm install -g @vue/cli` in your terminal 
+
+For Axios.js type in the next command `npm add axios` in your terminal
 
 
 

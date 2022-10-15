@@ -4,6 +4,7 @@ import com.example.subsidieradar.presentation.dto.SubsidieDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:8080/")
 @RequestMapping("/subsidie")
 public class SubsidieController {
 

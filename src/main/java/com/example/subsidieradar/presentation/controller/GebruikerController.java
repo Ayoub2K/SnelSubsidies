@@ -3,10 +3,7 @@ package com.example.subsidieradar.presentation.controller;
 import com.example.subsidieradar.application.GebruikerService;
 import com.example.subsidieradar.presentation.dto.RegistratieDTO;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
