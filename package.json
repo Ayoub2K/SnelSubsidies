@@ -1,0 +1,22 @@
+{
+  "name": "subsidieradar",
+  "version": "1.0.0",
+  "description": "This project is part of an assignment for the\r course Innovation (INNO 2022/23) at the\r Hogeschool Utrecht, University of Applied Sciences.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayoub2K/SubsidieRadar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayoub2K/SubsidieRadar/issues"
+  },
+  "homepage": "https://github.com/Ayoub2K/SubsidieRadar#readme"
+}
