@@ -37,4 +37,40 @@ public class Subsidie implements Serializable {
     public Subsidie() {
 
     }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public String getSubsidieverstrekker() {
+        return subsidieverstrekker;
+    }
+
+    public String getSubsidialeActiviteiten() {
+        return subsidialeActiviteiten;
+    }
+
+    public Date getMaxLooptijd() {
+        return MaxLooptijd;
+    }
+
+    public double getSubsidieBudget() {
+        return subsidieBudget;
+    }
+
+    public Date getStartDatum() {
+        return startDatum;
+    }
+
+    public Date getDeadline() {
+        return deadline;
+    }
+
+    public String getBeoordelingssystematiek() {
+        return beoordelingssystematiek;
+    }
+
+    public String getSubsidieWebsiteLink() {
+        return subsidieWebsiteLink;
+    }
 }
