@@ -42,5 +42,6 @@ public class SubsidieService {
                 date1, 12, date2, date3, "beoordelingssystematiek", "websitelink");
 
         this.subsidieRadarRepository.save(s1);
+        System.out.println("Filled dummy data");
     }
 }
