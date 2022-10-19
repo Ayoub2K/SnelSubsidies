@@ -38,6 +38,10 @@ public class Subsidie implements Serializable {
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public String getNaam() {
         return naam;
     }

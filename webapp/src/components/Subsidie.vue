@@ -1,13 +1,26 @@
 <template>
   <div class="container">
-    <h1>SubsidieLijst</h1>
-    <table>
+    <h1 class="text-center"> Subsidie Lijst</h1>
+    <table class="table table-striped">
       <thead>
-        <th>Subsidie naam</th>
+      <th>
+        <input type="checkbox" v-model="allSelected" @change="selectAll"></th>
+      <th>Subsidie naam</th>
+      <th>beoordelingssystematiek</th>
+      <th>Deadline</th>
+      <th>budget</th>
       </thead>
       <tbody>
-          <td>{{subsidieNaam}}</td>
+      <tr v-for="subsidie in subsidies" :key="subsidie.id">
+        <td><input type="checkbox" v-model="selected" :value="subsidie.id"></td>
+
+        <td>{{subsidie.Naam}}</td>
+        <td>{{subsidie.beoordelingssystematiek}}</td>
+        <td>{{subsidie.deadline}}</td>
+        <td>{{subsidie.subsidieBudget}}</td>
+      </tr>
       </tbody>
+
     </table>
   </div>
 </template>
@@ -25,15 +38,16 @@ export default {
   methods:{
     getSubsidie(){
       SubsidieService.getSubsidie().then((response) => {
-        //TODO: gaat iets mis met deze return items zijn leeg
-        console.log(this.subsidies)
-        this.subsidies = response.data
-      })
-    }
+        SubsidieService.getSubsidie().then(
+            response => {
+              this.employees = response.data;
+            }
+        );
   },
   created(){
     this.getSubsidie()
   }
+}
 }
 </script>
 
