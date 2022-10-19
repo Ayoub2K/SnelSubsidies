@@ -1,8 +1,10 @@
 package com.example.subsidieradar.presentation.controller;
 
 import com.example.subsidieradar.application.SubsidieService;
-import com.example.subsidieradar.presentation.dto.SubsidieDTO;
+import com.example.subsidieradar.domain.Subsidie;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8080/")
@@ -15,12 +17,7 @@ public class SubsidieController {
     }
 
     @GetMapping
-    public SubsidieDTO getSubsidies() throws Exception {
-        return (SubsidieDTO) subsidieService.getSubsidies();
+    public List<Subsidie> getSubsidies() throws Exception {
+        return subsidieService.getSubsidies();
     }
-
-//    @GetMapping
-//    public MatchDTO searchMatches() {
-//        return service.getMatches();
-//    }
 }
