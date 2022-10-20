@@ -14,7 +14,7 @@
       <tr v-for="subsidie in subsidies" :key="subsidie.id">
         <td><input type="checkbox" v-model="selected" :value="subsidie.id"></td>
 
-        <td>{{subsidie.Naam}}</td>
+        <td>{{subsidie.naam}}</td>
         <td>{{subsidie.beoordelingssystematiek}}</td>
         <td>{{subsidie.deadline}}</td>
         <td>{{subsidie.subsidieBudget}}</td>
@@ -28,26 +28,35 @@
 <script>
 import SubsidieService from "@/services/SubsidieService";
 
-export default {
-  name: "subsidie-item",
-  data(){
-    return{
-      subsidies : []
-    }
+export default{
+  name:'Subsidie-items',
+  data() {
+    return {
+      subsidies:[],
+    };
   },
   methods:{
-    getSubsidie(){
-      SubsidieService.getSubsidie().then((response) => {
-        SubsidieService.getSubsidie().then(
-            response => {
-              this.employees = response.data;
-            }
-        );
+    getSubsidies(){
+      SubsidieService.getSubsidies().then(
+          response => {
+            this.subsidies = response.data;
+          }
+      );
+    },
+    selectAll(){
+      this.employeeIds =[];
+      if(this.allSelected){
+        const selected = this.subsidies.map((subsidie)=>subsidie.id)
+        this.selected = selected;
+
+      }else{
+        this.selected=[];
+      }
+    }
   },
   created(){
-    this.getSubsidie()
+    this.getSubsidies()
   }
-}
 }
 </script>
 

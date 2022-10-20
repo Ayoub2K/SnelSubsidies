@@ -1,7 +1,6 @@
 package com.example.subsidieradar.domain;
 
 import com.example.subsidieradar.domain.exceptions.AlreadyExistsException;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
