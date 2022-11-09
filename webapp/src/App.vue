@@ -6,7 +6,7 @@
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-import Subsidie from './components/Subsidie.vue'
+import Subsidie from './views/Subsidie.vue'
 
 export default {
   name: 'App',
