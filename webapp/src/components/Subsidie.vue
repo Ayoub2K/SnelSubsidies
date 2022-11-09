@@ -44,11 +44,9 @@ export default{
       );
     },
     selectAll(){
-      this.employeeIds =[];
+      this.subsidieId =[];
       if(this.allSelected){
-        const selected = this.subsidies.map((subsidie)=>subsidie.id)
-        this.selected = selected;
-
+        this.selected = this.subsidies.map((subsidie) => subsidie.id);
       }else{
         this.selected=[];
       }
