@@ -2,6 +2,7 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/subsidie">Subsidie</router-link> |
+    <router-link to="/form">form</router-link> |
   </div>
   <router-view/>
 </template>
