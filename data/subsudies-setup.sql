@@ -26,6 +26,6 @@ create table subsidie
 );
 
 COPY subsidie
-    FROM program 'cut -d "," -f 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 data/CityDealsData/Database-ready-Circulair-Bouwen.csv'
-    DELIMITER ','
+    FROM program 'cut -d ";" -f 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 C:\Users\mayou\IdeaProjects\SubsidieRadar\data\CityDealsData\new.csv'
+    DELIMITER ';'
     CSV HEADER;
