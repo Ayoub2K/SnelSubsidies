@@ -27,6 +27,14 @@ public class SubsidieService {
         }
     }
 
+    public List<Subsidie> filterSubsidies(String budget) throws Exception{
+        try {
+            return this.subsidieRadarRepository.findAll();
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
     public void fillWithTestdata() throws ParseException {
         //TODO: SQL functie hier runnen
         String sDate1="31/12/1998";

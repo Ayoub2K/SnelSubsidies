@@ -9,8 +9,8 @@
       <option>C</option>
     </select>
 
-    <p>wat is het minimaal benodigd subsidiebedrag?: €{{ bedrag }}</p>
-    €<input v-model="bedrag" placeholder="0"/>
+    <p>wat is het minimaal benodigd subsidiebedrag?: €{{ budget }}</p>
+    €<input v-model="budget" placeholder="0"/>
 
     <div>wat is de projectlocatie?: {{ projectlocatie }}</div>
 
@@ -47,33 +47,31 @@
 <script>
 
 
-//import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "Form-component",
   data() {
     return {
       sector: [],
-      bedrag: '',
+      budget: '',
       projectlocatie: [],
       datum: '',
       onderwerpen: [],
       bijdrage: ''
     }
   }
-  // ,
-  // methods: {
-  //   submit() {
-  //     axios.post('/your-url', {name: this.name})
-  //         .then(res => {
-  //           //TODO: https://stackoverflow.com/questions/45398114/vue-submit-button-data
-  //           // do something with res
-  //         })
-  //         .catch(err => {
-  //           // catch error
-  //         });
-  //   }
-  // }
+  ,
+  methods: {
+    submit() {
+      console.log(this.budget);
+      axios.post('http://localhost:8081/subsidie', null, { params: {
+          budget : this.budget
+        }})
+          .then(response => response.status)
+          .catch(err => console.warn(err));
+    }
+  }
 
 }
 </script>
