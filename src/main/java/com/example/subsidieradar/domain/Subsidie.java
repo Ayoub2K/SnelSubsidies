@@ -14,6 +14,7 @@ public class Subsidie implements Serializable {
 
     String naam;
     String afkortingen;
+    String niveau;
     String subsidieverstrekker;
     String doel;
     String themas;
@@ -33,9 +34,10 @@ public class Subsidie implements Serializable {
     String beoordeling_tender;
     double looptijdProject_jaren;
 
-    public Subsidie(String naam, String afkortingen, String subsidieverstrekker, String doel, String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie, String samenwerking, String type_samenwerking, double totaal_budget, double subsidiebedrag_min, double subsidiebedrag_max, String bijzonderheid, String subsidiepercentage_min, String subsidiepercentage_max, String datum_open, String datum_sluit, String beoordeling_tender, double looptijdProject_jaren) {
+    public Subsidie(String naam, String afkortingen, String niveau, String subsidieverstrekker, String doel, String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie, String samenwerking, String type_samenwerking, double totaal_budget, double subsidiebedrag_min, double subsidiebedrag_max, String bijzonderheid, String subsidiepercentage_min, String subsidiepercentage_max, String datum_open, String datum_sluit, String beoordeling_tender, double looptijdProject_jaren) {
         this.naam = naam;
         this.afkortingen = afkortingen;
+        this.niveau = niveau;
         this.subsidieverstrekker = subsidieverstrekker;
         this.doel = doel;
         this.themas = themas;

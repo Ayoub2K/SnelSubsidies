@@ -2,9 +2,9 @@ drop table if exists subsidie;
 
 create table subsidie
 (
-    id bigint PRIMARY KEY,
-    naam varchar(125),
+    naam varchar(125) PRIMARY KEY,
     afkortingen  varchar(125),
+    niveau varchar(125),
     subsidieverstrekker varchar(125),
     doel  varchar(125),
     themas varchar(125),
