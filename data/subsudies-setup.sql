@@ -3,25 +3,29 @@ drop table if exists subsidie;
 create table subsidie
 (
     id bigint PRIMARY KEY,
-    Naam varchar(125),
-    Afkortingen  varchar(125),
-    Niveau varchar(125),
-    Subsidieverstrekker varchar(125),
-    Doel  varchar(125),
-    Themas varchar(125),
-    Subsidiabele_activiteiten varchar(125),
-    Locatie  varchar(125),
-    Soort_organisatie varchar(125),
-    Samenwerking varchar(125),
-    Type_samenwerking varchar(125),
-    Totaal_budget int,
-    Subsidiebedrag_min int,
-    Subsidiebedrag_max int,
-    Bijzonderheid varchar(300),
-    Subsidiepercentage_min int,
-    Subsidiepercentage_max int,
-    Datum_open varchar(20),
-    Datum_sluit varchar(20),
-    Beoordeling_tender varchar(125),
+    naam varchar(125),
+    afkortingen  varchar(125),
+    subsidieverstrekker varchar(125),
+    doel  varchar(125),
+    themas varchar(125),
+    subsidiabele_activiteiten varchar(125),
+    locatie  varchar(125),
+    soort_organisatie varchar(125),
+    samenwerking varchar(125),
+    type_samenwerking varchar(125),
+    totaal_budget int,
+    subsidiebedrag_min int,
+    subsidiebedrag_max int,
+    bijzonderheid varchar(300),
+    subsidiepercentage_min int,
+    subsidiepercentage_max int,
+    datum_open varchar(20),
+    datum_sluit varchar(20),
+    beoordeling_tender varchar(125),
     looptijdProject_jaren int
 );
+
+COPY subsidie
+    FROM program 'cut -d "," -f 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21 /data/CityDealsData/Database-ready Circulair Bouwen.csv'
+    DELIMITER ','
+    CSV HEADER;

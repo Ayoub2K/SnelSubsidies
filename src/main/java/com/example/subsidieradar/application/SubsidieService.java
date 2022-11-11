@@ -28,20 +28,11 @@ public class SubsidieService {
     }
 
     public void fillWithTestdata() throws ParseException {
-        //TODO: SQL functie hier runnen
-        String sDate1="31/12/1998";
-        Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(sDate1);
-
-        String sDate2="31/12/1998";
-        Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(sDate2);
-
-        String sDate3="31/12/1998";
-        Date date3 = new SimpleDateFormat("dd/MM/yyyy").parse(sDate3);
-
-        Subsidie s1 = new Subsidie("subsidieNaam", "subsidievestrekker", "subsidialeActiviteiten",
-                date1, 12, date2, date3, "beoordelingssystematiek", "websitelink");
-
-        this.subsidieRadarRepository.save(s1);
+//        //TODO: SQL functie hier runnen
+//      Subsidie s1 = new Subsidie("subsidieNaam", "subsidievestrekker", "subsidialeActiviteiten",
+//                "31/12/1998", 12, "31/12/1998", "31/12/1998", "beoordelingssystematiek", "websitelink");
+//
+//        this.subsidieRadarRepository.save(s1);
         System.out.println("Filled dummy data");
     }
 }

@@ -13,25 +13,47 @@ public class Subsidie implements Serializable {
     private Long id;
 
     String naam;
+    String afkortingen;
     String subsidieverstrekker;
-    String subsidialeActiviteiten;
-    Date MaxLooptijd;
-    double subsidieBudget;
-    Date startDatum;
-    Date deadline;
-    String beoordelingssystematiek;
-    String subsidieWebsiteLink;
+    String doel;
+    String themas;
+    String subsidiabele_activiteiten;
+    String locatie;
+    String soort_organisatie;
+    String samenwerking;
+    String type_samenwerking;
+    double totaal_budget;
+    double subsidiebedrag_min;
+    double subsidiebedrag_max;
+    String bijzonderheid;
+    String subsidiepercentage_min;
+    String subsidiepercentage_max;
+    String datum_open;
+    String datum_sluit;
+    String beoordeling_tender;
+    double looptijdProject_jaren;
 
-    public Subsidie(String naam, String subsidieverstrekker, String subsidialeActiviteiten, Date maxLooptijd, double subsidieBudget, Date startDatum, Date deadline, String beoordelingssystematiek, String subsidieWebsiteLink) {
+    public Subsidie(String naam, String afkortingen, String subsidieverstrekker, String doel, String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie, String samenwerking, String type_samenwerking, double totaal_budget, double subsidiebedrag_min, double subsidiebedrag_max, String bijzonderheid, String subsidiepercentage_min, String subsidiepercentage_max, String datum_open, String datum_sluit, String beoordeling_tender, double looptijdProject_jaren) {
         this.naam = naam;
+        this.afkortingen = afkortingen;
         this.subsidieverstrekker = subsidieverstrekker;
-        this.subsidialeActiviteiten = subsidialeActiviteiten;
-        this.MaxLooptijd = maxLooptijd;
-        this.subsidieBudget = subsidieBudget;
-        this.startDatum = startDatum;
-        this.deadline = deadline;
-        this.beoordelingssystematiek = beoordelingssystematiek;
-        this.subsidieWebsiteLink = subsidieWebsiteLink;
+        this.doel = doel;
+        this.themas = themas;
+        this.subsidiabele_activiteiten = subsidiabele_activiteiten;
+        this.locatie = locatie;
+        this.soort_organisatie = soort_organisatie;
+        this.samenwerking = samenwerking;
+        this.type_samenwerking = type_samenwerking;
+        this.totaal_budget = totaal_budget;
+        this.subsidiebedrag_min = subsidiebedrag_min;
+        this.subsidiebedrag_max = subsidiebedrag_max;
+        this.bijzonderheid = bijzonderheid;
+        this.subsidiepercentage_min = subsidiepercentage_min;
+        this.subsidiepercentage_max = subsidiepercentage_max;
+        this.datum_open = datum_open;
+        this.datum_sluit = datum_sluit;
+        this.beoordeling_tender = beoordeling_tender;
+        this.looptijdProject_jaren = looptijdProject_jaren;
     }
 
     public Subsidie() {
@@ -46,35 +68,79 @@ public class Subsidie implements Serializable {
         return naam;
     }
 
+    public String getAfkortingen() {
+        return afkortingen;
+    }
+
     public String getSubsidieverstrekker() {
         return subsidieverstrekker;
     }
 
-    public String getSubsidialeActiviteiten() {
-        return subsidialeActiviteiten;
+    public String getDoel() {
+        return doel;
     }
 
-    public Date getMaxLooptijd() {
-        return MaxLooptijd;
+    public String getThemas() {
+        return themas;
     }
 
-    public double getSubsidieBudget() {
-        return subsidieBudget;
+    public String getSubsidiabele_activiteiten() {
+        return subsidiabele_activiteiten;
     }
 
-    public Date getStartDatum() {
-        return startDatum;
+    public String getLocatie() {
+        return locatie;
     }
 
-    public Date getDeadline() {
-        return deadline;
+    public String getSoort_organisatie() {
+        return soort_organisatie;
     }
 
-    public String getBeoordelingssystematiek() {
-        return beoordelingssystematiek;
+    public String getSamenwerking() {
+        return samenwerking;
     }
 
-    public String getSubsidieWebsiteLink() {
-        return subsidieWebsiteLink;
+    public String getType_samenwerking() {
+        return type_samenwerking;
+    }
+
+    public double getTotaal_budget() {
+        return totaal_budget;
+    }
+
+    public double getSubsidiebedrag_min() {
+        return subsidiebedrag_min;
+    }
+
+    public double getSubsidiebedrag_max() {
+        return subsidiebedrag_max;
+    }
+
+    public String getBijzonderheid() {
+        return bijzonderheid;
+    }
+
+    public String getSubsidiepercentage_min() {
+        return subsidiepercentage_min;
+    }
+
+    public String getSubsidiepercentage_max() {
+        return subsidiepercentage_max;
+    }
+
+    public String getDatum_open() {
+        return datum_open;
+    }
+
+    public String getDatum_sluit() {
+        return datum_sluit;
+    }
+
+    public String getBeoordeling_tender() {
+        return beoordeling_tender;
+    }
+
+    public double getLooptijdProject_jaren() {
+        return looptijdProject_jaren;
     }
 }
