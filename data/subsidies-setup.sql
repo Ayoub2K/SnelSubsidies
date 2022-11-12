@@ -2,7 +2,9 @@ drop table if exists subsidie;
 
 create table subsidie
 (
-    naam varchar(125) PRIMARY KEY,
+    dtype varchar(31),
+    id bigint PRIMARY KEY,
+    naam varchar(125),
     afkortingen  varchar(125),
     niveau varchar(125),
     subsidieverstrekker varchar(125),
