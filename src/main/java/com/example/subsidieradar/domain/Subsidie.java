@@ -11,9 +11,9 @@ public class Subsidie implements Serializable {
 //    @Id
 //    @GeneratedValue
 //    private Long id;
+
     @Id
     public String naam;
-
     String afkortingen;
     String niveau;
     String subsidieverstrekker;

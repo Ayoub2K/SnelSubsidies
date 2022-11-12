@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,10 +38,12 @@ public class SubsidieService {
 
     public void fillWithTestdata() throws ParseException {
 //        //TODO: SQL functie hier runnen
-      Subsidie s1 = new Subsidie("a", "a", "a", "a", "a", "a","a", "a", "a", "a", "a", 1, 1, 1,
-              "a", "a", "a", "a","a", "a", 1);
+//        List<Subsidie> subsidieList = new ArrayList<>();
+//        subsidieBuilder.build(subsidieList);
+//
+//        this.subsidieRadarRepository.deleteAll();
+//        this.subsidieRadarRepository.saveAll(subsidieList);
 
-        this.subsidieRadarRepository.save(s1);
         System.out.println("Filled dummy data");
     }
 }
