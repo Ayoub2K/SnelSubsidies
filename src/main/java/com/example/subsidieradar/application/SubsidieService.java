@@ -37,10 +37,10 @@ public class SubsidieService {
 
     public void fillWithTestdata() throws ParseException {
 //        //TODO: SQL functie hier runnen
-//      Subsidie s1 = new Subsidie("subsidieNaam", "subsidievestrekker", "subsidialeActiviteiten",
-//                "31/12/1998", 12, "31/12/1998", "31/12/1998", "beoordelingssystematiek", "websitelink");
-//
-//        this.subsidieRadarRepository.save(s1);
+      Subsidie s1 = new Subsidie("a", "a", "a", "a", "a", "a","a", "a", "a", "a", "a", 1, 1, 1,
+              "a", "a", "a", "a","a", "a", 1);
+
+        this.subsidieRadarRepository.save(s1);
         System.out.println("Filled dummy data");
     }
 }

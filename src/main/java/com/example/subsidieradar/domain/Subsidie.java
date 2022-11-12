@@ -8,11 +8,12 @@ import java.util.Date;
 @Entity
 public class Subsidie implements Serializable {
 
+//    @Id
+//    @GeneratedValue
+//    private Long id;
     @Id
-    @GeneratedValue
-    private Long id;
+    public String naam;
 
-    String naam;
     String afkortingen;
     String niveau;
     String subsidieverstrekker;
@@ -62,9 +63,9 @@ public class Subsidie implements Serializable {
 
     }
 
-    public Long getId() {
-        return id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
 
     public String getNaam() {
         return naam;
