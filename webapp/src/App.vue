@@ -1,7 +1,9 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/subsidie">Subsidie</router-link> |
+    <ul>
+      <li><a><router-link to="/">Home</router-link></a></li>
+      <li><a><router-link to="/subsidie">Subsidie</router-link></a></li>
+    </ul>
   </div>
   <router-view/>
 </template>
@@ -14,14 +16,31 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #6cbb71;
 }
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+
+li {
+  float: left;
 }
-#nav a.router-link-exact-active {
-  color: #42b983;
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #89db8e;
 }
 </style>
