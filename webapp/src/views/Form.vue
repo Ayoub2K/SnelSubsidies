@@ -1,6 +1,4 @@
 <template>
-<!--  <form-component></form-component>-->
-<!--  <multiform-component></multiform-component>-->
   <step-form-component></step-form-component>
 </template>
 
