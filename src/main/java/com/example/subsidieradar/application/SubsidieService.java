@@ -38,11 +38,11 @@ public class SubsidieService {
 
     public void fillWithTestdata() throws ParseException {
 //        //TODO: SQL functie hier runnen
-//        List<Subsidie> subsidieList = new ArrayList<>();
-//        subsidieBuilder.build(subsidieList);
-//
-//        this.subsidieRadarRepository.deleteAll();
-//        this.subsidieRadarRepository.saveAll(subsidieList);
+        List<Subsidie> subsidieList = new ArrayList<>();
+        subsidieBuilder.build(subsidieList);
+
+        this.subsidieRadarRepository.deleteAll();
+        this.subsidieRadarRepository.saveAll(subsidieList);
 
         System.out.println("Filled dummy data");
     }

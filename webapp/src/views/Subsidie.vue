@@ -6,18 +6,16 @@
       <th>
         <input type="checkbox" v-model="allSelected" @change="selectAll"></th>
       <th>Subsidie naam</th>
-      <th>beoordelingssystematiek</th>
-      <th>Deadline</th>
-      <th>budget</th>
+      <th>afkorting</th>
+      <th>niveau</th>
       </thead>
       <tbody>
       <tr v-for="subsidie in subsidies" :key="subsidie.id">
         <td><input type="checkbox" v-model="selected" :value="subsidie.id"></td>
 
         <td>{{subsidie.naam}}</td>
-        <td>{{subsidie.beoordelingssystematiek}}</td>
-        <td>{{subsidie.deadline}}</td>
-        <td>{{subsidie.subsidieBudget}}</td>
+        <td>{{subsidie.afkortingen}}</td>
+        <td>{{subsidie.niveau}}</td>
       </tr>
       </tbody>
 

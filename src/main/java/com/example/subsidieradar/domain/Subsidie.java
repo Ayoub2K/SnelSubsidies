@@ -71,6 +71,10 @@ public class Subsidie implements Serializable {
         return naam;
     }
 
+    public String getNiveau() {
+        return niveau;
+    }
+
     public String getAfkortingen() {
         return afkortingen;
     }
