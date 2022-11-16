@@ -37,6 +37,7 @@ export default{
     getSubsidies(){
       SubsidieService.getSubsidies().then(
           response => {
+            console.log(this.$route.query.budget);
             this.subsidies = response.data;
           }
       );

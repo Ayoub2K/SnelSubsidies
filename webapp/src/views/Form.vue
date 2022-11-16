@@ -47,7 +47,7 @@
 <script>
 
 
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "Form-component",
@@ -64,10 +64,10 @@ export default {
   ,
   methods: {
     submit() {
-      console.log(this.budget);
-      axios.post('http://localhost:8081/subsidie', null, { params: {
-          budget : this.budget
-        }})
+      // axios.post('http://localhost:8081/subsidie', null, { params: {
+      //     budget : this.budget
+      //   }})
+      this.$router.push(`/subsidie?budget=${this.budget}`)
           .then(response => response.status)
           .catch(err => console.warn(err));
     }
