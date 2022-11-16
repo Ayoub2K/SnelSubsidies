@@ -116,6 +116,7 @@
 // import axios from "axios";
 
 const steps = Array.from(document.querySelectorAll('form .step'));
+console.log(steps)
 // const nextBtn = document.querySelectorAll('form .next-btn');
 // const prevBtn = document.querySelectorAll('form .previous-btn');
 
@@ -137,6 +138,7 @@ export default {
   ,
   methods: {
     nextstep() {
+      console.log(steps)
       let index = 0;
       const active = document.querySelectorAll('form .step.active');
       index = steps.indexOf(active);
@@ -161,13 +163,5 @@ export default {
 
 .step.active {
   display: block;
-}
-
-button.next-btn, button.previous-btn {
-  float: right;
-}
-
-button.previous-btn {
-  float: left;
 }
 </style>
