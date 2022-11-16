@@ -44,7 +44,7 @@ a {
   border: none;
   border-radius: 14px;
   color: white;
-  padding: 15px 32px;
+  padding: 11px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
