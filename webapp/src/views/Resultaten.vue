@@ -18,11 +18,12 @@
 
     <div id="breed">
       <div class="resultaten">
-        <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id" @click="subsidieInfo($event)">
+        <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id" @click="subsidieInfo(subsidie)">
           <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
           <p class="info">
             Afkorting: {{subsidie.afkortingen}}<br>
             Niveau: {{subsidie.niveau}}
+            <img id="open-icon" alt="Open link" src="../assets/open_icon.png">
           </p>
         </div>
       </div>
@@ -52,8 +53,7 @@ export default{
       );
     },
     subsidieInfo(e){
-      const targetId = e.currentTarget.id;
-      console.log(targetId)
+      console.log(e)
     }
   },
   created(){
@@ -63,6 +63,13 @@ export default{
 </script>
 
 <style scoped>
+
+#open-icon {
+  width: 4%;
+  float: right;
+  margin: 2%;
+  cursor: pointer;
+}
 hr {
   width: 50%;
   float: left;
@@ -92,10 +99,10 @@ hr {
 
 .subsidie {
   border-style: solid;
+  border-color: #6cbb71;
+  border-width: 2px;
   border-radius: 15px;
-}
-.subsidie:hover {
-  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 25%) 0 10px 20px, rgb(0 0 0 / 25%) 0 6px 6px;
 }
 
 .resultaten {
