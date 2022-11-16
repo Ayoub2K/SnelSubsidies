@@ -1,60 +1,74 @@
 <template>
   <form @submit.prevent="submit">
-      <!--    sector-->
-      <div>In welke sector werkt u?: {{ sector }}</div>
+    <section v-if="step === 1">
+      <h1>1</h1>
+      <h3>In welke sector werkt u?: {{ sector }}</h3>
       <select v-model="sector">
         <option disabled value="">sector</option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
       </select>
+    </section>
 
-      <!--    themas-->
-      <div>onder welke thema valt uw project?: {{ thema }}</div>
+    <section v-if="step === 2">
+      <h1>2</h1>
+      <h3>onder welke thema valt uw project?: {{ thema }}</h3>
       <select v-model="thema">
         <option disabled value="">thema</option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
       </select>
+    </section>
 
-      <!--    type activiteit-->
-      <div>wat is het type van uw activiteit?: {{ typeActiviteit }}</div>
+    <section v-if="step === 3">
+      <h1>3</h1>
+      <h3>wat is het type van uw activiteit?: {{ typeActiviteit }}</h3>
       <select v-model="typeActiviteit">
         <option disabled value="">type activiteit</option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
       </select>
+    </section>
 
-      <!--    minimale budget bedrag-->
-      <p>wat is het minimaal benodigd subsidiebedrag?: €{{ budget }}</p>
+    <section v-if="step === 4">
+      <h1>4</h1>
+      <h3>wat is het minimaal benodigd subsidiebedrag?: €{{ budget }}</h3>
       €<input v-model="budget" placeholder="0"/>
+    </section>
 
-      <!--    startdatum-->
-      <p>wat is uw beoogde startdatum?: {{ startDatum }}</p>
+    <section v-if="step === 5">
+      <h1>5</h1>
+      <h3>wat is uw beoogde startdatum?: {{ startDatum }}</h3>
       <input v-model="startDatum" placeholder="01-01-2000"/>
+    </section>
 
-      <!--    einddatum-->
-      <p>wat is uw beoogde einddatum?: {{ eindDatum }}</p>
+    <section v-if="step === 6">
+      <h1>6</h1>
+      <h3>wat is uw beoogde einddatum?: {{ eindDatum }}</h3>
       <input v-model="eindDatum" placeholder="01-01-2000"/>
+    </section>
 
-      <!-- projectlocatie -->
-      <div>wat is de projectlocatie?: {{ projectlocatie }}</div>
+    <section v-if="step === 7">
+      <h3>wat is de projectlocatie?: {{ projectlocatie }}</h3>
       <select v-model="projectlocatie">
         <option disabled value="">projectlocatie</option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
       </select>
+    </section>
 
-      <!--    bijdrage-->
-      <p>kunt u cofinancieren? : €{{ bijdrage }}</p>
+    <section v-if="step === 8">
+      <h3>kunt u cofinancieren? : €{{ bijdrage }}</h3>
       <input type="checkbox" id="checkbox" v-model="bijdrage"/>
       <label for="checkbox">{{ bijdrage }}</label>
+    </section>
 
-      <!--    type samenwerking-->
-      <div>wat is het type samenwerking?: {{ samenwerking }}</div>
+    <section v-if="step === 9">
+      <h3>wat is het type samenwerking?: {{ samenwerking }}</h3>
       <select v-model="samenwerking">
         <option disabled value="">type samenwerking</option>
         <option>A</option>
@@ -62,18 +76,23 @@
         <option>C</option>
       </select>
 
+      <button type="submit">Bekijk matchend subsidies</button>
+      <br>
+    </section>
 
-      <button type="submit">
-        Bekijk matchend subsidies
-      </button>
+    <button v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+    <button v-if="step !== totalsteps" @click.prevent="nextStep">Volgende Stap</button>
+
   </form>
 </template>
 
 <script>
 export default {
-  name: "formComponent",
+  name: "stepFormComponent",
   data() {
     return {
+      step: 1,
+      totalsteps: 9,
       sector: [],
       thema: [],
       typeActiviteit: [],
@@ -85,27 +104,12 @@ export default {
       samenwerking: []
     }
   },
-  methods: {
-    changeStep(richting) {
-      const steps = Array.from(document.querySelectorAll('form .step'));
-      const active = document.querySelectorAll('form .step.active');
-
-      let index = 0;
-      index = steps.indexOf(active);
-
-      console.log(steps)
-      console.log(steps.indexOf(active))
-      console.log(index)
-
-      steps[index].classList.remove('active');
-
-      if (richting === 'next') {
-        index++;
-      } else if (richting === 'prev') {
-        index--;
-      }
-
-      steps[index].classList.add('active');
+  methods:{
+    nextStep:function (){
+      this.step++;
+    },
+    prevStep:function (){
+      this.step--;
     },
     submit() {
       this.$router.push(`/resultaten?budget=${this.budget}`)
@@ -114,15 +118,7 @@ export default {
     }
   }
 }
-
 </script>
-
 <style scoped>
-.step {
-  display: none;
-}
 
-.step.active {
-  display: block;
-}
 </style>

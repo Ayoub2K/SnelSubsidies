@@ -1,14 +1,15 @@
 <template>
 <!--  <form-component></form-component>-->
-  <multiform-component></multiform-component>
+<!--  <multiform-component></multiform-component>-->
+  <step-form-component></step-form-component>
 </template>
 
 <script>
-import MultiformComponent from "@/components/multiformComponent";
+import StepFormComponent from "@/components/stepFormComponent";
 export default {
   name: 'form-page',
   components: {
-    MultiformComponent
+    StepFormComponent
   }
 }
 </script>
