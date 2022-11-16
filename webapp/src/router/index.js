@@ -19,8 +19,7 @@ const routes = [
     {
         path: '/subsidie',
         name: 'Subsidie',
-        component: Subsidie,
-        // props: route => ({query: route.query.budget})
+        component: Subsidie
     }
 
 

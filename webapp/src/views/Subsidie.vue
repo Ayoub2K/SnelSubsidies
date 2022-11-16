@@ -3,16 +3,12 @@
     <h1 class="text-center"> Subsidie Lijst</h1>
     <table class="table table-striped">
       <thead>
-      <th>
-        <input type="checkbox" v-model="allSelected" @change="selectAll"></th>
       <th>Subsidie naam</th>
       <th>afkorting</th>
       <th>niveau</th>
       </thead>
       <tbody>
       <tr v-for="subsidie in subsidies" :key="subsidie.id">
-        <td><input type="checkbox" v-model="selected" :value="subsidie.id"></td>
-
         <td>{{subsidie.naam}}</td>
         <td>{{subsidie.afkortingen}}</td>
         <td>{{subsidie.niveau}}</td>
@@ -42,16 +38,6 @@ export default{
           }
       );
     },
-    selectAll(){
-      this.employeeIds =[];
-      if(this.allSelected){
-        const selected = this.subsidies.map((subsidie)=>subsidie.id)
-        this.selected = selected;
-
-      }else{
-        this.selected=[];
-      }
-    }
   },
   created(){
     this.getSubsidies()
