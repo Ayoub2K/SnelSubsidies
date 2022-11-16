@@ -97,7 +97,7 @@ export default {
       // axios.post('http://localhost:8081/subsidie', null, { params: {
       //     budget : this.budget
       //   }})
-      this.$router.push(`/subsidie?budget=${this.budget}`)
+      this.$router.push(`/resultaten?budget=${this.budget}`)
           .then(response => response.status)
           .catch(err => console.warn(err));
     }
