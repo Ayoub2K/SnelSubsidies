@@ -12,14 +12,15 @@ const routes = [
         component: Home
     },
     {
-        path: '/subsidie',
-        name: 'Subsidie',
-        component: Subsidie
-    },
-    {
         path: '/form',
         name: 'Form',
         component: Form
+    },
+    {
+        path: '/subsidie',
+        name: 'Subsidie',
+        component: Subsidie,
+        props: route => ({query: route.query.q})
     }
 
 
