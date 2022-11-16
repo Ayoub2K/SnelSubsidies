@@ -1,10 +1,8 @@
 import axios from "axios";
 
-const SUBSIDIE_API_BASE_URL = 'http://localhost:8081/subsidie'
-
 class SubsidieService{
     getSubsidies(){
-        return axios.get(SUBSIDIE_API_BASE_URL);
+        return axios.get('http://localhost:8081/subsidie');
     }
 }
 
