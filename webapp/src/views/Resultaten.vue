@@ -1,6 +1,20 @@
 <template>
+
+  <h1 class="text-center">Uw resultaten</h1>
+
   <div class="container">
-    <h1 class="text-center"> Subsidie Lijst</h1>
+    <div class="status">
+      <p id="title">Status</p>
+      <input type="checkbox" id="Open" name="Open" value="Open">
+      <label for="Open"> Open</label><br>
+      <input type="checkbox" id="Aangekondigd" name="Aangekondigd" value="Aangekondigd">
+      <label for="Aangekondigd"> Aangekondigd</label><br>
+      <input type="checkbox" id="Gesloten" name="Gesloten" value="Gesloten">
+      <label for="Gesloten"> Gesloten</label><br><br>
+    </div>
+  </div>
+
+  <div class="container">
     <table class="table table-striped">
       <thead>
       <th>Subsidie naam</th>
@@ -14,9 +28,9 @@
         <td>{{subsidie.niveau}}</td>
       </tr>
       </tbody>
-
     </table>
   </div>
+
 </template>
 
 <script>
@@ -46,5 +60,23 @@ export default{
 </script>
 
 <style scoped>
+#title {
+  margin: auto;
+}
+
+.container {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+}
+tr {
+  border-style: solid;
+}
+
+.text-center {
+  text-align: center;
+}
 
 </style>
