@@ -17,7 +17,7 @@ export default {
   },
   methods:{
     buttonClicked(){
-      this.$router.push('/subsidie');
+      this.$router.push('/form');
     }
   }
 }

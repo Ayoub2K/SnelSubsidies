@@ -3,7 +3,7 @@
     <ul>
       <li><a><router-link to="/">Home</router-link></a></li>
       <li><a><router-link to="/form">Form</router-link></a></li>
-      <li><a><router-link to="/subsidie">Subsidie</router-link></a></li>
+      <li><a><router-link to="/resultaten">Subsidie</router-link></a></li>
     </ul>
   </div>
   <router-view/>

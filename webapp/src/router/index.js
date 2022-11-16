@@ -1,9 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Subsidie from "@/views/Subsidie";
+import Subsidie from "@/views/Resultaten";
 import Home from '../views/Home.vue';
 import Form from '../views/Form.vue';
-// import Employee from '../views/Employee.vue'
-// import EmployeeForm from '../views/EmployeeForm.vue'
 
 const routes = [
     {
@@ -17,8 +15,8 @@ const routes = [
         component: Form
     },
     {
-        path: '/subsidie',
-        name: 'Subsidie',
+        path: '/resultaten',
+        name: 'Resultaten',
         component: Subsidie
     }
 
