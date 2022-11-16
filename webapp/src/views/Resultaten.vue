@@ -18,12 +18,12 @@
 
     <div id="breed">
       <div class="resultaten">
-        <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id" @click="subsidieInfo(subsidie)">
+        <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
           <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
           <p class="info">
             Afkorting: {{subsidie.afkortingen}}<br>
             Niveau: {{subsidie.niveau}}
-            <img id="open-icon" alt="Open link" src="../assets/open_icon.png">
+            <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
           </p>
         </div>
       </div>
@@ -37,7 +37,7 @@
 import SubsidieService from "@/services/SubsidieService";
 
 export default{
-  name:'Subsidie-items',
+  name:'form-resultaten',
   data() {
     return {
       subsidies:[],
@@ -52,8 +52,9 @@ export default{
           }
       );
     },
-    subsidieInfo(e){
-      console.log(e)
+    subsidiePagina(sub){
+      console.log(sub)
+      this.$router.push('/subsidie/'+sub.naam)
     }
   },
   created(){

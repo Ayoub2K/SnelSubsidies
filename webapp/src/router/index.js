@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Subsidie from "@/views/Resultaten";
 import Home from '../views/Home.vue';
 import Form from '../views/Form.vue';
+import Resultaten from "@/views/Resultaten";
+import Subsidie from "@/views/Subsidie";
 
 const routes = [
     {
@@ -17,10 +18,13 @@ const routes = [
     {
         path: '/resultaten',
         name: 'Resultaten',
+        component: Resultaten
+    },
+    {
+        path: '/subsidie/:id',
+        name: 'Subsidie',
         component: Subsidie
     }
-
-
 ]
 
 const router = createRouter({
