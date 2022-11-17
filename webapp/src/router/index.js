@@ -7,22 +7,18 @@ import Subsidie from "@/views/Subsidie";
 const routes = [
     {
         path: '/',
-        name: 'Home',
         component: Home
     },
     {
         path: '/form',
-        name: 'Form',
         component: Form
     },
     {
         path: '/resultaten',
-        name: 'Resultaten',
         component: Resultaten
     },
     {
         path: '/subsidie/:id',
-        name: 'Subsidie',
         component: Subsidie
     }
 ]
