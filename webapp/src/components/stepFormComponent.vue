@@ -2,11 +2,15 @@
   <form @submit.prevent="submit">
     <section v-if="step === 1">
       <h3>1. In welke sector werkt u?: {{ sector }}</h3>
-      <select v-model="sector">
-        <option disabled value="">sector</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
+      <select v-model="sector" class="select" multiple>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five</option>
+        <option value="6">Six</option>
+        <option value="7">Seven</option>
+        <option value="8">Eight</option>
       </select>
     </section>
 
@@ -37,12 +41,12 @@
 
     <section v-if="step === 5">
       <h3>5. wat is uw beoogde startdatum?: {{ startDatum }}</h3>
-      <input v-model="startDatum" placeholder="01-01-2000"/>
+      <input type="date" v-model="startDatum" min="2022-01-01">
     </section>
 
     <section v-if="step === 6">
       <h3>6. wat is uw beoogde einddatum?: {{ eindDatum }}</h3>
-      <input v-model="eindDatum" placeholder="01-01-2000"/>
+      <input type="date" v-model="eindDatum" min="2022-01-01">
     </section>
 
     <section v-if="step === 7">
