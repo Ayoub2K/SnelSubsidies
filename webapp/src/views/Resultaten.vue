@@ -41,24 +41,27 @@ export default{
   data() {
     return {
       subsidies:[],
+      sesStor: '',
     };
   },
   methods:{
+    getStorageData(){
+      this.sesStor = localStorage.getItem('budget')
+      console.log(localStorage.getItem('budget'))
+    },
     getSubsidies(){
-      SubsidieService.getSubsidies().then(
-          response => {
-            console.log(response)
+      SubsidieService.getSubsidies()
+          .then(response => {
             this.subsidies = response.data;
-          }
-      );
+          });
     },
     subsidiePagina(sub){
-      console.log(sub)
-      this.$router.push('/subsidie/'+sub.naam)
+      this.$router.push(`/subsidie/${sub.naam}`)
     }
   },
   created(){
-    this.getSubsidies()
+    this.getStorageData();
+    this.getSubsidies();
   },
 }
 </script>

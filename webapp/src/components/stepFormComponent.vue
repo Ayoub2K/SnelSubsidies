@@ -106,6 +106,9 @@ export default {
     }
   },
   methods:{
+    setstorage(){
+      sessionStorage.setItem('budget',this.budget)
+    },
     nextStep:function (){
       this.step++;
     },
@@ -113,7 +116,8 @@ export default {
       this.step--;
     },
     submit() {
-      this.$router.push(`/resultaten?budget=${this.budget}`)
+      this.setstorage()
+      this.$router.push(`/resultaten`)
           .then(response => response.status)
           .catch(err => console.warn(err));
     }
