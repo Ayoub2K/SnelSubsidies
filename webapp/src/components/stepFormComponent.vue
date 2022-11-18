@@ -107,7 +107,15 @@ export default {
   },
   methods:{
     setstorage(){
-      sessionStorage.setItem('budget',this.budget)
+      sessionStorage.setItem('sector',JSON.stringify(this.sector))
+      sessionStorage.setItem('thema',JSON.stringify(this.thema))
+      sessionStorage.setItem('typeActiviteit',JSON.stringify(this.typeActiviteit))
+      sessionStorage.setItem('budget',JSON.stringify(this.budget))
+      sessionStorage.setItem('startDatum',JSON.stringify(this.startDatum))
+      sessionStorage.setItem('eindDatum',JSON.stringify(this.eindDatum))
+      sessionStorage.setItem('projectlocatie',JSON.stringify(this.projectlocatie))
+      sessionStorage.setItem('bijdrage',JSON.stringify(this.bijdrage))
+      sessionStorage.setItem('samenwerking',JSON.stringify(this.samenwerking))
     },
     nextStep:function (){
       this.step++;

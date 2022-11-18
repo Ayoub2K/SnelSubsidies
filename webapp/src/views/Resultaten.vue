@@ -41,17 +41,38 @@ export default{
   data() {
     return {
       subsidies:[],
-      sesStor: '',
+      sector: [],
+      thema: [],
+      typeActiviteit: [],
+      budget: '',
+      startDatum: '',
+      eindDatum: '',
+      projectlocatie: [],
+      bijdrage: false,
+      samenwerking: []
     };
   },
   methods:{
     getStorageData(){
-      this.sesStor = localStorage.getItem('budget')
-      console.log(localStorage.getItem('budget'))
+      this.sector = sessionStorage.getItem('sector')
+      this.thema = sessionStorage.getItem('thema')
+      this.typeActiviteit = sessionStorage.getItem('typeActiviteit')
+      this.budget = sessionStorage.getItem('budget')
+      this.startDatum = sessionStorage.getItem('startDatum')
+      this.eindDatum = sessionStorage.getItem('eindDatum')
+      this.projectlocatie = sessionStorage.getItem('projectlocatie')
+      this.bijdrage = sessionStorage.getItem('bijdrage')
+      this.samenwerking = sessionStorage.getItem('samenwerking')
     },
     getSubsidies(){
       SubsidieService.getSubsidies()
           .then(response => {
+            //TODO: met deze data call maken met Axios
+            console.log(this.sector)
+            console.log(this.budget)
+            console.log(this.startDatum)
+            console.log(this.bijdrage)
+            console.log(this.samenwerking)
             this.subsidies = response.data;
           });
     },
