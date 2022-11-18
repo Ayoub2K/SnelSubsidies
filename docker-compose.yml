@@ -5,8 +5,8 @@ services:
     ports:
       - "15432:5432"
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=subsidie-radar
+      - POSTGRES_PASSWORD=subsidie-radar
       - DB_APP_NAME=subsidie-radar
       - DB_APP_USER=subsidie-radar
       - DB_APP_PASS=subsidie-radar
