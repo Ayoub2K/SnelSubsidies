@@ -28,6 +28,14 @@ public class SubsidieService {
         }
     }
 
+    public Subsidie getSubsidie(String subsidie) throws Exception{
+        try {
+            return this.subsidieRadarRepository.findByNaam(subsidie);
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
     public List<Subsidie> filterSubsidies(String budget) throws Exception{
         try {
             return this.subsidieRadarRepository.findAll();
@@ -46,4 +54,5 @@ public class SubsidieService {
 
         System.out.println("Filled dummy data");
     }
+
 }

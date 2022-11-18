@@ -1,26 +1,26 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Subsidie from "@/views/Resultaten";
 import Home from '../views/Home.vue';
 import Form from '../views/Form.vue';
+import Resultaten from "@/views/Resultaten";
+import Subsidie from "@/views/Subsidie";
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
         component: Home
     },
     {
         path: '/form',
-        name: 'Form',
         component: Form
     },
     {
         path: '/resultaten',
-        name: 'Resultaten',
+        component: Resultaten
+    },
+    {
+        path: '/subsidie/:id',
         component: Subsidie
     }
-
-
 ]
 
 const router = createRouter({
