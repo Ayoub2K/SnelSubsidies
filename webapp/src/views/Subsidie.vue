@@ -18,11 +18,7 @@
           {{subsidie.subsidieverstrekker}}
         </p>
       </div>
-<!--      <p>-->
-<!--        Afkorting: {{subsidie.afkortingen}}<br>-->
-<!--        {{subsidie.niveau}}<br>-->
-<!--        Subsidieverstrekker: {{subsidie.subsidieverstrekker}}<br>-->
-<!--      </p>-->
+      <br><button id="aanvraag">Vraag nu aan</button>
     </div>
 
     <div id="omschrijving">
@@ -66,6 +62,22 @@ export default {
 </script>
 
 <style scoped>
+#aanvraag {
+  background-color: #6cbb71;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  padding: 11px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 5%;
+}
+#aanvraag:hover {
+  cursor: pointer;
+}
+
 .ppLeft {
   font-weight: bold;
 }
@@ -93,7 +105,7 @@ h1 {
 }
 
 #info {
-  width: 30%;
+  width: 27%;
   float: left;
   margin-left: 5%;
 }
