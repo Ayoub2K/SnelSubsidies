@@ -74,12 +74,15 @@
         <option>C</option>
       </select>
 
-      <button type="submit">Bekijk matchend subsidies</button>
+      <br>
+      <br>
+      <button class="button btn-next" type="submit">Bekijk matchend subsidies</button>
       <br>
     </section>
+    <br/>
 
-    <button v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-    <button v-if="step !== totalsteps" @click.prevent="nextStep">Volgende Stap</button>
+    <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+    <button class="button btn-next"  v-if="step !== totalsteps" @click.prevent="nextStep">Volgende Stap</button>
 
   </form>
 </template>
@@ -118,5 +121,33 @@ export default {
 }
 </script>
 <style scoped>
+
+.button {
+  border: none;
+  border-radius: 14px;
+  padding: 11px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn-prev {
+  background-color: #ababab;
+}
+
+.btn-prev:hover {
+  cursor:pointer;
+  background-color: #cecece;
+}
+
+.btn-next {
+  background-color: #6cbb71;
+}
+
+.btn-next:hover {
+  cursor:pointer;
+  background-color: #89db8e;
+}
 
 </style>
