@@ -1,5 +1,5 @@
 <template>
-  <h1 class="paginatitel">{{subsidie.naam}}</h1>
+  <h1 class="paginatitel">{{naam}}</h1>
   <hr><br>
   <div class="wrapper">
     <div id="info">
@@ -8,14 +8,18 @@
         <p class="ppLeft">
           Afkorting<br>
           Niveau<br>
-          Subsidieverstrekker
+          Subsidieverstrekker<br>
+          Open datum<br>
+          Sluitings datum<br>
         </p>
       </div>
       <div id="rechts">
         <p>
-          {{subsidie.afkortingen}}<br>
-          {{subsidie.niveau}}<br>
-          {{subsidie.subsidieverstrekker}}
+          {{afkortingen}}<br>
+          {{niveau}}<br>
+          {{subsidieverstrekker}}<br>
+          {{datum_open}}<br>
+          N.v.t.
         </p>
       </div>
       <br><button id="aanvraag">Vraag nu aan</button>
@@ -23,13 +27,10 @@
 
     <div id="omschrijving">
       <h2>Omschrijving</h2>
-      <p>What is Lorem Ipsum?
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <h3>Doel</h3>
+      <p>{{doel}}</p>
+      <h3>Activiteiten</h3>
+      <p>{{subsidiabele_activiteiten}}</p>
     </div>
   </div>
 </template>
@@ -41,16 +42,56 @@ export default {
   name: 'Subsidie-info',
   data() {
     return {
-      subsidie:[],
+      afkortingen:"",
+      beoordeling_tender:"",
+      bijzonderheid:"",
+      datum_open:"",
+      datum_sluit:"",
+      doel:"",
+      locatie:"",
+      looptijdProject_jaren:"",
+      naam:"",
+      niveau:"",
+      samenwerking:"",
+      soort_organisatie:"",
+      subsidiabele_activiteiten:"",
+      subsidiebedrag_max:"",
+      subsidiebedrag_min:"",
+      subsidiepercentage_max:"",
+      subsidiepercentage_min:"",
+      subsidieverstrekker:"",
+      themas:"",
+      totaal_budget:"",
+      type_samenwerking:""
     };
   },
   methods: {
-    init(){
+    init() {
       const subsidieNaam = this.$route.params.id;
       SubsidieService.getSubsidie(subsidieNaam).then(
           response => {
-            this.subsidie = response.data;
-            console.log(this.subsidie);
+            this.afkortingen = response.data.afkortingen;
+            this.beoordeling_tender = response.data.beoordeling_tender;
+            this.bijzonderheid= response.data.bijzonderheid,
+            this.datum_open= response.data.datum_open,
+            this.datum_sluit= response.data.datum_sluit,
+            this.doel= response.data.doel,
+            this.locatie= response.data.locatie,
+            this.looptijdProject_jaren= response.data.looptijdProject_jaren,
+            this.naam = response.data.naam,
+            this.niveau= response.data.niveau,
+            this.samenwerking= response.data.samenwerking,
+            this.soort_organisatie= response.data.soort_organisatie,
+            this.subsidiabele_activiteiten= response.data.subsidiabele_activiteiten,
+            this.subsidiebedrag_max= response.data.subsidiebedrag_max,
+            this.subsidiebedrag_min= response.data.subsidiebedrag_min,
+            this.subsidiepercentage_max= response.data.subsidiepercentage_max,
+            this.subsidiepercentage_min= response.data.dosubsidiepercentage_min,
+            this.subsidieverstrekker= response.data.subsidieverstrekker,
+            this.themas= response.data.themas,
+            this.totaal_budget= response.data.totaal_budget,
+            this.type_samenwerking= response.data.type_samenwerking
+            console.log(response.data);
           }
       );
     }

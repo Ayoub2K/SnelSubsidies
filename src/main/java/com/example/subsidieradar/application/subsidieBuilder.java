@@ -7,22 +7,23 @@ import java.util.List;
 public class subsidieBuilder {
     public static void build(List<Subsidie> subsidieList) {
 
-        Subsidie s1 = new Subsidie("Regeling natuurlijk sneller bouwen",
+        Subsidie s1 = new Subsidie(
+                "Regeling natuurlijk sneller bouwen",
                 "RNSB",
                 "Provinciaal",
                 "Provincie Gelderland",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                "a",
-                1, 1, 1,
-                "a",
-                "a", "a",
-                "a","a",
-                "a",
+                "Met de Regeling natuurlijk sneller bouwen stimuleert de provincie Gelderland bedrijven om hun productieproces te veranderen naar prefab bouw voor nieuwbouwwoningen.",
+                "Circulair bouwen; prefab bouwen;industrieel bouwen;",
+                "Subsidie kan worden aangevraagd voor het omzetten van het productieproces naar prefab bouw of verbetering van het bestaande productieproces voor prefab bouw op of ten behoeve van een productielocatie in Gelderland gericht op de versnelling van de bouw van nieuwbouwwoningen.",
+                "Gelderland",
+                "MKB",
+                "Nee",
+                "Nee",
+                1800000, 200000, 200000,
+                "Datum is doorlopend",
+                "0", "50",
+                "9/5/2022",null,
+                "Tender",
                 1);
 
         Subsidie s2 = new Subsidie("Demonstratie Energie- en Klimaatinnovatie",
@@ -38,7 +39,7 @@ public class subsidieBuilder {
                 "a",
                 1, 1, 1,
                 "a",
-                "a", "a",
+                "0", "0",
                 "a","a",
                 "a",
                 1);
@@ -56,7 +57,7 @@ public class subsidieBuilder {
                 "a",
                 1, 1, 1,
                 "a",
-                "a", "a",
+                "0", "0",
                 "a","a",
                 "a",
                 1);
@@ -74,7 +75,7 @@ public class subsidieBuilder {
                 "a",
                 1, 1, 1,
                 "a",
-                "a", "a",
+                "0", "0",
                 "a","a",
                 "a",
                 1);

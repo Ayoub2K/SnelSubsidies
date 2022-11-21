@@ -1,8 +1,6 @@
 package com.example.subsidieradar.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 @Entity
@@ -19,6 +17,7 @@ public class Subsidie implements Serializable {
     String subsidieverstrekker;
     String doel;
     String themas;
+    @Column(length = 999)
     String subsidiabele_activiteiten;
     String locatie;
     String soort_organisatie;

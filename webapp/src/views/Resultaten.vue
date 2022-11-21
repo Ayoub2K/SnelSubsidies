@@ -95,6 +95,7 @@ export default{
   margin: 2%;
   cursor: pointer;
 }
+
 hr {
   width: 50%;
   float: left;
