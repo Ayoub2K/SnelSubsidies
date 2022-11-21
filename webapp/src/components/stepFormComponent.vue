@@ -60,7 +60,7 @@
     </section>
 
     <section v-if="step === 8">
-      <h3>8. kunt u cofinancieren? : €{{ bijdrage }}</h3>
+      <h3>8. kunt u cofinancieren? : {{ bijdrage }}</h3>
       <input type="checkbox" id="checkbox" v-model="bijdrage"/>
       <label for="checkbox">{{ bijdrage }}</label>
     </section>
