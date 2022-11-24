@@ -5,11 +5,6 @@ import java.io.Serializable;
 import java.util.Date;
 @Entity
 public class Subsidie implements Serializable {
-
-//    @Id
-//    @GeneratedValue
-//    private Long id;
-
     @Id
     public String naam;
     String afkortingen;

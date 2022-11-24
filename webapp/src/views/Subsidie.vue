@@ -25,8 +25,9 @@
       <br><button id="aanvraag">Vraag nu aan</button>
     </div>
 
-    <div id="omschrijving">
+    <div id="omschrijving">      <button id="terugbutton" @click="gaTerug">Terug</button>
       <h2>Omschrijving</h2>
+
       <h3>Doel</h3>
       <p>{{doel}}</p>
       <h3>Activiteiten</h3>
@@ -94,6 +95,9 @@ export default {
             console.log(response.data);
           }
       );
+    },
+    gaTerug(){
+      this.$router.push('/resultaten');
     }
   },
   created() {
@@ -103,6 +107,23 @@ export default {
 </script>
 
 <style scoped>
+#terugbutton {
+  background-color: #6cbb71;
+  border: none;
+  border-radius: 1px;
+  color: white;
+  padding: 11px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  float: right;
+  margin-top: 1%;
+}
+#terugbutton:hover {
+  cursor: pointer;
+}
+
 #aanvraag {
   background-color: #6cbb71;
   border: none;

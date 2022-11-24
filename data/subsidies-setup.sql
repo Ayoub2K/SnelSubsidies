@@ -33,5 +33,5 @@ COPY subsidie_temp
 
 INSERT INTO subsidie (dtype, naam, afkortingen, niveau, subsidieverstrekker, doel, themas, subsidiabele_activiteiten, locatie, soort_organisatie, samenwerking, type_samenwerking, totaal_budget, subsidiebedrag_min, subsidiebedrag_max, bijzonderheid, subsidiepercentage_min, subsidiepercentage_max, datum_open, datum_sluit, beoordeling_tender, looptijd_project_jaren)
 SELECT * FROM subsidie_temp;
---
--- DROP TABLE subsidie_temp;
+
+DROP TABLE subsidie_temp;
