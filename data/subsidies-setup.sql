@@ -1,6 +1,6 @@
-drop table if exists subsidie;
+drop table if exists subsidie_temp;
 
-create table subsidie
+create table subsidie_temp
 (
     dtype varchar(31),
     naam varchar(125) PRIMARY KEY,
@@ -23,12 +23,15 @@ create table subsidie
     datum_open varchar(20),
     datum_sluit varchar(20),
     beoordeling_tender varchar(125),
-    looptijdProject_jaren int
+    looptijd_project_jaren int
 );
 
-
-
-COPY subsidie
+COPY subsidie_temp
     FROM program 'cut -d "," -f 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 /var/data/db/CityDealsData/Circulair-Bouwen.csv'
     DELIMITER ','
     CSV HEADER;
+
+INSERT INTO subsidie (dtype, naam, afkortingen, niveau, subsidieverstrekker, doel, themas, subsidiabele_activiteiten, locatie, soort_organisatie, samenwerking, type_samenwerking, totaal_budget, subsidiebedrag_min, subsidiebedrag_max, bijzonderheid, subsidiepercentage_min, subsidiepercentage_max, datum_open, datum_sluit, beoordeling_tender, looptijd_project_jaren)
+SELECT * FROM subsidie_temp;
+--
+-- DROP TABLE subsidie_temp;

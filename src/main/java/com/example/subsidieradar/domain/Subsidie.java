@@ -15,6 +15,7 @@ public class Subsidie implements Serializable {
     String afkortingen;
     String niveau;
     String subsidieverstrekker;
+    @Column(length = 999)
     String doel;
     String themas;
     @Column(length = 999)
