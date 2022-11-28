@@ -45,7 +45,7 @@ public class SubsidieService {
     }
 
     public void fillWithTestdata() throws ParseException {
-//        //TODO: SQL functie hier runnen
+//        //TODO: SQL functie hier runnen??
         List<Subsidie> subsidieList = new ArrayList<>();
         //subsidieBuilder.build(subsidieList);
 
