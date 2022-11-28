@@ -65,14 +65,8 @@ export default{
       this.samenwerking = sessionStorage.getItem('samenwerking')
     },
     getSubsidies(){
-      SubsidieService.getSubsidies()
+      SubsidieService.matchSubsidies(this.bijdrage)
           .then(response => {
-            //TODO: met deze data call maken met Axios
-            console.log(this.sector)
-            console.log(this.budget)
-            console.log(this.startDatum)
-            console.log(this.bijdrage)
-            console.log(this.samenwerking)
             this.subsidies = response.data;
           });
     },

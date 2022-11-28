@@ -1,6 +1,7 @@
 package com.example.subsidieradar.application;
 
 import com.example.subsidieradar.data.SubsidieRepository;
+import com.example.subsidieradar.domain.Match;
 import com.example.subsidieradar.domain.Subsidie;
 import org.springframework.stereotype.Service;
 
@@ -36,9 +37,16 @@ public class SubsidieService {
         }
     }
 
-    public List<Subsidie> filterSubsidies(String budget) throws Exception{
+    public List<Subsidie> matchSubsidies(boolean bijdragen) throws Exception{
         try {
-            return this.subsidieRadarRepository.findAll();
+
+            List<Subsidie> filteredSubsidies = new ArrayList<>(); // maakt lege subsidie list die uiteindelijk gereturned word
+            Match match = new Match(); // maakt match klasse aan om findmatches() methode uit te kunnen voeren
+            List<Subsidie> allSubsidies = this.subsidieRadarRepository.findAll();//haal alle ongefilterde subsidies op
+
+            filteredSubsidies =  match.findMatches(allSubsidies, bijdragen);//vult return list met gefilterde/gematchde subsidies
+
+            return filteredSubsidies;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

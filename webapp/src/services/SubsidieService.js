@@ -6,7 +6,11 @@ class SubsidieService {
     }
 
     getSubsidie(subsidie) {
-        return axios.get('http://localhost:8081/subsidie/'+subsidie);
+        return axios.get(`http://localhost:8081/subsidie/${subsidie}`);
+    }
+
+    matchSubsidies(bijdrage) {
+        return axios.get(`http://localhost:8081/subsidie/match?bijdragen=${bijdrage}`);
     }
 }
 

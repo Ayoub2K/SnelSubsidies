@@ -26,10 +26,9 @@ public class SubsidieController {
         return subsidieService.getSubsidie(subsidie);
     }
 
-    @PostMapping
-    public List<Subsidie> filterSubsidies(@RequestParam String budget) throws Exception {
-        System.out.println("controller post");
-        System.out.println(budget);
-        return subsidieService.filterSubsidies(budget);
+    @GetMapping("/match")
+    public List<Subsidie> matchSubsidies(@RequestParam boolean bijdragen) throws Exception {
+        System.out.println("match controller call");
+        return subsidieService.matchSubsidies(bijdragen);
     }
 }
