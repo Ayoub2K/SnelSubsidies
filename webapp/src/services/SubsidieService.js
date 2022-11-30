@@ -9,8 +9,20 @@ class SubsidieService {
         return axios.get(`http://localhost:8081/subsidie/${subsidie}`);
     }
 
-    matchSubsidies(bijdrage) {
-        return axios.get(`http://localhost:8081/subsidie/match?bijdragen=${bijdrage}`);
+    matchSubsidies(sector, thema, typeActiviteit, budget, startDatum, eindDatum, projectlocatie, bijdrage, samenwerking) {
+        return axios.get(`http://localhost:8081/match`,
+            {
+                    sector: sector,
+                    thema: thema,
+                    typeActiviteit: typeActiviteit,
+                    budget: budget,
+                    startDatum: startDatum,
+                    eindDatum: eindDatum,
+                    projectlocatie: projectlocatie,
+                    bijdrage: bijdrage,
+                    samenwerking: samenwerking
+                }
+        );
     }
 }
 

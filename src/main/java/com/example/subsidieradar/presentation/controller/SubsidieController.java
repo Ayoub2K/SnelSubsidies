@@ -25,10 +25,4 @@ public class SubsidieController {
     public Subsidie getSubsidie(@PathVariable String subsidie) throws Exception {
         return subsidieService.getSubsidie(subsidie);
     }
-
-    @GetMapping("/match")
-    public List<Subsidie> matchSubsidies(@RequestParam boolean bijdragen) throws Exception {
-        System.out.println("match controller call");
-        return subsidieService.matchSubsidies(bijdragen);
-    }
 }

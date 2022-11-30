@@ -1,18 +1,26 @@
 package com.example.subsidieradar.domain;
 
+import com.example.subsidieradar.presentation.dto.InputDTO;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Match implements iMatch{
+public class Match implements iMatch {
     @Override
-    public List<Subsidie> findMatches(List<Subsidie> allSubsidies, boolean bijdragen) {
+    public List<Subsidie> findMatches(List<Subsidie> subsidies,
+                                    String sector,
+                                    String thema,
+                                    String typeActiviteit,
+                                    int budget,
+                                    String startDatum,
+                                    String eindDatum,
+                                    String projectlocatie,
+                                    boolean bijdrage,
+                                    String samenwerking) {
         List<Subsidie> filteredSubsidies = new ArrayList<>();
 
-        for (Subsidie subsidie:allSubsidies) {
-            if(false != bijdragen){ //false zou subsidie.getbijdragen moeten zijn
-                //wijzig hier de matching percentage ? idk of we dit moeten doen in de subsidie.java
-                System.out.printf("idk");
-            }
+        for (Subsidie subsidie : subsidies) {
+            // set subsidiePercentage op basis van if/switch statements
             filteredSubsidies.add(subsidie);
         }
 

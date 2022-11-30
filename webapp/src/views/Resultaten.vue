@@ -65,7 +65,7 @@ export default{
       this.samenwerking = sessionStorage.getItem('samenwerking')
     },
     getSubsidies(){
-      SubsidieService.matchSubsidies(this.bijdrage)
+      SubsidieService.matchSubsidies(this.sector, this.thema, this.typeActiviteit, this.budget, this.startDatum, this.eindDatum, this.projectlocatie, this.bijdrage, this.samenwerking)
           .then(response => {
             this.subsidies = response.data;
           });
