@@ -21,6 +21,7 @@ public class Match implements iMatch {
 
         for (Subsidie subsidie : subsidies) {
             // set subsidiePercentage op basis van if/switch statements
+            subsidie.setMatchingPercentage(20);
             filteredSubsidies.add(subsidie);
         }
 

@@ -18,7 +18,7 @@ public class MatchController {
     @GetMapping(consumes = { "application/JSON", "application/XML" })
     public MatchDTO getMatches(@RequestBody InputDTO inputDTO) throws Exception {
         System.out.println("controller");
-        System.out.println("DTO " + inputDTO.getSamenwerking());
+        System.out.println("DTO " + inputDTO.isBijdrage());
         return matchService.matchSubsidies(inputDTO);
     }
 }
