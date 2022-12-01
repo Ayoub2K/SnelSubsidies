@@ -10,18 +10,19 @@ class SubsidieService {
     }
 
     matchSubsidies(sector, thema, typeActiviteit, budget, startDatum, eindDatum, projectlocatie, bijdrage, samenwerking) {
-        return axios.get(`http://localhost:8081/match`,
-            {
-                    sector: sector,
-                    thema: thema,
-                    typeActiviteit: typeActiviteit,
-                    budget: budget,
-                    startDatum: startDatum,
-                    eindDatum: eindDatum,
-                    projectlocatie: projectlocatie,
-                    bijdrage: bijdrage,
-                    samenwerking: samenwerking
-                }
+        return axios.post(`http://localhost:8081/match`, {
+            data: {
+                sector: sector,
+                thema: thema,
+                typeActiviteit: typeActiviteit,
+                budget: budget,
+                startDatum: startDatum,
+                eindDatum: eindDatum,
+                projectlocatie: projectlocatie,
+                bijdrage: bijdrage,
+                samenwerking: samenwerking
+            }
+        }
         );
     }
 }

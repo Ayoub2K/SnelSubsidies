@@ -67,7 +67,8 @@ export default{
     getSubsidies(){
       SubsidieService.matchSubsidies(this.sector, this.thema, this.typeActiviteit, this.budget, this.startDatum, this.eindDatum, this.projectlocatie, this.bijdrage, this.samenwerking)
           .then(response => {
-            this.subsidies = response.data;
+            console.log(response)
+            this.subsidies = response.data.subsidieList;
           });
     },
     subsidiePagina(sub){

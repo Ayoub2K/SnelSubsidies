@@ -33,10 +33,6 @@ public class Subsidie implements Serializable {
     @Transient
     int matchingPercentage;
 
-    public void setMatchingPercentage(int matchingPercentage) {
-        this.matchingPercentage = matchingPercentage;
-    }
-
     public Subsidie(String naam, String afkortingen, String niveau, String subsidieverstrekker, String doel, String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie, String samenwerking, String type_samenwerking, double totaal_budget, double subsidiebedrag_min, double subsidiebedrag_max, String bijzonderheid, String subsidiepercentage_min, String subsidiepercentage_max, String datum_open, String datum_sluit, String beoordeling_tender, double looptijdProject_jaren) {
         this.naam = naam;
         this.afkortingen = afkortingen;
@@ -157,4 +153,9 @@ public class Subsidie implements Serializable {
     public double getLooptijdProject_jaren() {
         return looptijdProject_jaren;
     }
+
+    public void setMatchingPercentage(int matchingPercentage) {
+        this.matchingPercentage = matchingPercentage;
+    }
+
 }

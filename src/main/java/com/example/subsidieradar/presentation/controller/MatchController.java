@@ -15,10 +15,11 @@ public class MatchController {
         this.matchService = matchService;
     }
 
-    @GetMapping(consumes = { "application/JSON", "application/XML" })
+    @PostMapping( consumes = { "application/JSON", "application/XML" })
     public MatchDTO getMatches(@RequestBody InputDTO inputDTO) throws Exception {
         System.out.println("controller");
         System.out.println("DTO " + inputDTO.isBijdrage());
+        System.out.println(inputDTO.getSector());
         return matchService.matchSubsidies(inputDTO);
     }
 }
