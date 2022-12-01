@@ -2,7 +2,7 @@
   <form @submit.prevent="submit">
     <section v-if="step === 1">
       <h3>1. In welke sector werkt u?: {{ sector }}</h3>
-      <select v-model="sector" class="select" multiple>
+      <select v-model="sector" class="select">
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>

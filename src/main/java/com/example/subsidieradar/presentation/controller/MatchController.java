@@ -15,11 +15,15 @@ public class MatchController {
         this.matchService = matchService;
     }
 
-    @PostMapping( consumes = { "application/JSON", "application/XML" })
-    public MatchDTO getMatches(@RequestBody InputDTO inputDTO) throws Exception {
-        System.out.println("controller");
-        System.out.println("DTO " + inputDTO.isBijdrage());
-        System.out.println(inputDTO.getSector());
-        return matchService.matchSubsidies(inputDTO);
+//    @PostMapping( consumes = { "application/JSON", "application/XML" })
+//    public MatchDTO getMatches(@RequestBody InputDTO inputDTO) throws Exception {
+//        System.out.println("controller");
+//        System.out.println("DTO " + inputDTO.isBijdrage());
+//        System.out.println(inputDTO.getSector());
+//        return matchService.matchSubsidies(inputDTO);
+//    }
+    @PostMapping
+    public void getMatches(@RequestParam String sector){
+        System.out.println("dto: " + sector);
     }
 }
