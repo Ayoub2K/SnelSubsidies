@@ -11,7 +11,7 @@ public class Match implements iMatch {
                                     String sector,
                                     String thema,
                                     String typeActiviteit,
-                                    int budget,
+                                    String budget,
                                     String startDatum,
                                     String eindDatum,
                                     String projectlocatie,

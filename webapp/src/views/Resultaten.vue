@@ -22,7 +22,8 @@
           <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
           <p class="info">
             Afkorting: {{subsidie.afkortingen}}<br>
-            Niveau: {{subsidie.niveau}}
+            Niveau: {{subsidie.niveau}}<br>
+            MATCHINGPERCENTAGE: {{subsidie.matchingPercentage}}
             <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
           </p>
         </div>

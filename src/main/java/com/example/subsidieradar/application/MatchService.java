@@ -26,7 +26,7 @@ public class MatchService {
             List<Subsidie> subsidies = subsidieRadarRepository.findAll();
 
             MatchDTO outputDto = new MatchDTO(match.findMatches(subsidies, input.getSector(), input.getThema(), input.getTypeActiviteit(), input.getBudget(), input.getStartDatum(), input.getEindDatum(), input.getProjectlocatie(), input.isBijdrage(), input.getSamenwerking()));
-            System.out.println("test");
+            System.out.println("matchsubsides:" + outputDto.getSubsidieList());
             return outputDto;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
