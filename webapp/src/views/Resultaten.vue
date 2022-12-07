@@ -25,7 +25,10 @@
             Niveau: {{subsidie.niveau}}<br>
             MATCHINGPERCENTAGE: {{subsidie.matchingPercentage}}
             <svg viewBox="0 0 80 80" width="80" height="80">
-              <circle class="circle" :class="subsidie.matchingPercentage" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
+              <circle class="circle" :class="{
+                circleGreen: subsidie.matchingPercentage > 70,
+                circleOrange: subsidie.matchingPercentage > 19 && subsidie.matchingPercentage < 70,
+              }" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
             </svg>
             <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
           </p>
@@ -91,6 +94,14 @@ export default{
 .circle {
   stroke: #000000;
   stroke-width: 0.1875em;
+}
+
+.circleGreen{
+  fill: #6cbb71;
+}
+
+.circleOrange{  
+  fill: #d79e38;
 }
 
 #open-icon {
