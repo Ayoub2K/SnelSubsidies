@@ -25,7 +25,16 @@
             Niveau: {{subsidie.niveau}}<br>
             MATCHINGPERCENTAGE: {{subsidie.matchingPercentage}}
             <svg viewBox="0 0 80 80" width="80" height="80">
-              <circle class="circle" :class="subsidie.matchingPercentage" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
+              <circle class="circle" :class="{
+                circleLightGreen: subsidie.matchingPercentage > 87.5 && subsidieMatchingPercentage < 100,
+                circleGreen: subsidie.matchingPercentage >75 && subsidie.matchingPercentage < 87.5,
+                circleLightYellow: subsidie.matchingPercentage > 62.5 && subsidie.matchingPercentage < 75,
+                circleYellow: subsidie.matchingPercentage > 50 && subsidie.matchingPercentage < 62.5,
+                circleLightOrange: subsidie.matchingPercentage > 37.5 && subsidie.matchingPercentage < 50,
+                circleOrange: subsidie.matchingPercentage > 25 && subsidie.matchingPercentage < 37.5,
+                circleLightRed: subsidie.matchingPercentage > 12.5 && subsidie.matchingPercentage < 25,
+                circleRed: subsidie.matchingPercentage > 0 && subsidie.matchingPercentage < 12.5,
+              }" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
             </svg>
             <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
           </p>
@@ -92,7 +101,30 @@ export default{
   stroke: #000000;
   stroke-width: 0.1875em;
 }
-
+.circleLightGreen{
+  fill: #60e760;
+}
+.circleGreen{
+  fill: #488a4b;
+}
+.circleOrange{  
+  fill: #ffb100;
+}
+.circleLightOrange{
+  fill: #f6cd83;
+}
+.circleYellow{
+  fill: #ffe200;
+}
+.circleLightYellow{
+ fill: #eee371;
+}
+.circleLightRed{
+  fill: #ef9291;
+}
+.circleRed{
+  fill: #cc0605;
+}
 #open-icon {
   width: 4%;
   float: right;
