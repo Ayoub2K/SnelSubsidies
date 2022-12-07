@@ -24,6 +24,9 @@
             Afkorting: {{subsidie.afkortingen}}<br>
             Niveau: {{subsidie.niveau}}<br>
             MATCHINGPERCENTAGE: {{subsidie.matchingPercentage}}
+            <svg viewBox="0 0 80 80" width="80" height="80">
+              <circle class="circle" :class="subsidie.matchingPercentage" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
+            </svg>
             <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
           </p>
         </div>
@@ -84,6 +87,11 @@ export default{
 </script>
 
 <style scoped>
+
+.circle {
+  stroke: #000000;
+  stroke-width: 0.1875em;
+}
 
 #open-icon {
   width: 4%;
