@@ -2,7 +2,6 @@ package com.example.subsidieradar.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 @Entity
 public class Subsidie implements Serializable {
 
