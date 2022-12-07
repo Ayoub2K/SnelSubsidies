@@ -18,9 +18,19 @@
       <h3>2. onder welke thema valt uw project?: {{ thema }}</h3>
       <select v-model="thema">
         <option disabled value="">thema</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
+        <option>Circulair bouwen</option>
+        <option>prefab bouwen</option>
+        <option>industrieel bouwen</option>
+        <option>Recycling</option>
+        <option>hergebruik afval</option>
+        <option>biobased grondstoffen</option>
+        <option>Circulair bouwen</option>
+        <option>circulair renoveren</option>
+        <option>CO2 reductie</option>
+        <option>New European Bauhaus</option>
+        <option>Efficient bronnengebruik</option>
+        <option>circulair ontwerp</option>
+        <option>hergebruik afval</option>
       </select>
     </section>
 
@@ -53,9 +63,9 @@
       <h3>7. wat is de projectlocatie?: {{ projectlocatie }}</h3>
       <select v-model="projectlocatie">
         <option disabled value="">projectlocatie</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
+        <option>Gelderland</option>
+        <option>Nederland</option>
+        <option>Europa</option>
       </select>
     </section>
 
@@ -69,9 +79,9 @@
       <h3>9. wat is het type samenwerking?: {{ samenwerking }}</h3>
       <select v-model="samenwerking">
         <option disabled value="">type samenwerking</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
+        <option>Nee</option>
+        <option>Samenwerkingsverbanden</option>
+        <option>3-6 ondernemers</option>
       </select>
 
       <br>
