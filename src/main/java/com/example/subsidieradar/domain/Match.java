@@ -1,7 +1,5 @@
 package com.example.subsidieradar.domain;
 
-import com.example.subsidieradar.presentation.dto.InputDTO;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +20,7 @@ public class Match implements iMatch {
         for (Subsidie subsidie : subsidies) {
             // eerst checken we groep 1; 65 punten; thema, activiteiten
             int percentageGroep1 = 65;
-            if (!subsidie.getThemas().contains(thema)) {    // als subsidie ander thema heeft -10%
+            if (!subsidie.getThemas().contains(thema)) {    // als subsidie ander thema heeft -35%
                 percentageGroep1 = percentageGroep1 - 35;
             }
             if (!subsidie.getSubsidiabele_activiteiten().contains(typeActiviteit)) {
@@ -32,7 +30,7 @@ public class Match implements iMatch {
             // dan groep 2; 35 punten; Verplicht; Minimaal benodigd subsidiebedrag, beoogde startdatum
             // niet verplicht; Niet verplicht: beoogde einddatum, cofinanciering mogelijkheid
             int percentageGroep2 = 35;
-            double min = Double.parseDouble(budget);
+            double min = Double.parseDouble(budget.substring( 1, budget.length() - 1 ));
             if (min > subsidie.subsidiebedrag_min) {
                 percentageGroep2 = percentageGroep2 - 15;
             }

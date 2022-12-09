@@ -10,29 +10,28 @@
     </section>
 
     <section v-if="step === 2">
-      <h3>2. onder welke thema valt uw project?</h3>
+      <h3>2. Onder welke thema valt uw project?</h3>
       <select v-model="thema">
-        <option disabled value="">thema</option>
+        <option disabled value="">tThema</option>
         <option>Circulair bouwen</option>
-        <option>prefab bouwen</option>
-        <option>industrieel bouwen</option>
+        <option>Prefab bouwen</option>
+        <option>Industrieel bouwen</option>
         <option>Recycling</option>
-        <option>hergebruik afval</option>
-        <option>biobased grondstoffen</option>
+        <option>Biobased grondstoffen</option>
         <option>Circulair bouwen</option>
         <option>circulair renoveren</option>
         <option>CO2 reductie</option>
         <option>New European Bauhaus</option>
         <option>Efficient bronnengebruik</option>
-        <option>circulair ontwerp</option>
-        <option>hergebruik afval</option>
+        <option>Circulair ontwerp</option>
+        <option>Hergebruik afval</option>
       </select>
     </section>
 
     <section v-if="step === 3">
-      <h3>3. wat is het type van uw activiteit?</h3>
+      <h3>3. Wat is het type van uw activiteit?</h3>
       <select v-model="typeActiviteit">
-        <option disabled value="">type activiteit</option>
+        <option disabled value="">Type activiteit</option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
@@ -40,22 +39,22 @@
     </section>
 
     <section v-if="step === 4">
-      <h3>4. wat is het minimaal benodigd subsidiebedrag?</h3>
+      <h3>4. Wat is het minimaal benodigd subsidiebedrag?</h3>
       €<input v-model="budget" placeholder="0"/>
     </section>
 
     <section v-if="step === 5">
-      <h3>5. wat is uw beoogde startdatum?</h3>
+      <h3>5. Wat is uw beoogde startdatum?</h3>
       <input type="date" v-model="startDatum" min="2022-01-01">
     </section>
 
     <section v-if="step === 6">
-      <h3>6. wat is uw beoogde einddatum?</h3>
+      <h3>6. Wat is uw beoogde einddatum?</h3>
       <input type="date" v-model="eindDatum" min="2022-01-01">
     </section>
 
     <section v-if="step === 7">
-      <h3>7. wat is de projectlocatie?</h3>
+      <h3>7. Wat is de projectlocatie?</h3>
       <select v-model="projectlocatie">
         <option disabled value="">projectlocatie</option>
         <option>Gelderland</option>
@@ -65,13 +64,13 @@
     </section>
 
     <section v-if="step === 8">
-      <h3>8. kunt u cofinancieren?</h3>
+      <h3>8. Kunt u cofinancieren?</h3>
       <input type="checkbox" id="checkbox" v-model="bijdrage"/>
       <label for="checkbox">{{ bijdrage }}</label>
     </section>
 
     <section v-if="step === 9">
-      <h3>9. wat is het type samenwerking?</h3>
+      <h3>9. Wat is het type samenwerking?</h3>
       <select v-model="samenwerking">
         <option disabled value="">type samenwerking</option>
         <option>Nee</option>
