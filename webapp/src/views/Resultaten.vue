@@ -23,7 +23,7 @@
           <p class="info">
             Afkorting: {{subsidie.afkortingen}}<br>
             Niveau: {{subsidie.niveau}}<br>
-            Matchingpercentage: {{subsidie.matchingPercentage}}
+            Matchingpercentage: {{subsidie.matchingPercentage}}%
             <svg viewBox="0 0 80 80" width="80" height="80">
               <circle class="circle" :class="{
                 circleLightGreen: subsidie.matchingPercentage > 87.5 && subsidieMatchingPercentage < 100,

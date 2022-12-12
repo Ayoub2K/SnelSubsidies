@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="submit" class="vragenForm">
     <section v-if="step === 1">
-      <h3>1. In welke sector werkt u?</h3>
+      <h3>1. In welke sector werkt u? <img id="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <select v-model="sector" class="select">
         <option value="1">data-leeg</option>
         <option value="2">data-leeg</option>
@@ -146,6 +146,12 @@ export default {
 .vragenForm {
   padding-top: 5%;
   width: 100%;
+}
+
+#info-icon {
+  width: 1%;
+  margin-left: 1%;
+  cursor: pointer;
 }
 
 h3 {
