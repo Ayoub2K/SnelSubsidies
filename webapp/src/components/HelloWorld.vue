@@ -1,12 +1,14 @@
 <template>
-  <div class="hello">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <p>
-      Zoek begeleid en snel naar de subsidie die het beste bij uw project past!
-    </p>
-    <button class="button" @click="buttonClicked">Begin met zoeken</button>
-  </div>
+  <main>
+        <div class="header">
+            <img class="logo" src="https://cdn.discordapp.com/attachments/230010488082268160/1044981108086943755/image.png" alt="logo">
+            <p>Zoek begeleid en snel naar de subsidie die het beste bij uw project past!</p>
+            <a class="about-button" href="">Over ons</a>
+        </div>
+        <a class="button" href="/form">
+            Aan de slag
+        </a>
+    </main>
 </template>
 
 <script>
@@ -26,8 +28,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.hello {
-  text-align: center;
+
+.button {
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: 16px;
+  width: 384px;
+  height: 104px;
+  background: linear-gradient(110.6deg, rgba(137, 188, 248, 0.9) 5.78%, rgba(221, 238, 248, 0.9) 92.19%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.button:hover {
+  cursor:pointer;
+  background-color: #89db8e;
 }
 
 h3 {
@@ -44,20 +61,65 @@ li {
 a {
   color: #42b983;
 }
-.button {
-  background-color: #6cbb71;
-  border: none;
-  border-radius: 14px;
-  color: white;
-  padding: 11px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+
+main {
+  background: white;
+  border-radius: var(--default-border-radius);
+  width: 90%;
+  padding: 50px;
+  margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.button:hover {
-  cursor:pointer;
-  background-color: #89db8e;
+main .header {
+  padding: 20px;
+  border-radius: var(--default-border-radius);
+  width: 90%;
+  background: linear-gradient(110.6deg, rgba(137, 188, 248, 0.9) 5.78%, rgba(221, 238, 248, 0.9) 92.19%);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+main .header img {
+  margin-bottom: 20px;
+}
+
+main .header .about-button {
+  background: #14335C;
+  padding: 20px 50px;
+  border-top-left-radius: var(--default-border-radius);
+  border-bottom-right-radius: var(--default-border-radius);
+  text-decoration: none;
+  color: white;
+  position: relative;
+  top: 40px; /* 20px voor main padding + 20px over de rand heen */
+  left: 40px; /* 20px voor main padding + 20px over de rand heen */
+  margin-left: auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+main .button {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: var(--main-bg-color);
+  max-width: 30%;
+  border-radius: var(--default-border-radius);
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: var(--main-text-color);
+  font-size: 1.2rem;
+  text-align: center;
+  white-space: nowrap; /* zodat button text altijd op 1 regel blijft met kleinere schermen */
 }
 </style>
