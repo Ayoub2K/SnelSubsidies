@@ -1,7 +1,14 @@
 <template>
+  <div>
+    <div id="progress-bar">
+      <div :style="{ width: progress + '%' }" id="progress"></div>
+    </div>
+    <!-- <br><br>
+    <p>Progress: {{ progress }}%</p> -->
+  </div>
   <form @submit.prevent="submit">
     <section v-if="step === 1">
-      <h3>1. In welke sector werkt u?: {{ sector }}</h3>
+      <h3>In welke sector werkt u?: {{ sector }}</h3>
       <p>Sla deze vraag over indien niet van toepassing </p>
       <select v-model="sector" class="select">
         <option disabled value="">Uw sector</option>
@@ -17,7 +24,7 @@
     </section>
 
     <section v-if="step === 2">
-      <h3>2. onder welke thema valt uw project?: {{ thema }}</h3>
+      <h3>Onder welke thema valt uw project?: {{ thema }}</h3>
       <select v-model="thema" class="select">
         <option disabled value="">thema</option>
         <option>A</option>
@@ -27,7 +34,7 @@
     </section>
 
     <section v-if="step === 3">
-      <h3>3. wat is het type van uw activiteit?: {{ typeActiviteit }}</h3>
+      <h3>Wat is het type van uw activiteit?: {{ typeActiviteit }}</h3>
       <select v-model="typeActiviteit" class="select">
         <option disabled value="">type activiteit</option>
         <option>A</option>
@@ -37,22 +44,22 @@
     </section>
 
     <section v-if="step === 4">
-      <h3>4. wat is het minimaal benodigd subsidiebedrag?: €{{ budget }}</h3>
+      <h3>Wat is het minimaal benodigd subsidiebedrag?: €{{ budget }}</h3>
       €<input v-model="budget" class="select" placeholder="0"/>
     </section>
 
     <section v-if="step === 5">
-      <h3>5. wat is uw beoogde startdatum?: {{ startDatum }}</h3>
+      <h3>Wat is uw beoogde startdatum?: {{ startDatum }}</h3>
       <input type="date" v-model="startDatum" class="select" min="2022-01-01">
     </section>
 
     <section v-if="step === 6">
-      <h3>6. wat is uw beoogde einddatum?: {{ eindDatum }}</h3>
+      <h3>Wat is uw beoogde einddatum?: {{ eindDatum }}</h3>
       <input type="date" v-model="eindDatum" class="select" min="2022-01-01">
     </section>
 
     <section v-if="step === 7">
-      <h3>7. wat is de projectlocatie?: {{ projectlocatie }}</h3>
+      <h3>Wat is de projectlocatie?: {{ projectlocatie }}</h3>
       <select v-model="projectlocatie" class="select">
         <option disabled value="">projectlocatie</option>
         <option>A</option>
@@ -62,13 +69,13 @@
     </section>
 
     <section v-if="step === 8">
-      <h3>8. kunt u cofinancieren? : {{ bijdrage }}</h3>
+      <h3>Kunt u cofinancieren? : {{ bijdrage }}</h3>
       <input type="checkbox" id="checkbox" v-model="bijdrage"/>
       <label for="checkbox">{{ bijdrage }}</label>
     </section>
 
     <section v-if="step === 9">
-      <h3>9. wat is het type samenwerking?: {{ samenwerking }}</h3>
+      <h3>Wat is het type samenwerking?: {{ samenwerking }}</h3>
       <select v-model="samenwerking" class="select">
         <option disabled value="">type samenwerking</option>
         <option>A</option>
@@ -83,8 +90,8 @@
     </section>
     <br/>
 
-    <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-    <button class="button btn-next"  v-if="step !== totalsteps" @click.prevent="nextStep">Volgende Stap</button>
+    <button @click="deadvanceProgress" class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+    <button @click="advanceProgress" class="button btn-next"  v-if="step !== totalsteps" @click.prevent="nextStep">Volgende Stap</button>
 
   </form>
 </template>
@@ -104,10 +111,17 @@ export default {
       eindDatum: '',
       projectlocatie: [],
       bijdrage: false,
-      samenwerking: []
+      samenwerking: [],
+      progress: 0,
     }
   },
   methods:{
+    advanceProgress() {
+        this.progress = Math.min(this.progress + 12.5, 100);
+      },
+      deadvanceProgress() {
+        this.progress = Math.min(this.progress - 12.5, 100);
+      },
     setstorage(){
       sessionStorage.setItem('sector',JSON.stringify(this.sector))
       sessionStorage.setItem('thema',JSON.stringify(this.thema))
@@ -168,6 +182,7 @@ form {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  margin: 20px;
 }
 
 .btn-prev {
@@ -200,4 +215,17 @@ form {
   background-color: #6c9fc4;
 }
 
+#progress-bar {
+  width: 673px;
+  height: 20px;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  }
+
+#progress {
+  height: 100%;
+  background-color: #86C2EE;
+  border-radius: 30px;
+  
+  }
 </style>

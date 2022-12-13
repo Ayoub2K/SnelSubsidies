@@ -28,7 +28,14 @@
         </div>
       
         <div class="header">
-          <progress id="progress-bar" value="10" max="100"> 32% </progress>
+          <!-- <div>
+            <button @click="advanceProgress">Advance Progress</button>
+            <div id="progress-bar">
+              <div :style="{ width: progress + '%' }" id="progress"></div>
+            </div>
+            <br><br>
+            <p>Progress: {{ progress }}%</p>
+          </div> -->
               <step-form-component></step-form-component>
         </div>
         
@@ -46,7 +53,9 @@ export default {
   components: {
     StepFormComponent
   }
-}
+};
+
+
 </script>
 
 
@@ -55,7 +64,7 @@ main {
   background: white;
   border-radius: var(--default-border-radius);
   width: 90%;
-  padding: 50px;
+  padding-bottom: 50px;
   margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
   margin-left: auto;
   margin-right: auto;
@@ -130,9 +139,6 @@ main .button {
   background-color: #e0e0e0;
 }
 
-#progress-bar {
-  padding: 20px;
-}
 
 h3 {
   margin: 40px 0 0;
@@ -148,4 +154,19 @@ li {
 a {
   color: #42b983;
 }
+
+
+#progress-bar {
+  width: 673px;
+  height: 20px;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  }
+
+#progress {
+  height: 100%;
+  background-color: #86C2EE;
+  border-radius: 30px;
+  
+  }
 </style>
