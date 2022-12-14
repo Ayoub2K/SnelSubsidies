@@ -1,4 +1,11 @@
 <template>
+  <div>
+    <div id="progress-bar">
+      <div :style="{ width: progress + '%' }" id="progress"></div>
+    </div>
+    <!-- <br><br>
+    <p>Progress: {{ progress }}%</p> -->
+  </div>
   <form @submit.prevent="submit" class="vragenForm">
     <section v-if="step === 1">
       <h3>1. In welke sector werkt u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
@@ -109,10 +116,18 @@ export default {
       eindDatum: '',
       projectlocatie: [],
       bijdrage: false,
-      samenwerking: []
+      samenwerking: [],
+      progress: 0,
     }
   },
   methods: {
+
+    advanceProgress() {
+      this.progress = Math.min(this.progress + 12.5, 100);
+    },
+    deadvanceProgress() {
+      this.progress = Math.min(this.progress - 12.5, 100);
+    },
     setstorage() {
       sessionStorage.setItem('sector', JSON.stringify(this.sector))
       sessionStorage.setItem('thema', JSON.stringify(this.thema))
@@ -140,6 +155,33 @@ export default {
 }
 </script>
 <style scoped>
+
+h3{
+  font-size: 4vh;
+  font-weight: 400;
+  color: #102932;
+}
+
+p {
+  color: #102932;
+}
+
+form {
+  padding-top: 50px;
+}
+
+.select {
+  width: 374px;
+  height: 66px;
+  border: 2px solid #282B2F;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 100px;
+}
+
+.button {
+  margin-top: 80px;
+
+}
 .buttons{
   text-align: center;
 }
@@ -171,7 +213,50 @@ section {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 0 10px;
+  margin: 20px;
+}
+
+.btn-prev {
+  width: 243px;
+  height: 47px;
+  left: 688px;
+  top: 696px;
+  background: #86C2EE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 36px;
+}
+
+.btn-prev:hover {
+  cursor:pointer;
+  background-color: #6c9fc4;
+}
+
+.btn-next {
+  width: 243px;
+  height: 47px;
+  left: 688px;
+  top: 696px;
+  background: #86C2EE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 36px;
+}
+
+.btn-next:hover {
+  cursor:pointer;
+  background-color: #6c9fc4;
+}
+
+#progress-bar {
+  width: 673px;
+  height: 20px;
+  background-color: #D9D9D9;
+  border-radius: 30px;
+  }
+
+#progress {
+  height: 100%;
+  background-color: #86C2EE;
+  border-radius: 30px;
 }
 
 .btn-prev {
@@ -200,5 +285,4 @@ section {
   cursor: pointer;
   background-color: #cecece;
 }
-
 </style>

@@ -107,6 +107,103 @@ export default{
 .circleGreen{
   fill: #488a4b;
 }
+.circleOrange{
+  fill: #ffb100;
+}
+.circleLightOrange{
+  fill: #f6cd83;
+}
+.circleYellow{
+  fill: #ffe200;
+}
+.circleLightYellow{
+  fill: #eee371;
+}
+.circleLightRed{
+  fill: #ef9291;
+}
+.circleRed{
+  fill: #cc0605;
+}
+#open-icon {
+  width: 4%;
+  float: right;
+  margin: 2%;
+  cursor: pointer;
+}
+
+hr {
+  width: 50%;
+  float: left;
+  border: 1px solid #6cbb71;
+}
+
+.resultaten_box{
+  height: auto;
+  width: 100%;
+  background: green;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  background: white;
+  border-radius: var(--default-border-radius);
+  width: 90%;
+  padding-bottom: 50px;
+  margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .progress {
+  padding: 20px;
+  width: 100%;
+  background: red;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  gap: 20px;
+}
+
+.progress-item {
+  box-sizing: border-box;
+  width: 216px;
+  height: 43px;
+  background: #86C2EE;
+  border: 2px solid #86C2EE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  padding: 10px;
+}
+
+main .header {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.circle {
+  stroke: #000000;
+  stroke-width: 0.1875em;
+}
+.circleLightGreen{
+  fill: #60e760;
+}
+.circleGreen{
+  fill: #488a4b;
+}
 .circleOrange{  
   fill: #ffb100;
 }
@@ -139,16 +236,14 @@ hr {
 }
 
 .filters {
-  margin-left: 1%;
-  display: inline-block;
-  width: 13%;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-color: yellow;
 }
 
 #breed {
   display: inline-block;
-  width: 80%;
-  right: 5%;
-  position: absolute;
 }
 
 .info {
@@ -160,11 +255,11 @@ hr {
 }
 
 .subsidie {
-  border-style: solid;
-  border-color: #6cbb71;
-  border-width: 2px;
-  border-radius: 15px;
-  box-shadow: rgb(0 0 0 / 25%) 0 10px 20px, rgb(0 0 0 / 25%) 0 6px 6px;
+  height: 150px;
+  background: linear-gradient(112.52deg, rgba(118, 194, 249, 0.9) 5.83%, rgba(209, 236, 249, 0.9) 87.44%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 36px;
+  padding: 15px;
 }
 
 .resultaten {
@@ -179,10 +274,56 @@ thead {
 }
 #title {
   margin: auto;
+  width: 180px;
+  height: 38px;
+  background: #97CAEF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
 }
+
+.checkboxes {
+  background-color: aqua;
+  margin: auto;
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+input[type=checkbox] {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    label {
+      display: inline-block;
+      position: relative;
+      padding-left: 25px;
+      margin-right: 15px;
+      font-size: 18px;
+    }
+
+    input[type=checkbox] + label:before {
+      content: "";
+      background-color: #ffffff;
+      border: 1.5px solid black;
+      border-radius: 20%;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    input[type=checkbox]:checked + label:before {
+      background-color: black;
+    }
 
 .text-center {
   text-align: center;
 }
+
+
 
 </style>
