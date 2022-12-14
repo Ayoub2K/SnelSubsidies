@@ -2,6 +2,7 @@ package com.example.subsidieradar.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class Match implements iMatch {
     @Override
@@ -20,10 +21,10 @@ public class Match implements iMatch {
         for (Subsidie subsidie : subsidies) {
             // eerst checken we groep 1; 65 punten; thema, activiteiten
             int percentageGroep1 = 65;
-            if (!subsidie.getThemas().contains(thema)) {    // als subsidie ander thema heeft -35%
+            if (!subsidie.getThemas().toLowerCase().contains(thema.toLowerCase())) {    // als subsidie ander thema heeft -35%
                 percentageGroep1 = percentageGroep1 - 35;
             }
-            if (!subsidie.getSubsidiabele_activiteiten().contains(typeActiviteit)) {
+            if (!subsidie.getSubsidiabele_activiteiten().toLowerCase().contains(typeActiviteit.toLowerCase())) {
                 percentageGroep1 = percentageGroep1 - 30;
             }
 
