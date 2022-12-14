@@ -51,17 +51,16 @@
     </section>
 
     <section v-if="step === 5">
-      <h3>5. Wat is uw beoogde startdatum? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
-      <input type="date" v-model="startDatum" min="2022-01-01">
+      <h3>5. Watvoor type aanvragen bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <select v-model="typeAanvrager">
+        <option disabled value="">typeAanvrager</option>
+        <option>MKB</option>
+        <option>Gemeente</option>
+      </select>
     </section>
 
     <section v-if="step === 6">
-      <h3>6. Wat is uw beoogde einddatum? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
-      <input type="date" v-model="eindDatum" min="2022-01-01">
-    </section>
-
-    <section v-if="step === 7">
-      <h3>7. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>6. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <select v-model="projectlocatie">
         <option disabled value="">projectlocatie</option>
         <option>Gelderland</option>
@@ -70,14 +69,14 @@
       </select>
     </section>
 
-    <section v-if="step === 8">
-      <h3>8. Kunt u cofinancieren? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+    <section v-if="step === 7">
+      <h3>7. Kunt u cofinancieren? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <input type="checkbox" id="checkbox" v-model="bijdrage"/>
       <label for="checkbox">{{ bijdrage }}</label>
     </section>
 
-    <section v-if="step === 9">
-      <h3>9. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+    <section v-if="step === 8">
+      <h3>8. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <select v-model="samenwerking">
         <option disabled value="">type samenwerking</option>
         <option>Nee</option>
@@ -107,13 +106,12 @@ export default {
   data() {
     return {
       step: 1,
-      totalsteps: 9,
+      totalsteps: 8,
       sector: [],
       thema: [],
       typeActiviteit: [],
       budget: '',
-      startDatum: '',
-      eindDatum: '',
+      typeAanvrager: '',
       projectlocatie: [],
       bijdrage: false,
       samenwerking: [],
@@ -121,20 +119,12 @@ export default {
     }
   },
   methods: {
-
-    advanceProgress() {
-      this.progress = Math.min(this.progress + 12.5, 100);
-    },
-    deadvanceProgress() {
-      this.progress = Math.min(this.progress - 12.5, 100);
-    },
     setstorage() {
       sessionStorage.setItem('sector', JSON.stringify(this.sector))
       sessionStorage.setItem('thema', JSON.stringify(this.thema))
       sessionStorage.setItem('typeActiviteit', JSON.stringify(this.typeActiviteit))
       sessionStorage.setItem('budget', JSON.stringify(this.budget))
-      sessionStorage.setItem('startDatum', JSON.stringify(this.startDatum))
-      sessionStorage.setItem('eindDatum', JSON.stringify(this.eindDatum))
+      sessionStorage.setItem('typeAanvrager', JSON.stringify(this.typeAanvrager))
       sessionStorage.setItem('projectlocatie', JSON.stringify(this.projectlocatie))
       sessionStorage.setItem('bijdrage', JSON.stringify(this.bijdrage))
       sessionStorage.setItem('samenwerking', JSON.stringify(this.samenwerking))

@@ -8,8 +8,7 @@ public interface iMatch {
                                String thema,
                                String typeActiviteit,
                                String budget,
-                               String startDatum,
-                               String eindDatum,
+                               String typeAanvrager,
                                String projectlocatie,
                                boolean bijdrage,
                                String samenwerking);

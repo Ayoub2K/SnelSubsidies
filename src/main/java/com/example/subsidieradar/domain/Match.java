@@ -11,8 +11,7 @@ public class Match implements iMatch {
                                     String thema,
                                     String typeActiviteit,
                                     String budget,
-                                    String startDatum,
-                                    String eindDatum,
+                                    String typeAanvrager,
                                     String projectlocatie,
                                     boolean bijdrage,
                                     String samenwerking) {
@@ -29,7 +28,7 @@ public class Match implements iMatch {
             }
 
             // dan groep 2; 35 punten; Verplicht; Minimaal benodigd subsidiebedrag, beoogde startdatum
-            // niet verplicht; Niet verplicht: beoogde einddatum, cofinanciering mogelijkheid
+            // niet verplicht;, cofinanciering mogelijkheid
             int percentageGroep2 = 35;
             double min = Double.parseDouble(budget.substring( 1, budget.length() - 1 ));
             if (min > subsidie.subsidiebedrag_min) {

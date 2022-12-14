@@ -5,19 +5,17 @@ public class InputDTO {
     String thema;
     String typeActiviteit;
     String budget;
-    String startDatum;
-    String eindDatum;
+    String typeAanvrager;
     String projectlocatie;
     boolean bijdrage;
     String samenwerking;
 
-    public InputDTO(String sector, String thema, String typeActiviteit, String budget, String startDatum, String eindDatum, String projectlocatie, boolean bijdrage, String samenwerking) {
+    public InputDTO(String sector, String thema, String typeActiviteit, String budget, String typeAanvrager, String projectlocatie, boolean bijdrage, String samenwerking) {
         this.sector = sector;
         this.thema = thema;
         this.typeActiviteit = typeActiviteit;
         this.budget = budget;
-        this.startDatum = startDatum;
-        this.eindDatum = eindDatum;
+        this.typeAanvrager = typeAanvrager;
         this.projectlocatie = projectlocatie;
         this.bijdrage = bijdrage;
         this.samenwerking = samenwerking;
@@ -39,12 +37,8 @@ public class InputDTO {
         return budget;
     }
 
-    public String getStartDatum() {
-        return startDatum;
-    }
-
-    public String getEindDatum() {
-        return eindDatum;
+    public String getTypeAanvrager() {
+        return typeAanvrager;
     }
 
     public String getProjectlocatie() {
@@ -75,12 +69,8 @@ public class InputDTO {
         this.budget = budget;
     }
 
-    public void setStartDatum(String startDatum) {
-        this.startDatum = startDatum;
-    }
-
-    public void setEindDatum(String eindDatum) {
-        this.eindDatum = eindDatum;
+    public void setTypeAanvrager(String typeAanvrager) {
+        this.typeAanvrager = typeAanvrager;
     }
 
     public void setProjectlocatie(String projectlocatie) {
