@@ -10,7 +10,7 @@ import java.text.ParseException;
 @Component
 public class Application {
 
-    private SubsidieService subsidieService;
+    private final SubsidieService subsidieService;
 
     public Application( SubsidieService subsidieService) {
         this.subsidieService = subsidieService;

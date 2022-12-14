@@ -25,6 +25,45 @@
             <div class="progress-item">
                 <p>Samenwerking</p>
             </div>
+
+  <h1 class="text-center">Uw resultaten</h1>
+
+  <div id="wrapper">
+    <div class="filters">
+      <div class="status">
+        <p id="title"><b>Status</b></p>
+        <hr><br>
+        <input type="checkbox" id="Open" name="Open" value="Open">
+        <label for="Open"> Open</label><br>
+        <input type="checkbox" id="Aangekondigd" name="Aangekondigd" value="Aangekondigd">
+        <label for="Aangekondigd"> Aangekondigd</label><br>
+        <input type="checkbox" id="Gesloten" name="Gesloten" value="Gesloten">
+        <label for="Gesloten"> Gesloten</label><br><br>
+      </div>
+    </div>
+
+    <div id="breed">
+      <div class="resultaten">
+        <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
+          <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
+          <p class="info">
+            Afkorting: {{subsidie.afkortingen}}<br>
+            Niveau: {{subsidie.niveau}}<br>
+            Matchingpercentage: {{subsidie.matchingPercentage}}%
+            <svg viewBox="0 0 80 80" width="80" height="80">
+              <circle class="circle" :class="{
+                circleLightGreen: subsidie.matchingPercentage > 87.5 && subsidieMatchingPercentage < 100,
+                circleGreen: subsidie.matchingPercentage >75 && subsidie.matchingPercentage < 87.5,
+                circleLightYellow: subsidie.matchingPercentage > 62.5 && subsidie.matchingPercentage < 75,
+                circleYellow: subsidie.matchingPercentage > 50 && subsidie.matchingPercentage < 62.5,
+                circleLightOrange: subsidie.matchingPercentage > 37.5 && subsidie.matchingPercentage < 50,
+                circleOrange: subsidie.matchingPercentage > 25 && subsidie.matchingPercentage < 37.5,
+                circleLightRed: subsidie.matchingPercentage > 12.5 && subsidie.matchingPercentage < 25,
+                circleRed: subsidie.matchingPercentage > 0 && subsidie.matchingPercentage < 12.5,
+              }" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
+            </svg>
+            <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
+          </p>
         </div>
 
         
@@ -119,15 +158,10 @@ export default{
       this.samenwerking = sessionStorage.getItem('samenwerking')
     },
     getSubsidies(){
-      SubsidieService.getSubsidies()
+      SubsidieService.matchSubsidies(this.sector, this.thema, this.typeActiviteit, this.budget, this.startDatum, this.eindDatum, this.projectlocatie, this.bijdrage, this.samenwerking)
           .then(response => {
-            //TODO: met deze data call maken met Axios
-            console.log(this.sector)
-            console.log(this.budget)
-            console.log(this.startDatum)
-            console.log(this.bijdrage)
-            console.log(this.samenwerking)
-            this.subsidies = response.data;
+            console.log(response)
+            this.subsidies = response.data.subsidieList;
           });
     },
     subsidiePagina(sub){
@@ -198,6 +232,34 @@ main .header {
 }
 
 
+.circle {
+  stroke: #000000;
+  stroke-width: 0.1875em;
+}
+.circleLightGreen{
+  fill: #60e760;
+}
+.circleGreen{
+  fill: #488a4b;
+}
+.circleOrange{  
+  fill: #ffb100;
+}
+.circleLightOrange{
+  fill: #f6cd83;
+}
+.circleYellow{
+  fill: #ffe200;
+}
+.circleLightYellow{
+ fill: #eee371;
+}
+.circleLightRed{
+  fill: #ef9291;
+}
+.circleRed{
+  fill: #cc0605;
+}
 #open-icon {
   width: 4%;
   float: right;

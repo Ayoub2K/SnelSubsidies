@@ -2,19 +2,15 @@ package com.example.subsidieradar.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 @Entity
 public class Subsidie implements Serializable {
-
-//    @Id
-//    @GeneratedValue
-//    private Long id;
 
     @Id
     public String naam;
     String afkortingen;
     String niveau;
     String subsidieverstrekker;
+    @Column(length = 999)
     String doel;
     String themas;
     @Column(length = 999)
@@ -33,6 +29,8 @@ public class Subsidie implements Serializable {
     String datum_sluit;
     String beoordeling_tender;
     double looptijdProject_jaren;
+    @Transient
+    int matchingPercentage;
 
     public Subsidie(String naam, String afkortingen, String niveau, String subsidieverstrekker, String doel, String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie, String samenwerking, String type_samenwerking, double totaal_budget, double subsidiebedrag_min, double subsidiebedrag_max, String bijzonderheid, String subsidiepercentage_min, String subsidiepercentage_max, String datum_open, String datum_sluit, String beoordeling_tender, double looptijdProject_jaren) {
         this.naam = naam;
@@ -56,6 +54,8 @@ public class Subsidie implements Serializable {
         this.datum_sluit = datum_sluit;
         this.beoordeling_tender = beoordeling_tender;
         this.looptijdProject_jaren = looptijdProject_jaren;
+
+//        this.matchingPercentage = null;
     }
 
     public Subsidie() {
@@ -68,6 +68,9 @@ public class Subsidie implements Serializable {
 
     public String getNaam() {
         return naam;
+    }
+    public int getMatchingPercentage() {
+        return matchingPercentage;
     }
 
     public String getNiveau() {
@@ -149,4 +152,9 @@ public class Subsidie implements Serializable {
     public double getLooptijdProject_jaren() {
         return looptijdProject_jaren;
     }
+
+    public void setMatchingPercentage(int matchingPercentage) {
+        this.matchingPercentage = matchingPercentage;
+    }
+
 }

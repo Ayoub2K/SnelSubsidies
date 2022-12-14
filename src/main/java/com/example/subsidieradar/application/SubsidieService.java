@@ -6,9 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -36,18 +34,10 @@ public class SubsidieService {
         }
     }
 
-    public List<Subsidie> filterSubsidies(String budget) throws Exception{
-        try {
-            return this.subsidieRadarRepository.findAll();
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
-    }
-
     public void fillWithTestdata() throws ParseException {
 //        //TODO: SQL functie hier runnen
         List<Subsidie> subsidieList = new ArrayList<>();
-        subsidieBuilder.build(subsidieList);
+//        subsidieBuilder.build(subsidieList);
 
         this.subsidieRadarRepository.deleteAll();
         this.subsidieRadarRepository.saveAll(subsidieList);

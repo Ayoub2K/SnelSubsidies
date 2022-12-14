@@ -25,11 +25,4 @@ public class SubsidieController {
     public Subsidie getSubsidie(@PathVariable String subsidie) throws Exception {
         return subsidieService.getSubsidie(subsidie);
     }
-
-    @PostMapping
-    public List<Subsidie> filterSubsidies(@RequestParam String budget) throws Exception {
-        System.out.println("controller post");
-        System.out.println(budget);
-        return subsidieService.filterSubsidies(budget);
-    }
 }
