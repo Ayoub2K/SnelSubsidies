@@ -6,20 +6,6 @@
     <!-- <br><br>
     <p>Progress: {{ progress }}%</p> -->
   </div>
-  <form @submit.prevent="submit">
-    <section v-if="step === 1">
-      <h3>In welke sector werkt u?: {{ sector }}</h3>
-      <p>Sla deze vraag over indien niet van toepassing </p>
-      <select v-model="sector" class="select">
-        <option disabled value="">Uw sector</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-        <option value="4">Four</option>
-        <option value="5">Five</option>
-        <option value="6">Six</option>
-        <option value="7">Seven</option>
-        <option value="8">Eight</option>
   <form @submit.prevent="submit" class="vragenForm">
     <section v-if="step === 1">
       <h3>1. In welke sector werkt u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
@@ -31,12 +17,6 @@
     </section>
 
     <section v-if="step === 2">
-      <h3>Onder welke thema valt uw project?: {{ thema }}</h3>
-      <select v-model="thema" class="select">
-        <option disabled value="">thema</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
       <h3>2. Onder welke thema valt uw project? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <select v-model="thema">
         <option disabled value="">tThema</option>
@@ -56,9 +36,6 @@
     </section>
 
     <section v-if="step === 3">
-      <h3>Wat is het type van uw activiteit?: {{ typeActiviteit }}</h3>
-      <select v-model="typeActiviteit" class="select">
-        <option disabled value="">type activiteit</option>
       <h3>3. Wat is het type van uw activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <select v-model="typeActiviteit">
         <option disabled value="">Type activiteit</option>
@@ -69,27 +46,6 @@
     </section>
 
     <section v-if="step === 4">
-      <h3>Wat is het minimaal benodigd subsidiebedrag?: €{{ budget }}</h3>
-      €<input v-model="budget" class="select" placeholder="0"/>
-    </section>
-
-    <section v-if="step === 5">
-      <h3>Wat is uw beoogde startdatum?: {{ startDatum }}</h3>
-      <input type="date" v-model="startDatum" class="select" min="2022-01-01">
-    </section>
-
-    <section v-if="step === 6">
-      <h3>Wat is uw beoogde einddatum?: {{ eindDatum }}</h3>
-      <input type="date" v-model="eindDatum" class="select" min="2022-01-01">
-    </section>
-
-    <section v-if="step === 7">
-      <h3>Wat is de projectlocatie?: {{ projectlocatie }}</h3>
-      <select v-model="projectlocatie" class="select">
-        <option disabled value="">projectlocatie</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
       <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       €<input v-model="budget" placeholder="0"/>
     </section>
@@ -115,19 +71,12 @@
     </section>
 
     <section v-if="step === 8">
-      <h3>Kunt u cofinancieren? : {{ bijdrage }}</h3>
       <h3>8. Kunt u cofinancieren? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <input type="checkbox" id="checkbox" v-model="bijdrage"/>
       <label for="checkbox">{{ bijdrage }}</label>
     </section>
 
     <section v-if="step === 9">
-      <h3>Wat is het type samenwerking?: {{ samenwerking }}</h3>
-      <select v-model="samenwerking" class="select">
-        <option disabled value="">type samenwerking</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
       <h3>9. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
       <select v-model="samenwerking">
         <option disabled value="">type samenwerking</option>
@@ -142,8 +91,7 @@
       <br>
     </section>
     <br/>
-    <button @click="deadvanceProgress" class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-    <button @click="advanceProgress" class="button btn-next"  v-if="step !== totalsteps" @click.prevent="nextStep">Volgende Stap</button>
+
     <div class="buttons">
       <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
       <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="nextStep">Overslaan</button>

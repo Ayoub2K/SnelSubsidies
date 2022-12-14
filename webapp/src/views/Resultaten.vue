@@ -1,30 +1,4 @@
 <template>
-<main>
-        <div class="progress">   
-            <div class="progress-item">
-                <p>Sector</p>
-            </div>
-            <div class="progress-item">
-                <p>Thema</p>
-            </div>
-            <div class="progress-item">
-                <p>Activiteit</p>
-            </div>
-            <div class="progress-item">
-                <p>Subsidiebedrag</p>
-            </div>
-            <div class="progress-item">
-                <p>Datums</p>
-            </div>
-            <div class="progress-item">
-                <p>Locatie</p>
-            </div>
-            <div class="progress-item">
-                <p>Cofinancering</p>
-            </div>
-            <div class="progress-item">
-                <p>Samenwerking</p>
-            </div>
 
   <h1 class="text-center">Uw resultaten</h1>
 
@@ -65,65 +39,11 @@
             <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
           </p>
         </div>
-
-        
-        <div class="resultaten_box">
-
-          <div class="filters">
-              <div class="status">
-                <p id="title"><b>Status</b></p>
-                <div class="checkboxes">
+      </div>
+    </div>
+  </div>
 
 
-                  <input type="checkbox" class="checkmark" id="Open" name="Open" value="Open">
-                  <label for="Open"> Open</label><br>
-
-                  <input type="checkbox" id="Aangekondigd" name="Aangekondigd" value="Aangekondigd">
-                  <label for="Aangekondigd"> Aangekondigd</label><br>
-
-                  <input type="checkbox" id="Gesloten" name="Gesloten" value="Gesloten">
-                  <label for="Gesloten"> Gesloten</label><br><br>
-                </div>
-              </div>
-
-              <div class="status">
-                <p id="title"><b>Match</b></p>
-                <div class="checkboxes">
-                  <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
-                  <label for="Groen"> Groen</label><br>
-
-                  <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
-                  <label for="Oranje"> Oranje</label><br>
-
-                  <input type="checkbox" id="Rood" name="Rood" value="Rood">
-                  <label for="Rood"> Rood</label><br><br>
-                </div>
-              </div>
-          </div>
-
-    
-              
- 
-          
-          <div class="header">
-            <h1 class="text-center">Uw resultaten</h1>
-            <div id="wrapper">
-              <div id="breed">
-                <div class="resultaten">
-                  <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
-                    <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
-                    <p class="info">
-                      Afkorting: {{subsidie.afkortingen}}<br>
-                      Niveau: {{subsidie.niveau}}
-                      <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </main>
 </template>
 
 <script>
@@ -176,6 +96,48 @@ export default{
 </script>
 
 <style scoped>
+
+.circle {
+  stroke: #000000;
+  stroke-width: 0.1875em;
+}
+.circleLightGreen{
+  fill: #60e760;
+}
+.circleGreen{
+  fill: #488a4b;
+}
+.circleOrange{
+  fill: #ffb100;
+}
+.circleLightOrange{
+  fill: #f6cd83;
+}
+.circleYellow{
+  fill: #ffe200;
+}
+.circleLightYellow{
+  fill: #eee371;
+}
+.circleLightRed{
+  fill: #ef9291;
+}
+.circleRed{
+  fill: #cc0605;
+}
+#open-icon {
+  width: 4%;
+  float: right;
+  margin: 2%;
+  cursor: pointer;
+}
+
+hr {
+  width: 50%;
+  float: left;
+  border: 1px solid #6cbb71;
+}
+
 .resultaten_box{
   height: auto;
   width: 100%;
