@@ -26,16 +26,12 @@ Firstly make sure you have the `package.json` file in your project. If not, run 
 
 For [Node.js](https://nodejs.org/en/download/) install the latest LTS `npm install`
 
-For Vue.js type in the next command `npm install -g @vue/cli` in your terminal 
-
-For Axios.js type in the next command `npm add axios` in your terminal
-
-For Bootstrap type in the next command `npm install bootstrap --save` in your terminal
 
 
 
 ## Booting
 First, make sure the database is set up, started and reachable.
+do this by runinng `docker-compose up`
 
 Start the application via your IDE by running the `SubsidieRadarApplication`
 class. Alternatively, run `mvn spring-boot:start`.
