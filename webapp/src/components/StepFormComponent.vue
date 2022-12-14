@@ -8,7 +8,12 @@
   </div>
   <form @submit.prevent="submit" class="vragenForm">
     <section v-if="step === 1">
-      <h3>1. In welke sector werkt u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>1. In welke sector werkt u?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
+        </div>
+      </h3>
       <select v-model="sector" class="select">
         <option value="1">data-leeg</option>
         <option value="2">data-leeg</option>
@@ -17,7 +22,12 @@
     </section>
 
     <section v-if="step === 2">
-      <h3>2. Onder welke thema valt uw project? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>2. Onder welke thema valt uw project?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
+        </div>
+      </h3>
       <select v-model="thema">
         <option disabled value="">tThema</option>
         <option>Circulair bouwen</option>
@@ -145,6 +155,34 @@ export default {
 }
 </script>
 <style scoped>
+.tooltip {
+  display: inline;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 380px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  padding: 5px;
+  border-style: solid;
+  border-radius: 6px;
+  border-color: gray;
+  box-shadow: 1px 2px 9px darkgrey;
+  margin-left:1%;
+
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
 h3{
   font-size: 4vh;
@@ -181,7 +219,7 @@ form {
 }
 
 .info-icon {
-  width: 1%;
+  width: 2%;
   margin-left: 1%;
   cursor: pointer;
 }
