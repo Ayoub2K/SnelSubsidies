@@ -8,17 +8,20 @@
   </div>
   <form @submit.prevent="submit" class="vragenForm">
     <section v-if="step === 1">
-      <h3>1. In welke sector werkt u?
+      <h3 for="sectorr">1. In welke sector werkt u?
         <div class="tooltip">
           <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
           <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
         </div>
       </h3>
-      <select v-model="sector" class="select">
+      <select v-model="sector" id="sectorr" class="select">
         <option value="1">data-leeg</option>
         <option value="2">data-leeg</option>
         <option value="3">data-leeg</option>
       </select>
+      <div class="buttons">
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(1)">Volgende Stap</button>
+      </div>
     </section>
 
     <section v-if="step === 2">
@@ -43,50 +46,78 @@
         <option>Circulair ontwerp</option>
         <option>Hergebruik afval</option>
       </select>
+      <div class="buttons">
+        <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(2)">Volgende Stap</button>
+      </div>
     </section>
 
     <section v-if="step === 3">
-      <h3>3. Wat is het type van uw activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>3. Wat is het type van uw activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+      </h3>
       <select v-model="typeActiviteit">
         <option disabled value="">Type activiteit</option>
         <option>A</option>
         <option>B</option>
         <option>C</option>
       </select>
+      <div class="buttons">
+        <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+        <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="skipStep(3)">Overslaan</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(3)">Volgende Stap</button>
+      </div>
     </section>
 
     <section v-if="step === 4">
-      <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link"
+                                                               src="../assets/info_icon.png"></h3>
       €<input v-model="budget" placeholder="0"/>
+      <div class="buttons">
+        <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(4)">Volgende Stap</button>
+      </div>
     </section>
 
     <section v-if="step === 5">
-      <h3>5. Watvoor type aanvragen bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>5. Watvoor type aanvragen bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
       <select v-model="typeAanvrager">
         <option disabled value="">typeAanvrager</option>
         <option>MKB</option>
         <option>Gemeente</option>
       </select>
+      <div class="buttons">
+        <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(5)">Volgende Stap</button>
+      </div>
     </section>
 
     <section v-if="step === 6">
-      <h3>6. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>6. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
       <select v-model="projectlocatie">
         <option disabled value="">projectlocatie</option>
         <option>Gelderland</option>
         <option>Nederland</option>
         <option>Europa</option>
       </select>
+      <div class="buttons">
+        <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(6)">Volgende Stap</button>
+      </div>
     </section>
 
     <section v-if="step === 7">
-      <h3>7. Kunt u cofinancieren? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
-      <input type="checkbox" id="checkbox" v-model="bijdrage"/>
-      <label for="checkbox">{{ bijdrage }}</label>
+      <h3>7. Kunt u cofinancieren? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
+      <input type="checkbox" id="checkbox" v-model="cofinancieren"/>
+      <label for="checkbox">{{ cofinancieren }}</label>
+      <div class="buttons">
+        <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+        <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="skipStep(7)">Overslaan</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(7)">Volgende Stap</button>
+      </div>
     </section>
 
     <section v-if="step === 8">
-      <h3>8. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"> </h3>
+      <h3>8. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
       <select v-model="samenwerking">
         <option disabled value="">type samenwerking</option>
         <option>Nee</option>
@@ -94,18 +125,23 @@
         <option>3-6 ondernemers</option>
       </select>
 
-      <br>
-      <br>
-      <button class="button btn-next" type="submit">Bekijk matchend subsidies</button>
-      <br>
+      <div class="buttons">
+        <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+        <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="skipStep(8)">Overslaan</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(8)">Volgende Stap</button>
+      </div>
+    </section>
+
+
+    <section v-if="step === 9">
+      <h3>Wij hebben uw vookeuren meegenomen, bekijk uw beste matches! </h3>
+
+      <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
+      <button class="button btn-next" type="submit">matchend subsidies</button>
+
     </section>
     <br/>
 
-    <div class="buttons">
-      <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-      <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="nextStep">Overslaan</button>
-      <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep">Volgende Stap</button>
-    </div>
 
   </form>
 </template>
@@ -116,15 +152,15 @@ export default {
   data() {
     return {
       step: 1,
-      totalsteps: 8,
-      sector: [],
-      thema: [],
-      typeActiviteit: [],
+      totalsteps: 9,
+      sector: '',
+      thema: '',
+      typeActiviteit: '',
       budget: '',
       typeAanvrager: '',
-      projectlocatie: [],
-      bijdrage: false,
-      samenwerking: [],
+      projectlocatie: '',
+      cofinancieren: null,
+      samenwerking: '',
       progress: 0,
     }
   },
@@ -136,11 +172,76 @@ export default {
       sessionStorage.setItem('budget', JSON.stringify(this.budget))
       sessionStorage.setItem('typeAanvrager', JSON.stringify(this.typeAanvrager))
       sessionStorage.setItem('projectlocatie', JSON.stringify(this.projectlocatie))
-      sessionStorage.setItem('bijdrage', JSON.stringify(this.bijdrage))
+      sessionStorage.setItem('cofinancieren', JSON.stringify(this.cofinancieren))
       sessionStorage.setItem('samenwerking', JSON.stringify(this.samenwerking))
     },
-    nextStep: function () {
+    skipStep(vraagnummer) {
+      // zet vraag van sessionstorage op null
+      if (vraagnummer === 3) {
+        this.typeActiviteit = "null";
+        console.log(this.typeActiviteit)
+      } else if (vraagnummer === 7) {
+        this.cofinancieren = null;
+        console.log(this.cofinancieren)
+      } else if (vraagnummer === 8) {
+        this.samenwerking = "null";
+        console.log(this.samenwerking)
+      }
+      console.log(vraagnummer)
       this.step++;
+    },
+    nextStep(vraagnummer) {
+      // checkt of vraag is ingevuld
+      if (vraagnummer === 1) {
+        if (this.sector === '') {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      } else if (vraagnummer === 2) {
+        if (this.thema === '') {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      } else if (vraagnummer === 3) {
+        if (this.typeActiviteit === '') {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      } else if (vraagnummer === 4) {
+        if (this.budget === '') {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      } else if (vraagnummer === 5) {
+        if (this.typeAanvrager === '') {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      } else if (vraagnummer === 6) {
+        if (this.projectlocatie === '') {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      } else if (vraagnummer === 7) {
+        if (this.cofinancieren === null) {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      }
+      else if (vraagnummer === 8) {
+        if (this.samenwerking === '') {
+          console.log("NIET INGEVULD")
+        } else {
+          this.step++
+        }
+      }
     },
     prevStep: function () {
       this.step--;
@@ -171,7 +272,7 @@ export default {
   border-radius: 6px;
   border-color: gray;
   box-shadow: 1px 2px 9px darkgrey;
-  margin-left:1%;
+  margin-left: 1%;
 
 
   /* Position the tooltip text - see examples below! */
@@ -184,7 +285,7 @@ export default {
   visibility: visible;
 }
 
-h3{
+h3 {
   font-size: 4vh;
   font-weight: 400;
   color: #102932;
@@ -210,9 +311,11 @@ form {
   margin-top: 80px;
 
 }
-.buttons{
+
+.buttons {
   text-align: center;
 }
+
 .vragenForm {
   padding-top: 5%;
   width: 100%;
@@ -255,7 +358,7 @@ section {
 }
 
 .btn-prev:hover {
-  cursor:pointer;
+  cursor: pointer;
   background-color: #6c9fc4;
 }
 
@@ -270,7 +373,7 @@ section {
 }
 
 .btn-next:hover {
-  cursor:pointer;
+  cursor: pointer;
   background-color: #6c9fc4;
 }
 
@@ -279,7 +382,7 @@ section {
   height: 20px;
   background-color: #D9D9D9;
   border-radius: 30px;
-  }
+}
 
 #progress {
   height: 100%;
