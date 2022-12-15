@@ -194,50 +194,50 @@ export default {
       // checkt of vraag is ingevuld
       if (vraagnummer === 1) {
         if (this.sector === '') {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
       } else if (vraagnummer === 2) {
         if (this.thema === '') {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
       } else if (vraagnummer === 3) {
         if (this.typeActiviteit === '') {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
       } else if (vraagnummer === 4) {
         if (this.budget === '') {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
       } else if (vraagnummer === 5) {
         if (this.typeAanvrager === '') {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
       } else if (vraagnummer === 6) {
         if (this.projectlocatie === '') {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
       } else if (vraagnummer === 7) {
         if (this.cofinancieren === null) {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
       }
       else if (vraagnummer === 8) {
         if (this.samenwerking === '') {
-          console.log("NIET INGEVULD")
+          alert("Vul aub deze vraag in")
         } else {
           this.step++
         }
