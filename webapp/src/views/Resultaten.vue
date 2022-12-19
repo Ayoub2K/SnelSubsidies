@@ -207,8 +207,9 @@ main .progress {
   box-sizing: border-box;
   width: 216px;
   height: 43px;
-  background: #86C2EE;
-  border: 2px solid #86C2EE;
+  background: #463c95;
+  border: 2px solid #463c95;
+  color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   padding: 10px;
@@ -285,7 +286,8 @@ hr {
 }
 
 .subsidie {
-  background: linear-gradient(112.52deg, rgba(118, 194, 249, 0.9) 5.83%, rgba(209, 236, 249, 0.9) 87.44%);
+  background: #463c95;
+  color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 36px;
   padding: 15px;
@@ -305,7 +307,8 @@ thead {
   margin: auto;
   width: 180px;
   height: 38px;
-  background: #97CAEF;
+  background: #463c95;
+  color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   text-align: center;

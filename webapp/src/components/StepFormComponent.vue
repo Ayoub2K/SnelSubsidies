@@ -15,6 +15,7 @@
         </div>
       </h3>
       <select v-model="sector" id="sectorr" class="select">
+        <option disabled value="">Kies een sector</option>
         <option value="1">data-leeg</option>
         <option value="2">data-leeg</option>
         <option value="3">data-leeg</option>
@@ -31,8 +32,8 @@
           <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
         </div>
       </h3>
-      <select v-model="thema">
-        <option disabled value="">tThema</option>
+      <select v-model="thema" class="select">
+        <option disabled value="">Kies een thema</option>
         <option>Circulair bouwen</option>
         <option>Prefab bouwen</option>
         <option>Industrieel bouwen</option>
@@ -55,7 +56,7 @@
     <section v-if="step === 3">
       <h3>3. Wat is het type van uw activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
       </h3>
-      <select v-model="typeActiviteit">
+      <select v-model="typeActiviteit" class="select">
         <option disabled value="">Type activiteit</option>
         <option>A</option>
         <option>B</option>
@@ -71,7 +72,8 @@
     <section v-if="step === 4">
       <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link"
                                                                src="../assets/info_icon.png"></h3>
-      €<input v-model="budget" placeholder="0"/>
+      
+      €<input v-model="budget" class="select" placeholder="0"/>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
         <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(4)">Volgende Stap</button>
@@ -80,8 +82,8 @@
 
     <section v-if="step === 5">
       <h3>5. Watvoor type aanvragen bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
-      <select v-model="typeAanvrager">
-        <option disabled value="">typeAanvrager</option>
+      <select v-model="typeAanvrager" class="select">
+        <option disabled value="">Type aanvrager</option>
         <option>MKB</option>
         <option>Gemeente</option>
       </select>
@@ -93,8 +95,8 @@
 
     <section v-if="step === 6">
       <h3>6. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
-      <select v-model="projectlocatie">
-        <option disabled value="">projectlocatie</option>
+      <select v-model="projectlocatie" class="select">
+        <option disabled value="">Projectlocatie</option>
         <option>Gelderland</option>
         <option>Nederland</option>
         <option>Europa</option>
@@ -107,8 +109,8 @@
 
     <section v-if="step === 7">
       <h3>7. Kunt u cofinancieren? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
-      <input type="checkbox" id="checkbox" v-model="cofinancieren"/>
-      <label for="checkbox">{{ cofinancieren }}</label>
+      <input type="checkbox" class="select" id="checkbox" v-model="cofinancieren"/>
+      <!-- <label for="checkbox">{{ cofinancieren }}</label> -->
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
         <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="skipStep(7)">Overslaan</button>
@@ -118,8 +120,8 @@
 
     <section v-if="step === 8">
       <h3>8. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
-      <select v-model="samenwerking">
-        <option disabled value="">type samenwerking</option>
+      <select v-model="samenwerking" class="select">
+        <option disabled value="">Type samenwerking</option>
         <option>Nee</option>
         <option>Samenwerkingsverbanden</option>
         <option>3-6 ondernemers</option>
@@ -137,7 +139,7 @@
       <h3>Wij hebben uw vookeuren meegenomen, bekijk uw beste matches! </h3>
 
       <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-      <button class="button btn-next" type="submit">matchend subsidies</button>
+      <button class="button btn-next" type="submit">Bekijk subsidies</button>
 
     </section>
     <br/>
@@ -267,14 +269,18 @@ export default {
   background-color: white;
   color: black;
   text-align: left;
-  padding: 5px;
-  border-style: solid;
-  border-radius: 6px;
-  border-color: gray;
+  padding: 20px;
+  font-size: 2vh;
+
   box-shadow: 1px 2px 9px darkgrey;
   margin-left: 1%;
 
-
+  background: rgba(255, 255, 255, 0.47);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.2px);
+-webkit-backdrop-filter: blur(11.2px);
+border: 1px solid rgba(255, 255, 255, 1);
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
@@ -302,9 +308,10 @@ form {
 .select {
   width: 374px;
   height: 66px;
-  border: 2px solid #282B2F;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--default-border-radius);
   margin-top: 100px;
+  font-size: 2vh;
+  text-align: center;
 }
 
 .button {
@@ -314,6 +321,7 @@ form {
 
 .buttons {
   text-align: center;
+  padding-top: 100px;
 }
 
 .vragenForm {
@@ -352,9 +360,10 @@ section {
   height: 47px;
   left: 688px;
   top: 696px;
-  background: #86C2EE;
+  background: #463c95;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 36px;
+  color: white;
 }
 
 .btn-prev:hover {
@@ -367,7 +376,8 @@ section {
   height: 47px;
   left: 688px;
   top: 696px;
-  background: #86C2EE;
+  background: #463c95;
+  color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 36px;
 }
@@ -390,30 +400,24 @@ section {
   border-radius: 30px;
 }
 
-.btn-prev {
-  background-color: #e0933a;
-}
 
 .btn-prev:hover {
   cursor: pointer;
-  background-color: #9d6e39;
-}
-
-.btn-next {
-  background-color: #6cbb71;
+  background-color: #3b2f94;
 }
 
 .btn-next:hover {
   cursor: pointer;
-  background-color: #89db8e;
+  background-color: #3b2f94;
 }
 
 .btn-skip {
-  background-color: #ababab;
+  background-color: white;
+  margin-top: 50px;
 }
 
 .btn-skip:hover {
   cursor: pointer;
-  background-color: #cecece;
+  background-color: #eeeeee;
 }
 </style>

@@ -39,9 +39,6 @@
               <step-form-component></step-form-component>
         </div>
         
-        <a class="button" href="/form">
-            Overslaan
-        </a>
     </main>
   
 </template>
@@ -61,13 +58,19 @@ export default {
 
 <style scoped>
 main {
-  background: white;
+  background: ;
   border-radius: var(--default-border-radius);
   width: 90%;
+  height: 80vh;
   padding-bottom: 50px;
   margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
   margin-left: auto;
   margin-right: auto;
+  
+  background: rgba(70, 60, 149, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(6.8px);
 }
 
 main .progress {
@@ -88,8 +91,9 @@ main .progress {
   box-sizing: border-box;
   width: 216px;
   height: 43px;
-  background: #86C2EE;
-  border: 2px solid #86C2EE;
+  background: #463c95;
+  border: 2px solid #463c95;
+  color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px;
   padding: 10px;
@@ -165,7 +169,7 @@ a {
 
 #progress {
   height: 100%;
-  background-color: #86C2EE;
+  background-color: #edeafe;
   border-radius: 30px;
   
   }

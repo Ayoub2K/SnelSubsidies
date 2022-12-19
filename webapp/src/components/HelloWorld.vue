@@ -1,7 +1,7 @@
 <template>
   <main>
         <div class="header">
-            <img class="logo" src="https://cdn.discordapp.com/attachments/230010488082268160/1044981108086943755/image.png" alt="logo">
+            <img class="logo" src="../assets/logo-white.png" alt="logo">
             <p>Zoek begeleid en snel naar de subsidie die het beste bij uw project past!</p>
             <a class="about-button" href="">Over ons</a>
         </div>
@@ -36,7 +36,6 @@ export default {
   font-size: 16px;
   width: 384px;
   height: 104px;
-  background: linear-gradient(110.6deg, rgba(137, 188, 248, 0.9) 5.78%, rgba(221, 238, 248, 0.9) 92.19%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   padding: 20px;
@@ -44,7 +43,7 @@ export default {
 
 .button:hover {
   cursor:pointer;
-  background-color: #89db8e;
+  background-color: #463c95;
 }
 
 h3 {
@@ -63,8 +62,6 @@ a {
 }
 
 main {
-  background: white;
-  border-radius: var(--default-border-radius);
   width: 90%;
   padding: 50px;
   margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
@@ -76,7 +73,8 @@ main .header {
   padding: 20px;
   border-radius: var(--default-border-radius);
   width: 90%;
-  background: linear-gradient(110.6deg, rgba(137, 188, 248, 0.9) 5.78%, rgba(221, 238, 248, 0.9) 92.19%);
+  background: #463c95;
+  color: white;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -89,10 +87,11 @@ main .header {
 
 main .header img {
   margin-bottom: 20px;
+  width: 80%;
 }
 
 main .header .about-button {
-  background: #14335C;
+  background: #3b2f94;
   padding: 20px 50px;
   border-top-left-radius: var(--default-border-radius);
   border-bottom-right-radius: var(--default-border-radius);
@@ -111,13 +110,13 @@ main .button {
   align-items: center;
   justify-content: center;
   margin-top: 50px;
-  background-color: var(--main-bg-color);
+  background-color: #3b2f94;;
   max-width: 30%;
   border-radius: var(--default-border-radius);
   margin-left: auto;
   margin-right: auto;
   text-decoration: none;
-  color: var(--main-text-color);
+  color: white;
   font-size: 1.2rem;
   text-align: center;
   white-space: nowrap; /* zodat button text altijd op 1 regel blijft met kleinere schermen */
