@@ -1,21 +1,54 @@
 <template>
+<main>
+        <div class="progress">   
+            <div class="progress-item">
+                <p>Sector</p>
+            </div>
+            <div class="progress-item">
+                <p>Thema</p>
+            </div>
+            <div class="progress-item">
+                <p>Activiteit</p>
+            </div>
+            <div class="progress-item">
+                <p>Subsidiebedrag</p>
+            </div>
+            <div class="progress-item">
+                <p>Datums</p>
+            </div>
+            <div class="progress-item">
+                <p>Locatie</p>
+            </div>
+            <div class="progress-item">
+                <p>Cofinancering</p>
+            </div>
+            <div class="progress-item">
+                <p>Samenwerking</p>
+            </div>
+        </div>
+          <h1 class="text-center">Uw resultaten</h1>
 
-  <h1 class="text-center">Uw resultaten</h1>
+          <div class="resultaten_box">
 
-  <div id="wrapper">
-    <div class="filters">
-      <div class="status">
-        <p id="title"><b>Status</b></p>
-        <hr><br>
-        <input type="checkbox" id="Open" name="Open" value="Open">
-        <label for="Open"> Open</label><br>
-        <input type="checkbox" id="Aangekondigd" name="Aangekondigd" value="Aangekondigd">
-        <label for="Aangekondigd"> Aangekondigd</label><br>
-        <input type="checkbox" id="Gesloten" name="Gesloten" value="Gesloten">
-        <label for="Gesloten"> Gesloten</label><br><br>
-      </div>
-    </div>
+          <div id="wrapper">
+            <div class="filters">
+              <div class="status">
+                <p id="title"><b>Match</b></p>
+                <div class="checkboxes">
+                  <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
+                  <label for="Groen"> Groen</label><br>
 
+                  <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
+                  <label for="Oranje"> Oranje</label><br>
+
+                  <input type="checkbox" id="Rood" name="Rood" value="Rood">
+                  <label for="Rood"> Rood</label><br><br>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        
     <div id="breed">
       <div class="resultaten">
         <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
@@ -41,9 +74,9 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
 
-
+</main>
 </template>
 
 <script>
@@ -236,7 +269,6 @@ hr {
 .filters {
   display: flex;
   flex-direction: column;
-  width: 20%;
   background-color: yellow;
 }
 
@@ -253,7 +285,6 @@ hr {
 }
 
 .subsidie {
-  height: 150px;
   background: linear-gradient(112.52deg, rgba(118, 194, 249, 0.9) 5.83%, rgba(209, 236, 249, 0.9) 87.44%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 36px;
