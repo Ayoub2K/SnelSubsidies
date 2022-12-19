@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="progress">   
-            <div class="progress-item">
+            <div class="progress-item active">
                 <p>Sector</p>
             </div>
             <div class="progress-item">
@@ -91,6 +91,17 @@ main .progress {
   box-sizing: border-box;
   width: 216px;
   height: 43px;
+  background: white;
+  border: 2px solid #463c95;
+  color: black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.progress-item.active {
+  box-sizing: border-box;
+  width: 216px;
+  height: 43px;
   background: #463c95;
   border: 2px solid #463c95;
   color: white;
@@ -98,6 +109,7 @@ main .progress {
   border-radius: 10px;
   padding: 10px;
 }
+
 
 main .header {
   padding: 50px;

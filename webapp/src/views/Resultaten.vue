@@ -79,7 +79,7 @@
                 Matchingpercentage: {{subsidie.matchingPercentage}}%
               </p>
               <svg viewBox="0 0 80 80" width="80" height="80">
-              <circle class="circle" :class="{
+              <circle class="circle" @click="subsidiePagina(subsidie)" :class="{
                 circleLightGreen: subsidie.matchingPercentage > 87.5 && subsidieMatchingPercentage < 100,
                 circleGreen: subsidie.matchingPercentage >75 && subsidie.matchingPercentage < 87.5,
                 circleLightYellow: subsidie.matchingPercentage > 62.5 && subsidie.matchingPercentage < 75,
@@ -90,7 +90,6 @@
                 circleRed: subsidie.matchingPercentage > 0 && subsidie.matchingPercentage < 12.5,
               }" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
               </svg>
-              <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
             </div>
         </div>
       </div>
@@ -201,7 +200,6 @@ main .progress {
   background: #463c95;
   border: 2px solid #463c95;
   color: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   padding: 10px;
 }
@@ -220,6 +218,7 @@ main .header {
 .circle {
   box-shadow:  27px 27px 77px #bababa,
               -27px -27px 77px #ffffff;
+  cursor: pointer;
 }
 .circleLightGreen{
   fill: #60e760;
@@ -260,6 +259,7 @@ hr {
 
 #breed {
   display: inline-block;
+  width: 100%;
 }
 
 .info {
@@ -299,7 +299,6 @@ hr {
 
 .matchingpercentage {
   margin-top: 20px;
-  margin-left: 2%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: end;
