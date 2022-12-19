@@ -308,7 +308,7 @@ form {
 .select {
   width: 374px;
   height: 66px;
-  border-radius: var(--default-border-radius);
+  border-radius: 10px;
   margin-top: 100px;
   font-size: 2vh;
   text-align: center;
@@ -362,7 +362,7 @@ section {
   top: 696px;
   background: #463c95;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 36px;
+  border-radius: 10px;
   color: white;
 }
 
@@ -379,7 +379,7 @@ section {
   background: #463c95;
   color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 36px;
+  border-radius: 10px;
 }
 
 .btn-next:hover {
@@ -414,6 +414,7 @@ section {
 .btn-skip {
   background-color: white;
   margin-top: 50px;
+  border-radius: 10px;
 }
 
 .btn-skip:hover {

@@ -46,7 +46,24 @@
                 </div>
               </div>
             </div>
+
+            <div class="filters">
+              <div class="status">
+                <p id="title"><b>Placeholder</b></p>
+                <div class="checkboxes">
+                  <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
+                  <label for="Groen"> Placeholder</label><br>
+
+                  <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
+                  <label for="Oranje"> Placeholder</label><br>
+
+                  <input type="checkbox" id="Rood" name="Rood" value="Rood">
+                  <label for="Rood"> Placeholder</label><br><br>
+                </div>
+              </div>
+            </div>
         </div>
+        
 
         
     <div id="breed">
@@ -55,9 +72,13 @@
           <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
           <p class="info">
             Afkorting: {{subsidie.afkortingen}}<br>
-            Niveau: {{subsidie.niveau}}<br>
-            Matchingpercentage: {{subsidie.matchingPercentage}}%
-            <svg viewBox="0 0 80 80" width="80" height="80">
+            Niveau: {{subsidie.niveau}}<br></p>
+            
+            <div class="matchingpercentage">
+              <p>
+                Matchingpercentage: {{subsidie.matchingPercentage}}%
+              </p>
+              <svg viewBox="0 0 80 80" width="80" height="80">
               <circle class="circle" :class="{
                 circleLightGreen: subsidie.matchingPercentage > 87.5 && subsidieMatchingPercentage < 100,
                 circleGreen: subsidie.matchingPercentage >75 && subsidie.matchingPercentage < 87.5,
@@ -68,9 +89,9 @@
                 circleLightRed: subsidie.matchingPercentage > 12.5 && subsidie.matchingPercentage < 25,
                 circleRed: subsidie.matchingPercentage > 0 && subsidie.matchingPercentage < 12.5,
               }" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
-            </svg>
-            <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
-          </p>
+              </svg>
+              <img id="open-icon" alt="Open link" src="../assets/open_icon.png" @click="subsidiePagina(subsidie)">
+            </div>
         </div>
       </div>
     </div>
@@ -128,40 +149,6 @@ export default{
 
 <style scoped>
 
-.circle {
-  stroke: #000000;
-  stroke-width: 0.1875em;
-}
-.circleLightGreen{
-  fill: #60e760;
-}
-.circleGreen{
-  fill: #488a4b;
-}
-.circleOrange{
-  fill: #ffb100;
-}
-.circleLightOrange{
-  fill: #f6cd83;
-}
-.circleYellow{
-  fill: #ffe200;
-}
-.circleLightYellow{
-  fill: #eee371;
-}
-.circleLightRed{
-  fill: #ef9291;
-}
-.circleRed{
-  fill: #cc0605;
-}
-#open-icon {
-  width: 4%;
-  float: right;
-  margin: 2%;
-  cursor: pointer;
-}
 
 hr {
   width: 50%;
@@ -172,27 +159,31 @@ hr {
 .resultaten_box{
   height: auto;
   width: 100%;
-  background: green;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: row;
+  padding: 0px 0px 0px 20px;
 }
 
 main {
-  background: white;
   border-radius: var(--default-border-radius);
   width: 90%;
+  height: 80vh;
   padding-bottom: 50px;
   margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
   margin-left: auto;
   margin-right: auto;
+  background: rgba(70, 60, 149, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(6.8px);
 }
 
 main .progress {
   padding: 20px;
   width: 100%;
-  background: red;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -211,7 +202,7 @@ main .progress {
   border: 2px solid #463c95;
   color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 10px;
 }
 
@@ -227,8 +218,8 @@ main .header {
 
 
 .circle {
-  stroke: #000000;
-  stroke-width: 0.1875em;
+  box-shadow:  27px 27px 77px #bababa,
+              -27px -27px 77px #ffffff;
 }
 .circleLightGreen{
   fill: #60e760;
@@ -267,12 +258,6 @@ hr {
   border: 1px solid #6cbb71;
 }
 
-.filters {
-  display: flex;
-  flex-direction: column;
-  background-color: yellow;
-}
-
 #breed {
   display: inline-block;
 }
@@ -282,22 +267,42 @@ hr {
 }
 
 #subsidieNaam {
-  text-align: center;
+  text-align: left;
+  background: rgba(175, 169, 223, 0.52);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.9px);
+  -webkit-backdrop-filter: blur(13.9px);
+  padding: 5px;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .subsidie {
   background: #463c95;
   color: white;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 36px;
+  border-radius: 10px;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .resultaten {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 10px;
-  grid-column-gap: 5px;
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
+  padding: 0px 50px 0px 50px;
+}
+
+.matchingpercentage {
+  margin-top: 20px;
+  margin-left: 2%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: end;
 }
 
 thead {
@@ -305,7 +310,7 @@ thead {
 }
 #title {
   margin: auto;
-  width: 180px;
+  width: 195px;
   height: 38px;
   background: #463c95;
   color: white;
@@ -314,9 +319,11 @@ thead {
   text-align: center;
   padding: 10px;
 }
-
+.filters {
+  display: flex;
+  flex-direction: column;
+}
 .checkboxes {
-  background-color: aqua;
   margin: auto;
   width: 150px;
   margin-top: 10px;
@@ -354,6 +361,9 @@ input[type=checkbox] {
 
 .text-center {
   text-align: center;
+  padding: 15px;
+  color: black;
+  font-weight: 500;
 }
 
 
