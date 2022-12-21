@@ -1,9 +1,16 @@
 <template>
-  <h1 class="paginatitel">{{naam}}</h1>
+  <main>
+    <div class="titelbar">
+      <button id="terugbutton" @click="gaTerug">Terug</button>
+      <h1 class="paginatitel">{{naam}}</h1>
+    </div>
   <hr><br>
   <div class="wrapper">
     <div id="info">
-      <h2>Informatie</h2>
+      <div class="informatie_titel">
+        <h2>Informatie</h2>
+      </div>
+      
       <div id="links">
         <p class="ppLeft">
           Afkorting<br>
@@ -22,10 +29,13 @@
           N.v.t.
         </p>
       </div>
-      <br><button id="aanvraag">Vraag nu aan</button>
+
+        <button id="aanvraag">Vraag nu aan</button>
+ 
+      
     </div>
 
-    <div id="omschrijving">      <button id="terugbutton" @click="gaTerug">Terug</button>
+    <div id="omschrijving">
       <h2>Omschrijving</h2>
 
       <h3>Doel</h3>
@@ -34,6 +44,8 @@
       <p>{{subsidiabele_activiteiten}}</p>
     </div>
   </div>
+</main>
+
 </template>
 
 <script>
@@ -107,25 +119,47 @@ export default {
 </script>
 
 <style scoped>
+main {
+  border-radius: var(--default-border-radius);
+  width: 90%;
+  height: 80vh;
+  padding-bottom: 50px;
+  margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(70, 60, 149, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(6.8px);
+}
+
+.titelbar{
+  display: flex;
+  align-items: center;
+}
+
 #terugbutton {
-  background-color: #6cbb71;
+  background-color: #3b2f94;
   border: none;
-  border-radius: 1px;
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
   color: white;
-  padding: 11px 25px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  float: right;
-  margin-top: 1%;
+  margin-left: 5%;
+  margin-top: 10px;
+
 }
 #terugbutton:hover {
   cursor: pointer;
 }
 
 #aanvraag {
-  background-color: #6cbb71;
+  background-color: #3b2f94;
   border: none;
   border-radius: 14px;
   color: white;
@@ -134,22 +168,27 @@ export default {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin-top: 5%;
+  margin-top: 80%;
+  width: 100%;
 }
+
 #aanvraag:hover {
   cursor: pointer;
+  background-color: #463c95;
 }
 
 .ppLeft {
-  font-weight: bold;
+  font-weight: 600;
 }
 #links {
   display: inline-block;
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 #rechts {
   display: inline-block;
-  margin-left: 2%;
+  margin-left: 10%;
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 h2 {
@@ -158,27 +197,57 @@ h2 {
 
 hr {
   width: 90%;
-  border: 1px solid #6cbb71;
+  border: 1px solid #3b2f94;
 }
 
 h1 {
-  margin-left: 5%;
+  margin-left: 30px;
   margin-top: 1%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  gap: 20px;
 }
 
 #info {
   width: 27%;
   float: left;
   margin-left: 5%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+
+}
+
+#info h2 {
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+
+
+.aanvraagbutton {
+  display: block;
 }
 
 #omschrijving {
   width: 60%;
   overflow: hidden;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
 }
 
-.wrapper {
-  overflow: hidden;
+#omschrijving h2 {
+  font-weight: bold;
+}
+
+#omschrijving h3 {
+  font-weight: 500;
+  margin-bottom: 1%;
+  margin-top: 2%;
 }
 
 </style>
