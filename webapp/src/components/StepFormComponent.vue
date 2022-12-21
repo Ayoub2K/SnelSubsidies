@@ -193,9 +193,12 @@ export default {
   },
   methods: {
     setstorage() {
-      sessionStorage.setItem('sector', JSON.stringify(this.sector))
-      sessionStorage.setItem('thema', JSON.stringify(this.thema))
-      sessionStorage.setItem('subsidialeActiviteit', JSON.stringify(this.subsidialeActiviteit))
+      const tempSector = this.sector.toString();
+      sessionStorage.setItem('sector', JSON.stringify(tempSector))
+      const tempThema = this.thema.toString();
+      sessionStorage.setItem('thema', JSON.stringify(tempThema))
+      const tempsubAct = this.subsidialeActiviteit.toString();
+      sessionStorage.setItem('subsidialeActiviteit', JSON.stringify(tempsubAct))
       sessionStorage.setItem('minimaleBedrag', JSON.stringify(this.minimaleBedrag))
       sessionStorage.setItem('typeOrganisatie', JSON.stringify(this.typeOrganisatie))
       sessionStorage.setItem('projectlocatie', JSON.stringify(this.projectlocatie))

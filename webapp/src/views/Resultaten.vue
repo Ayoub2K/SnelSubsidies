@@ -121,15 +121,15 @@ export default{
     getStorageData(){
       this.sector = sessionStorage.getItem('sector')
       this.thema = sessionStorage.getItem('thema')
-      this.typeActiviteit = sessionStorage.getItem('typeActiviteit')
-      this.budget = sessionStorage.getItem('budget')
-      this.typeAanvrager = sessionStorage.getItem('typeAanvrager')
+      this.subsidialeActiviteit = sessionStorage.getItem('subsidialeActiviteit')
+      this.minimaleBedrag = sessionStorage.getItem('minimaleBedrag')
+      this.typeOrganisatie = sessionStorage.getItem('typeOrganisatie')
       this.projectlocatie = sessionStorage.getItem('projectlocatie')
-      this.bijdrage = sessionStorage.getItem('bijdrage')
+      this.cofinancieren = sessionStorage.getItem('cofinancieren')
       this.samenwerking = sessionStorage.getItem('samenwerking')
     },
     getSubsidies(){
-      SubsidieService.matchSubsidies(this.sector, this.thema, this.typeActiviteit, this.budget, this.typeAanvrager, this.projectlocatie, this.bijdrage, this.samenwerking)
+      SubsidieService.matchSubsidies(this.sector, this.thema, this.subsidialeActiviteit, this.minimaleBedrag, this.typeOrganisatie, this.projectlocatie, this.cofinancieren, this.samenwerking)
           .then(response => {
             console.log(response)
             this.subsidies = response.data.subsidieList;
