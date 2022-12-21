@@ -12,27 +12,37 @@ public class Subsidie implements Serializable {
     String subsidieverstrekker;
     @Column(length = 999)
     String doel;
+    String sector;
     String themas;
-    @Column(length = 999)
+    String thema_verdieping;
     String subsidiabele_activiteiten;
+    @Column(length = 999)
+    String subsidiabele_activiteiten_output;
     String locatie;
     String soort_organisatie;
+    String soort_organisatie_output;
     String samenwerking;
+    String samenwerking_matching;
     String type_samenwerking;
     double totaal_budget;
-    double subsidiebedrag_min;
-    double subsidiebedrag_max;
+    double subsidiebedrag;
     String bijzonderheid;
-    String subsidiepercentage_min;
-    String subsidiepercentage_max;
+    String subsidiepercentage;
     String datum_open;
     String datum_sluit;
     String beoordeling_tender;
-    double looptijdProject_jaren;
+    String looptijdProject; //was eerst jaren
     @Transient
     int matchingPercentage;
 
-    public Subsidie(String naam, String afkortingen, String niveau, String subsidieverstrekker, String doel, String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie, String samenwerking, String type_samenwerking, double totaal_budget, double subsidiebedrag_min, double subsidiebedrag_max, String bijzonderheid, String subsidiepercentage_min, String subsidiepercentage_max, String datum_open, String datum_sluit, String beoordeling_tender, double looptijdProject_jaren) {
+    public Subsidie(String naam, String afkortingen, String niveau, String subsidieverstrekker, String doel,
+                    String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie,
+                    String soort_organisatie_output,
+                    String samenwerking, String type_samenwerking, double totaal_budget, double subsidiebedrag,
+                    String bijzonderheid, String subsidiepercentage,
+                    String datum_open, String datum_sluit, String beoordeling_tender,
+                    String looptijdProject,
+                    String samenwerking_matching) {
         this.naam = naam;
         this.afkortingen = afkortingen;
         this.niveau = niveau;
@@ -42,18 +52,18 @@ public class Subsidie implements Serializable {
         this.subsidiabele_activiteiten = subsidiabele_activiteiten;
         this.locatie = locatie;
         this.soort_organisatie = soort_organisatie;
+        this.soort_organisatie_output = soort_organisatie_output;
         this.samenwerking = samenwerking;
         this.type_samenwerking = type_samenwerking;
         this.totaal_budget = totaal_budget;
-        this.subsidiebedrag_min = subsidiebedrag_min;
-        this.subsidiebedrag_max = subsidiebedrag_max;
+        this.subsidiebedrag = subsidiebedrag;
         this.bijzonderheid = bijzonderheid;
-        this.subsidiepercentage_min = subsidiepercentage_min;
-        this.subsidiepercentage_max = subsidiepercentage_max;
+        this.subsidiepercentage = subsidiepercentage;
         this.datum_open = datum_open;
         this.datum_sluit = datum_sluit;
         this.beoordeling_tender = beoordeling_tender;
-        this.looptijdProject_jaren = looptijdProject_jaren;
+        this.looptijdProject = looptijdProject;
+        this.samenwerking_matching = samenwerking_matching;
 
 //        this.matchingPercentage = null;
     }
@@ -117,24 +127,8 @@ public class Subsidie implements Serializable {
         return totaal_budget;
     }
 
-    public double getSubsidiebedrag_min() {
-        return subsidiebedrag_min;
-    }
-
-    public double getSubsidiebedrag_max() {
-        return subsidiebedrag_max;
-    }
-
     public String getBijzonderheid() {
         return bijzonderheid;
-    }
-
-    public String getSubsidiepercentage_min() {
-        return subsidiepercentage_min;
-    }
-
-    public String getSubsidiepercentage_max() {
-        return subsidiepercentage_max;
     }
 
     public String getDatum_open() {
@@ -149,12 +143,31 @@ public class Subsidie implements Serializable {
         return beoordeling_tender;
     }
 
-    public double getLooptijdProject_jaren() {
-        return looptijdProject_jaren;
-    }
-
     public void setMatchingPercentage(int matchingPercentage) {
         this.matchingPercentage = matchingPercentage;
     }
 
+    public String getSector() {
+        return sector;
+    }
+
+    public String getThema_verdieping() {
+        return thema_verdieping;
+    }
+
+    public String getSubsidiabele_activiteiten_output() {
+        return subsidiabele_activiteiten_output;
+    }
+
+    public double getSubsidiebedrag() {
+        return subsidiebedrag;
+    }
+
+    public String getSubsidiepercentage() {
+        return subsidiepercentage;
+    }
+
+    public String getLooptijdProject() {
+        return looptijdProject;
+    }
 }

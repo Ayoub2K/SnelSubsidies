@@ -72,7 +72,7 @@
     <section v-if="step === 4">
       <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link"
                                                                src="../assets/info_icon.png"></h3>
-      
+
       €<input v-model="budget" class="select" placeholder="0"/>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
@@ -276,11 +276,11 @@ export default {
   margin-left: 1%;
 
   background: rgba(255, 255, 255, 0.47);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(11.2px);
--webkit-backdrop-filter: blur(11.2px);
-border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.2px);
+  -webkit-backdrop-filter: blur(11.2px);
+  border: 1px solid rgba(255, 255, 255, 1);
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
