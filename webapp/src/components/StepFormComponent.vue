@@ -450,6 +450,9 @@ section {
   margin-top:20px;
 }
 /*before is het bolletje, after is de lijn die de bolletjes verbind*/
+.progress-bar{
+  width: 0px;
+}
 .progress-bar li::before{
   content:counter(container);
   position:absolute;
