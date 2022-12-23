@@ -246,6 +246,7 @@ export default {
       // checkt of vraag is ingevuld
       if (vraagnummer === 1) {
         if (this.sector === '') {
+          //mexx- hier css class added, voor input voorbeeld: line 223
           alert("Vul aub deze vraag in")
         }else {
           this.updateProgress(vraagnummer);
