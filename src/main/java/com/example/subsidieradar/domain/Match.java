@@ -31,7 +31,7 @@ public class Match implements iMatch {
             // niet verplicht;, cofinanciering mogelijkheid
             int percentageGroep2 = 35;
             double min = Double.parseDouble(budget.substring( 1, budget.length() - 1 ));
-            if (min > subsidie.subsidiebedrag_min) {
+            if (min > subsidie.subsidiebedrag) {
                 percentageGroep2 = percentageGroep2 - 15;
             }
 

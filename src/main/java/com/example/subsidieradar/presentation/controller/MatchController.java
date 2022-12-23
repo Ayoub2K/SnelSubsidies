@@ -23,8 +23,9 @@ public class MatchController {
 //        return matchService.matchSubsidies(inputDTO);
 //    }
     @PostMapping
-    public MatchDTO getMatches(@RequestParam String sector,@RequestParam String thema, @RequestParam String typeActiviteit, @RequestParam String budget, @RequestParam String typeAanvrager
-            , @RequestParam String projectlocatie, @RequestParam boolean bijdrage, @RequestParam String samenwerking) throws Exception {
+    public MatchDTO getMatches(@RequestParam String sector,@RequestParam String thema, @RequestParam String typeActiviteit,
+                               @RequestParam String budget, @RequestParam String typeAanvrager,
+                               @RequestParam String projectlocatie, @RequestParam boolean bijdrage, @RequestParam String samenwerking) throws Exception {
         InputDTO inputDTO = new InputDTO(sector, thema, typeActiviteit, budget, typeAanvrager, projectlocatie,bijdrage, samenwerking);
         return matchService.matchSubsidies(inputDTO);
     }

@@ -1,7 +1,18 @@
 <template>
   <div>
     <div id="progress-bar">
-      <div :style="{ width: progress + '%' }" id="progress"></div>
+<!--      <div :style="{ width: progress + '%' }" id="progress"></div>-->
+      <ul class="progress-bar">
+<!--        <li class="active"></li>-->
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
     <!-- <br><br>
     <p>Progress: {{ progress }}%</p> -->
@@ -14,11 +25,25 @@
           <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
         </div>
       </h3>
-      <select v-model="sector" id="sectorr" class="select">
+      <select v-model="sector" id="sectorr" class="select" multiple>
         <option disabled value="">Kies een sector</option>
-        <option value="1">data-leeg</option>
-        <option value="2">data-leeg</option>
-        <option value="3">data-leeg</option>
+        <option>Arbeid en arbeidsmarkt</option>
+        <option>Bouw en ruimtelijke ordening</option>
+        <option>Cultuur</option>
+        <option>Energie</option>
+        <option>Export, internationalisering en ontwikkelingsamenwerking</option>
+        <option>Gezondheidszorg en welzijn</option>
+        <option>Informatie en communicatietechnologie</option>
+        <option>Landbouw en Visserij</option>
+        <option>Milieu</option>
+        <option>Natuurbeheer</option>
+        <option>Onderwijs</option>
+        <option>Onderzoek, ontwikkeling en innovatie</option>
+        <option>Overheid</option>
+        <option>Industrie</option>
+        <option>Sport, recreatie en toerisme</option>
+        <option>Transport</option>
+        <option>Veiligheid</option>
       </select>
       <div class="buttons">
         <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(1)">Volgende Stap</button>
@@ -32,20 +57,24 @@
           <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
         </div>
       </h3>
-      <select v-model="thema" class="select">
+      <select v-model="thema" class="select" multiple>
         <option disabled value="">Kies een thema</option>
-        <option>Circulair bouwen</option>
-        <option>Prefab bouwen</option>
-        <option>Industrieel bouwen</option>
+        <option>Duurzaamheid en circulariteit</option>
+        <option>Digitalisering</option>
+        <option>Economische gevolgen coronavirus</option>
+        <option>Energie besparen</option>
+        <option>Energie produceren</option>
+        <option>Gebouwen renoveren en bouwen</option>
+        <option>Infrastructuur verbeteren</option>
         <option>Recycling</option>
-        <option>Biobased grondstoffen</option>
-        <option>Circulair bouwen</option>
-        <option>circulair renoveren</option>
-        <option>CO2 reductie</option>
-        <option>New European Bauhaus</option>
-        <option>Efficient bronnengebruik</option>
-        <option>Circulair ontwerp</option>
-        <option>Hergebruik afval</option>
+        <option>Landbouw interventies</option>
+        <option>Maatschappelijke vraagstukken </option>
+        <option>Milieu en natuur beschermen of beheren</option>
+        <option>Onderzoek en ontwikkeling</option>
+        <option>Overnemen van een bedrijf</option>
+        <option>Mobiliteit</option>
+        <option>Voedsel en voedselveiligheid</option>
+        <option>Personeel opleiden</option>
       </select>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
@@ -54,13 +83,15 @@
     </section>
 
     <section v-if="step === 3">
-      <h3>3. Wat is het type van uw activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+      <h3>3. Wat is het uw subsidiale activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
       </h3>
-      <select v-model="typeActiviteit" class="select">
-        <option disabled value="">Type activiteit</option>
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
+      <select v-model="subsidialeActiviteit" class="select" multiple>
+        <option disabled value="">subsidiale activiteit</option>
+        <option>Onderzoek en ontwikkeling</option>
+        <option>Demonstratie en pilots</option>
+        <option>Investeren en uitrollen</option>
+        <option>Netwerkactiviteiten</option>
+        <option>Onderwijs</option>
       </select>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
@@ -73,7 +104,7 @@
       <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link"
                                                                src="../assets/info_icon.png"></h3>
       
-      €<input v-model="budget" class="select" placeholder="0"/>
+      €<input v-model="minimaleBedrag" class="select" placeholder="0"/>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
         <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(4)">Volgende Stap</button>
@@ -81,11 +112,15 @@
     </section>
 
     <section v-if="step === 5">
-      <h3>5. Watvoor type aanvragen bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
-      <select v-model="typeAanvrager" class="select">
-        <option disabled value="">Type aanvrager</option>
-        <option>MKB</option>
-        <option>Gemeente</option>
+      <h3>5. Watvoor type organistatie bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
+      <select v-model="typeOrganisatie" class="select">
+        <option disabled value="">Type Organisatie</option>
+        <option>Overheid</option>
+        <option>Onderwijs</option>
+        <option>mkb</option>
+        <option>Groot bedrijf</option>
+        <option>Kennisinstellingen</option>
+        <option>Stichting</option>
       </select>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
@@ -97,9 +132,9 @@
       <h3>6. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
       <select v-model="projectlocatie" class="select">
         <option disabled value="">Projectlocatie</option>
-        <option>Gelderland</option>
-        <option>Nederland</option>
-        <option>Europa</option>
+        <option>Regionaal</option>
+        <option>Nationaal</option>
+        <option>Internationaal</option>
       </select>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
@@ -122,9 +157,10 @@
       <h3>8. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
       <select v-model="samenwerking" class="select">
         <option disabled value="">Type samenwerking</option>
-        <option>Nee</option>
-        <option>Samenwerkingsverbanden</option>
-        <option>3-6 ondernemers</option>
+        <option>Niet van toepassing</option>
+        <option>Privaat/Privaat</option>
+        <option>Publiek/Publiek</option>
+        <option>Publiek/Privaat</option>
       </select>
 
       <div class="buttons">
@@ -157,9 +193,9 @@ export default {
       totalsteps: 9,
       sector: '',
       thema: '',
-      typeActiviteit: '',
-      budget: '',
-      typeAanvrager: '',
+      subsidialeActiviteit: '',
+      minimaleBedrag: '',
+      typeOrganisatie: '',
       projectlocatie: '',
       cofinancieren: null,
       samenwerking: '',
@@ -168,20 +204,34 @@ export default {
   },
   methods: {
     setstorage() {
-      sessionStorage.setItem('sector', JSON.stringify(this.sector))
-      sessionStorage.setItem('thema', JSON.stringify(this.thema))
-      sessionStorage.setItem('typeActiviteit', JSON.stringify(this.typeActiviteit))
-      sessionStorage.setItem('budget', JSON.stringify(this.budget))
-      sessionStorage.setItem('typeAanvrager', JSON.stringify(this.typeAanvrager))
+      const tempSector = this.sector.toString();
+      sessionStorage.setItem('sector', JSON.stringify(tempSector))
+      const tempThema = this.thema.toString();
+      sessionStorage.setItem('thema', JSON.stringify(tempThema))
+      const tempsubAct = this.subsidialeActiviteit.toString();
+      sessionStorage.setItem('subsidialeActiviteit', JSON.stringify(tempsubAct))
+      sessionStorage.setItem('minimaleBedrag', JSON.stringify(this.minimaleBedrag))
+      sessionStorage.setItem('typeOrganisatie', JSON.stringify(this.typeOrganisatie))
       sessionStorage.setItem('projectlocatie', JSON.stringify(this.projectlocatie))
       sessionStorage.setItem('cofinancieren', JSON.stringify(this.cofinancieren))
       sessionStorage.setItem('samenwerking', JSON.stringify(this.samenwerking))
     },
+    updateProgress(vraagnummer){
+      const number = vraagnummer -1 ;
+      const list = document.querySelectorAll(".progress-bar li")
+      for(let i = 0; i < 10; i++){
+        list[number].classList.remove('notactive')
+        list[number].classList.add('active')
+      }
+      for(let i = 0; i < number; i++){
+        list[number].classList.remove('notactive')
+      }
+    },
     skipStep(vraagnummer) {
       // zet vraag van sessionstorage op null
       if (vraagnummer === 3) {
-        this.typeActiviteit = "null";
-        console.log(this.typeActiviteit)
+        this.subsidialeActiviteit = "null";
+        console.log(this.subsidialeActiviteit)
       } else if (vraagnummer === 7) {
         this.cofinancieren = null;
         console.log(this.cofinancieren)
@@ -196,44 +246,52 @@ export default {
       // checkt of vraag is ingevuld
       if (vraagnummer === 1) {
         if (this.sector === '') {
+          //mexx- hier css class added, voor input voorbeeld: line 223
           alert("Vul aub deze vraag in")
-        } else {
+        }else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 2) {
-        if (this.thema === '') {
+        if (this.thema === ''){
           alert("Vul aub deze vraag in")
-        } else {
+        }else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 3) {
-        if (this.typeActiviteit === '') {
-          alert("Vul aub deze vraag in")
+        if (this.subsidialeActiviteit === '') {
+          alert("Vul aub deze vraag in");
         } else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 4) {
-        if (this.budget === '') {
+        if (this.minimaleBedrag === '') {
           alert("Vul aub deze vraag in")
         } else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 5) {
-        if (this.typeAanvrager === '') {
+        if (this.typeOrganisatie === '') {
           alert("Vul aub deze vraag in")
         } else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 6) {
         if (this.projectlocatie === '') {
           alert("Vul aub deze vraag in")
         } else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 7) {
         if (this.cofinancieren === null) {
           alert("Vul aub deze vraag in")
         } else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       }
@@ -241,6 +299,7 @@ export default {
         if (this.samenwerking === '') {
           alert("Vul aub deze vraag in")
         } else {
+          this.updateProgress(vraagnummer);
           this.step++
         }
       }
@@ -261,7 +320,6 @@ export default {
 .tooltip {
   display: inline;
 }
-
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -276,35 +334,30 @@ export default {
   margin-left: 1%;
 
   background: rgba(255, 255, 255, 0.47);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(11.2px);
--webkit-backdrop-filter: blur(11.2px);
-border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.2px);
+  -webkit-backdrop-filter: blur(11.2px);
+  border: 1px solid rgba(255, 255, 255, 1);
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
 }
-
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-
 h3 {
   font-size: 4vh;
   font-weight: 400;
   color: #102932;
 }
-
 p {
   color: #102932;
 }
-
 form {
   padding-top: 50px;
 }
-
 .select {
   width: 374px;
   height: 66px;
@@ -313,37 +366,34 @@ form {
   font-size: 2vh;
   text-align: center;
 }
-
+.select[multiple]{
+  margin-top: 50px;
+  height: 300px !important;
+  width: 800px !important;
+}
 .button {
   margin-top: 80px;
-
 }
-
 .buttons {
   text-align: center;
   padding-top: 100px;
 }
-
 .vragenForm {
   padding-top: 5%;
   width: 100%;
 }
-
 .info-icon {
   width: 2%;
   margin-left: 1%;
   cursor: pointer;
 }
-
 h3 {
   text-align: center;
   font-size: 25px;
 }
-
 section {
   text-align: center;
 }
-
 .button {
   border: none;
   border-radius: 14px;
@@ -354,7 +404,6 @@ section {
   font-size: 16px;
   margin: 20px;
 }
-
 .btn-prev {
   width: 243px;
   height: 47px;
@@ -365,12 +414,10 @@ section {
   border-radius: 10px;
   color: white;
 }
-
 .btn-prev:hover {
   cursor: pointer;
   background-color: #6c9fc4;
 }
-
 .btn-next {
   width: 243px;
   height: 47px;
@@ -381,42 +428,86 @@ section {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
-
 .btn-next:hover {
   cursor: pointer;
   background-color: #6c9fc4;
 }
-
-#progress-bar {
+.progress-bar{
+  display:flex;
+  list-style:none;
+  counter-reset:container 0;
   width: 673px;
   height: 20px;
   background-color: #D9D9D9;
   border-radius: 30px;
 }
-
+.progress-bar li{
+  display:flex;
+  list-style:none;
+  counter-increment:container 1;
+  position:relative;
+  margin-right:133px;
+  margin-top:20px;
+}
+/*before is het bolletje, after is de lijn die de bolletjes verbind*/
+.progress-bar li::before{
+  content:counter(container);
+  position:absolute;
+  height:25px;
+  width:25px;
+  border-radius:50%;
+  border:1px solid #eef1f7;
+  text-align:center;
+  line-height:26px;
+  z-index:10;
+  background-color:#fff;
+}
+.progress-bar li::after{
+  content:'';
+  position:absolute;
+  height:2px;
+  width:140px;
+  background-color:#f5f7fa;
+  top:12px;
+  right:-10px;
+}
+.progress-bar li:active{
+  background-color:green;
+  border:none;
+  color:green;
+}
+progress-bar li:before{
+  background-color:grey ;
+}
+.progress-bar li.active:after{
+  background-color:green !important;
+}
+.progress-bar li.active::before{
+  background-color: green;
+  border:none;
+  color:#fff;
+}
+.progress-bar li:first-child:after{
+  display:none;
+}
 #progress {
   height: 100%;
   background-color: #86C2EE;
   border-radius: 30px;
 }
-
-
 .btn-prev:hover {
   cursor: pointer;
   background-color: #3b2f94;
 }
-
 .btn-next:hover {
   cursor: pointer;
   background-color: #3b2f94;
 }
-
 .btn-skip {
   background-color: white;
   margin-top: 50px;
   border-radius: 10px;
 }
-
 .btn-skip:hover {
   cursor: pointer;
   background-color: #eeeeee;
