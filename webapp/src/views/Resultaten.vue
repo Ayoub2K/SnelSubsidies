@@ -75,9 +75,6 @@
             Niveau: {{subsidie.niveau}}<br></p>
             
             <div class="matchingpercentage">
-              <p>
-                Matchingpercentage: {{subsidie.matchingPercentage}}%
-              </p>
               <svg viewBox="0 0 80 80" width="80" height="80">
               <circle class="circle" @click="subsidiePagina(subsidie)" :class="{
                 circleLightGreen: subsidie.matchingPercentage > 87.5 && subsidieMatchingPercentage < 100,
