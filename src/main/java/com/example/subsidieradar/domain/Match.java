@@ -18,7 +18,25 @@ public class Match implements iMatch {
         List<Subsidie> filteredSubsidies = new ArrayList<>();
 
         for (Subsidie subsidie : subsidies) {
-            // eerst checken we groep 1; 65 punten; thema, activiteiten
+            //eerst checken we of er knockoutcriteria zijn
+            subsidie.setKnockout(false);
+
+            if (!subsidie.getNiveau().toLowerCase().contains(projectlocatie.substring(1, projectlocatie.length() -1).toLowerCase())){
+                subsidie.setKnockout(true);
+            }
+
+            if (!subsidie.getSoort_organisatie().toLowerCase().contains(typeAanvrager.substring(1, typeAanvrager.length() -1).toLowerCase())){
+                subsidie.setKnockout(true);
+            }
+
+            if (!subsidie.getSector().equals("Geen vereiste")){
+                if (!subsidie.getSector().toLowerCase().contains(sector.substring(1, sector.length() -1).toLowerCase())){
+                    subsidie.setKnockout(true);
+                }
+            }
+
+
+            // dan checken we groep 1; 65 punten; thema, activiteiten
             int percentageGroep1 = 65;
             if (!subsidie.getThemas().toLowerCase().contains(thema.toLowerCase())) {    // als subsidie ander thema heeft -35%
                 percentageGroep1 = percentageGroep1 - 35;
@@ -34,6 +52,8 @@ public class Match implements iMatch {
             if (min > subsidie.subsidiebedrag) {
                 percentageGroep2 = percentageGroep2 - 15;
             }
+
+
 
             subsidie.setMatchingPercentage(percentageGroep1 + percentageGroep2);
             filteredSubsidies.add(subsidie);
