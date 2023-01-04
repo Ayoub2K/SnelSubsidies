@@ -21,6 +21,8 @@ public class Match implements iMatch {
             //eerst checken we of er knockoutcriteria zijn
             subsidie.setKnockout(false);
 
+            System.out.println(subsidie.getAfkortingen());
+
             if (!subsidie.getNiveau().toLowerCase().contains(projectlocatie.substring(1, projectlocatie.length() -1).toLowerCase())){
                 subsidie.setKnockout(true);
             }
@@ -38,11 +40,15 @@ public class Match implements iMatch {
 
             // dan checken we groep 1; 65 punten; thema, activiteiten
             int percentageGroep1 = 65;
-            if (!subsidie.getThemas().toLowerCase().contains(thema.toLowerCase())) {    // als subsidie ander thema heeft -35%
+            if (!subsidie.getThemas().toLowerCase().contains(thema.substring(1, thema.length() -1).toLowerCase())) {    // als subsidie ander thema heeft -35%
                 percentageGroep1 = percentageGroep1 - 35;
+                System.out.println(subsidie.getThemas().toLowerCase());
+                System.out.println(thema.toLowerCase());
+                System.out.println("-35");
             }
-            if (!subsidie.getSubsidiabele_activiteiten().toLowerCase().contains(typeActiviteit.toLowerCase())) {
+            if (!subsidie.getSubsidiabele_activiteiten().toLowerCase().contains(typeActiviteit.substring(1, typeActiviteit.length() -1).toLowerCase())) {
                 percentageGroep1 = percentageGroep1 - 30;
+                System.out.println("-30");
             }
 
             // dan groep 2; 35 punten; Verplicht; Minimaal benodigd subsidiebedrag, beoogde startdatum
@@ -96,10 +102,12 @@ public class Match implements iMatch {
             if (!subsidie.getSubsidiepercentage().equals("n.v.t.")){
                 if (!bijdrage){
                     percentageGroep2 = percentageGroep2 - 20;
+                    System.out.println("-20");
                 }
             }
 
-
+            System.out.println("groep1: " + percentageGroep1);
+            System.out.println("groep2: " + percentageGroep2);
             subsidie.setMatchingPercentage(percentageGroep1 + percentageGroep2);
             filteredSubsidies.add(subsidie);
         }

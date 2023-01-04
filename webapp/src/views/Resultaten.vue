@@ -79,14 +79,12 @@
             <div class="matchingpercentage">
               <svg viewBox="0 0 80 80" width="80" height="80">
               <circle class="circle" @click="subsidiePagina(subsidie)" :class="{
-                circleLightGreen: subsidie.matchingPercentage > 87.5 && subsidieMatchingPercentage < 100,
-                circleGreen: subsidie.matchingPercentage >75 && subsidie.matchingPercentage < 87.5,
-                circleLightYellow: subsidie.matchingPercentage > 62.5 && subsidie.matchingPercentage < 75,
-                circleYellow: subsidie.matchingPercentage > 50 && subsidie.matchingPercentage < 62.5,
-                circleLightOrange: subsidie.matchingPercentage > 37.5 && subsidie.matchingPercentage < 50,
-                circleOrange: subsidie.matchingPercentage > 25 && subsidie.matchingPercentage < 37.5,
-                circleLightRed: subsidie.matchingPercentage > 12.5 && subsidie.matchingPercentage < 25,
-                circleRed: subsidie.matchingPercentage > 0 && subsidie.matchingPercentage < 12.5,
+                circleLightGreen: subsidie.matchingPercentage > 85 && subsidie.matchingPercentage <= 100,
+                circleGreen: subsidie.matchingPercentage >70 && subsidie.matchingPercentage <= 85,
+                circleLightOrange: subsidie.matchingPercentage > 50 && subsidie.matchingPercentage <= 70,
+                circleOrange: subsidie.matchingPercentage > 30 && subsidie.matchingPercentage <= 50,
+                circleLightRed: subsidie.matchingPercentage > 15 && subsidie.matchingPercentage <= 30,
+                circleRed: subsidie.matchingPercentage > 0 && subsidie.matchingPercentage <= 15,
               }" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
               </svg>
             </div>
@@ -220,28 +218,22 @@ main .header {
   cursor: pointer;
 }
 .circleLightGreen{
-  fill: #60e760;
+  fill: #69B34C;
 }
 .circleGreen{
-  fill: #488a4b;
+  fill: #93b334;
 }
 .circleOrange{  
-  fill: #ffb100;
+  fill: #FAB733;
 }
 .circleLightOrange{
-  fill: #f6cd83;
-}
-.circleYellow{
-  fill: #ffe200;
-}
-.circleLightYellow{
- fill: #eee371;
+  fill: #FF8E15;
 }
 .circleLightRed{
-  fill: #ef9291;
+  fill: #FF4E11;
 }
 .circleRed{
-  fill: #cc0605;
+  fill: #FF0D0D;
 }
 #open-icon {
   width: 4%;
