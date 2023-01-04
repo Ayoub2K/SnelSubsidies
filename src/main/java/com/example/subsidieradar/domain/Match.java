@@ -48,11 +48,56 @@ public class Match implements iMatch {
             // dan groep 2; 35 punten; Verplicht; Minimaal benodigd subsidiebedrag, beoogde startdatum
             // niet verplicht;, cofinanciering mogelijkheid
             int percentageGroep2 = 35;
-            double min = Double.parseDouble(budget.substring( 1, budget.length() - 1 ));
-            if (min > subsidie.subsidiebedrag) {
-                percentageGroep2 = percentageGroep2 - 15;
+
+            //budget
+            double gegevenBudget = Double.parseDouble(budget.substring( 1, budget.length() - 1 ));
+            boolean cat1 = false;
+            boolean cat2 = false;
+            boolean cat3 = false;
+            boolean cat4 = false;
+
+            if (subsidie.getSubsidiebedrag() < 50000){
+                cat1 = true;
+            } else if (subsidie.getSubsidiebedrag() >= 50000 && subsidie.getSubsidiebedrag() < 200000) {
+                cat2 = true;
+            } else if (subsidie.getSubsidiebedrag() >= 200000 && subsidie.getSubsidiebedrag() < 1000000) {
+                cat3 = true;
+            } else if (subsidie.getSubsidiebedrag() > 1000000) {
+                cat4 = true;
             }
 
+            if (gegevenBudget < 50000){// als gegeven budget cat1
+                if (cat2){
+                    percentageGroep2 = percentageGroep2 - 10;
+                }else if(!cat1){
+                    percentageGroep2 = percentageGroep2 - 15;
+                }
+            } else if (gegevenBudget >= 50000 && gegevenBudget < 200000) { // als gegeven budget cat2
+                if (cat1 || cat3){
+                    percentageGroep2 = percentageGroep2 - 10;
+                }else if(!cat2){
+                    percentageGroep2 = percentageGroep2 - 15;
+                }
+            } else if (gegevenBudget >= 200000 && gegevenBudget < 1000000) {// als gegeven budget cat3
+                if (cat2 || cat4){
+                    percentageGroep2 = percentageGroep2 - 10;
+                }else if(!cat3){
+                    percentageGroep2 = percentageGroep2 - 15;
+                }
+            } else if (gegevenBudget > 1000000) { // als gegeven budget cat4
+                if (cat3){
+                    percentageGroep2 = percentageGroep2 - 10;
+                }else if(!cat4){
+                    percentageGroep2 = percentageGroep2 - 15;
+                }
+            }
+
+            //cofinanciering
+            if (!subsidie.getSubsidiepercentage().equals("n.v.t.")){
+                if (!bijdrage){
+                    percentageGroep2 = percentageGroep2 - 20;
+                }
+            }
 
 
             subsidie.setMatchingPercentage(percentageGroep1 + percentageGroep2);
