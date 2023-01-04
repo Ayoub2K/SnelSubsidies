@@ -71,8 +71,10 @@
         <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
           <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
           <p class="info">
+            knockout: {{subsidie.knockout}}<br>
             Afkorting: {{subsidie.afkortingen}}<br>
             Niveau: {{subsidie.niveau}}<br></p>
+
             
             <div class="matchingpercentage">
               <svg viewBox="0 0 80 80" width="80" height="80">

@@ -132,9 +132,9 @@
       <h3>6. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
       <select v-model="projectlocatie" class="select">
         <option disabled value="">Projectlocatie</option>
-        <option>Regionaal</option>
+        <option>Provinciaal</option>
         <option>Nationaal</option>
-        <option>Internationaal</option>
+        <option>Europees</option>
       </select>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>

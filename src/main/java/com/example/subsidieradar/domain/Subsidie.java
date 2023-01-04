@@ -2,6 +2,8 @@ package com.example.subsidieradar.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 public class Subsidie implements Serializable {
 
@@ -34,6 +36,8 @@ public class Subsidie implements Serializable {
     String looptijdProject; //was eerst jaren
     @Transient
     int matchingPercentage;
+    @Transient
+    Boolean knockout;
 
     public Subsidie(String naam, String afkortingen, String niveau, String subsidieverstrekker, String doel,
                     String themas, String subsidiabele_activiteiten, String locatie, String soort_organisatie,
@@ -65,6 +69,7 @@ public class Subsidie implements Serializable {
         this.looptijdProject = looptijdProject;
         this.samenwerking_matching = samenwerking_matching;
 
+        this.knockout = false;
 //        this.matchingPercentage = null;
     }
 
@@ -81,6 +86,10 @@ public class Subsidie implements Serializable {
     }
     public int getMatchingPercentage() {
         return matchingPercentage;
+    }
+
+    public Boolean getKnockout() {
+        return knockout;
     }
 
     public String getNiveau() {
@@ -145,6 +154,9 @@ public class Subsidie implements Serializable {
 
     public void setMatchingPercentage(int matchingPercentage) {
         this.matchingPercentage = matchingPercentage;
+    }
+    public void setKnockout(boolean knockout){
+        this.knockout = knockout;
     }
 
     public String getSector() {
