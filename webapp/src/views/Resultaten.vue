@@ -1,109 +1,133 @@
 <template>
-<main>
-        <div class="progress">   
-            <div class="progress-item">
-                <p>Sector</p>
+  <main>
+    <div class="progress">
+      <div class="progress-item">
+        <p>Sector</p>
+      </div>
+      <div class="progress-item">
+        <p>Thema</p>
+      </div>
+      <div class="progress-item">
+        <p>Activiteit</p>
+      </div>
+      <div class="progress-item">
+        <p>Subsidiebedrag</p>
+      </div>
+      <div class="progress-item">
+        <p>Datums</p>
+      </div>
+      <div class="progress-item">
+        <p>Locatie</p>
+      </div>
+      <div class="progress-item">
+        <p>Cofinancering</p>
+      </div>
+      <div class="progress-item">
+        <p>Samenwerking</p>
+      </div>
+    </div>
+    <h1 class="text-center">Uw resultaten</h1>
+
+    <div class="resultaten_box">
+
+      <div id="wrapper">
+        <div class="filters">
+          <div class="status">
+            <p id="title"><b>Match</b></p>
+            <div class="checkboxes">
+              <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
+              <label for="Groen"> Groen</label><br>
+
+              <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
+              <label for="Oranje"> Oranje</label><br>
+
+              <input type="checkbox" id="Rood" name="Rood" value="Rood">
+              <label for="Rood"> Rood</label><br><br>
             </div>
-            <div class="progress-item">
-                <p>Thema</p>
-            </div>
-            <div class="progress-item">
-                <p>Activiteit</p>
-            </div>
-            <div class="progress-item">
-                <p>Subsidiebedrag</p>
-            </div>
-            <div class="progress-item">
-                <p>Datums</p>
-            </div>
-            <div class="progress-item">
-                <p>Locatie</p>
-            </div>
-            <div class="progress-item">
-                <p>Cofinancering</p>
-            </div>
-            <div class="progress-item">
-                <p>Samenwerking</p>
-            </div>
+          </div>
         </div>
-          <h1 class="text-center">Uw resultaten</h1>
 
-          <div class="resultaten_box">
+        <div class="filters">
+          <div class="status">
+            <p id="title"><b>Placeholder</b></p>
+            <div class="checkboxes">
+              <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
+              <label for="Groen"> Placeholder</label><br>
 
-          <div id="wrapper">
-            <div class="filters">
-              <div class="status">
-                <p id="title"><b>Match</b></p>
-                <div class="checkboxes">
-                  <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
-                  <label for="Groen"> Groen</label><br>
+              <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
+              <label for="Oranje"> Placeholder</label><br>
 
-                  <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
-                  <label for="Oranje"> Oranje</label><br>
-
-                  <input type="checkbox" id="Rood" name="Rood" value="Rood">
-                  <label for="Rood"> Rood</label><br><br>
-                </div>
-              </div>
+              <input type="checkbox" id="Rood" name="Rood" value="Rood">
+              <label for="Rood"> Placeholder</label><br><br>
             </div>
-
-            <div class="filters">
-              <div class="status">
-                <p id="title"><b>Placeholder</b></p>
-                <div class="checkboxes">
-                  <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
-                  <label for="Groen"> Placeholder</label><br>
-
-                  <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
-                  <label for="Oranje"> Placeholder</label><br>
-
-                  <input type="checkbox" id="Rood" name="Rood" value="Rood">
-                  <label for="Rood"> Placeholder</label><br><br>
-                </div>
-              </div>
-            </div>
+          </div>
         </div>
-        
+      </div>
 
-        
-    <div id="breed">
-      <div class="resultaten">
-        <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
-          <h3 id="subsidieNaam">{{subsidie.naam}}</h3>
-          <p class="info">
-            knockout: {{subsidie.knockout}}<br>
-            Afkorting: {{subsidie.afkortingen}}<br>
-            Niveau: {{subsidie.niveau}}<br></p>
 
-            
+      <div id="breed">
+        <div class="resultaten">
+          <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
+            <h3 id="subsidieNaam" @click="subsidiePagina(subsidie)">{{ subsidie.naam }}</h3>
+            <p class="info">
+              Afkorting: {{ subsidie.afkortingen }}<br>
+              Niveau: {{ subsidie.niveau }}<br></p>
+
+
+            <div id="appmodal">
+              <button
+                  type="button"
+                  class="btn"
+                  @click="showModal"
+              >
+                Toon matching details
+              </button>
+
+              <Modal v-show="isModalVisible" @close="closeModal">
+                <template v-slot:header>Matching details</template>
+                <template v-slot:body>
+                   {{ subsidie.knockout }}
+                </template>
+              </Modal>
+            </div>
+
+
             <div class="matchingpercentage">
               <svg viewBox="0 0 80 80" width="80" height="80">
-              <circle class="circle" @click="subsidiePagina(subsidie)" :class="{
+                <circle class="circle" :class="{
                 circleLightGreen: subsidie.matchingPercentage > 85 && subsidie.matchingPercentage <= 100,
                 circleGreen: subsidie.matchingPercentage >70 && subsidie.matchingPercentage <= 85,
                 circleLightOrange: subsidie.matchingPercentage > 50 && subsidie.matchingPercentage <= 70,
-                circleOrange: subsidie.matchingPercentage > 30 && subsidie.matchingPercentage <= 50,
-                circleLightRed: subsidie.matchingPercentage > 15 && subsidie.matchingPercentage <= 30,
+                circleOrange: subsidie.matchingPercentage > 40 && subsidie.matchingPercentage <= 50,
+                circleLightRed: subsidie.matchingPercentage > 15 && subsidie.matchingPercentage <= 40,
                 circleRed: subsidie.matchingPercentage > 0 && subsidie.matchingPercentage <= 15,
-              }" cx="40" cy="40" r="38"/> {{subsidie.matchingPercentage}}
+              }" cx="40" cy="40" r="38"/>
+                {{ subsidie.matchingPercentage }}
               </svg>
             </div>
+
+            knockout: {{ subsidie.knockout }}<br>
+
+          </div>
         </div>
       </div>
     </div>
-</div>
 
-</main>
+  </main>
 </template>
 
 <script>
 import SubsidieService from "@/services/SubsidieService";
+import Modal from "@/components/modal.vue";
 
-export default{
-  name:'form-resultaten',
+export default {
+  name: 'form-resultaten',
+  components: {
+    Modal,
+  },
   data() {
     return {
-      subsidies:[],
+      subsidies: [],
       sector: [],
       thema: [],
       typeActiviteit: [],
@@ -111,11 +135,18 @@ export default{
       typeAanvrager: '',
       projectlocatie: [],
       bijdrage: false,
-      samenwerking: []
+      samenwerking: [],
+      isModalVisible: false,
     };
   },
-  methods:{
-    getStorageData(){
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+    getStorageData() {
       this.sector = sessionStorage.getItem('sector')
       this.thema = sessionStorage.getItem('thema')
       this.subsidialeActiviteit = sessionStorage.getItem('subsidialeActiviteit')
@@ -125,18 +156,18 @@ export default{
       this.cofinancieren = sessionStorage.getItem('cofinancieren')
       this.samenwerking = sessionStorage.getItem('samenwerking')
     },
-    getSubsidies(){
+    getSubsidies() {
       SubsidieService.matchSubsidies(this.sector, this.thema, this.subsidialeActiviteit, this.minimaleBedrag, this.typeOrganisatie, this.projectlocatie, this.cofinancieren, this.samenwerking)
           .then(response => {
             console.log(response)
             this.subsidies = response.data.subsidieList;
           });
     },
-    subsidiePagina(sub){
+    subsidiePagina(sub) {
       this.$router.push(`/subsidie/${sub.naam}`)
     }
   },
-  created(){
+  created() {
     this.getStorageData();
     this.getSubsidies();
   },
@@ -152,7 +183,7 @@ hr {
   border: 1px solid #6cbb71;
 }
 
-.resultaten_box{
+.resultaten_box {
   height: auto;
   width: 100%;
   margin-top: 20px;
@@ -213,28 +244,35 @@ main .header {
 
 
 .circle {
-  box-shadow:  27px 27px 77px #bababa,
-              -27px -27px 77px #ffffff;
+  box-shadow: 27px 27px 77px #bababa,
+  -27px -27px 77px #ffffff;
   cursor: pointer;
 }
-.circleLightGreen{
+
+.circleLightGreen {
   fill: #69B34C;
 }
-.circleGreen{
+
+.circleGreen {
   fill: #93b334;
 }
-.circleOrange{  
+
+.circleOrange {
   fill: #FAB733;
 }
-.circleLightOrange{
+
+.circleLightOrange {
   fill: #FF8E15;
 }
-.circleLightRed{
+
+.circleLightRed {
   fill: #FF4E11;
 }
-.circleRed{
+
+.circleRed {
   fill: #FF0D0D;
 }
+
 #open-icon {
   width: 4%;
   float: right;
@@ -269,6 +307,10 @@ hr {
   font-weight: 500;
 }
 
+#subsidieNaam:hover {
+  cursor: pointer;
+}
+
 .subsidie {
   background: #463c95;
   color: white;
@@ -298,6 +340,7 @@ hr {
 thead {
   text-align: left;
 }
+
 #title {
   margin: auto;
   width: 195px;
@@ -309,10 +352,12 @@ thead {
   text-align: center;
   padding: 10px;
 }
+
 .filters {
   display: flex;
   flex-direction: column;
 }
+
 .checkboxes {
   margin: auto;
   width: 150px;
@@ -321,33 +366,33 @@ thead {
 }
 
 input[type=checkbox] {
-      position: absolute;
-      visibility: hidden;
-    }
+  position: absolute;
+  visibility: hidden;
+}
 
-    label {
-      display: inline-block;
-      position: relative;
-      padding-left: 25px;
-      margin-right: 15px;
-      font-size: 18px;
-    }
+label {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 15px;
+  font-size: 18px;
+}
 
-    input[type=checkbox] + label:before {
-      content: "";
-      background-color: #ffffff;
-      border: 1.5px solid black;
-      border-radius: 20%;
-      width: 18px;
-      height: 18px;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+input[type=checkbox] + label:before {
+  content: "";
+  background-color: #ffffff;
+  border: 1.5px solid black;
+  border-radius: 20%;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
-    input[type=checkbox]:checked + label:before {
-      background-color: black;
-    }
+input[type=checkbox]:checked + label:before {
+  background-color: black;
+}
 
 .text-center {
   text-align: center;
@@ -355,7 +400,6 @@ input[type=checkbox] {
   color: black;
   font-weight: 500;
 }
-
 
 
 </style>
