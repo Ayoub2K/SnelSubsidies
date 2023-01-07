@@ -156,8 +156,7 @@ export default {
       this.cofinancieren = sessionStorage.getItem('cofinancieren')
       this.samenwerking = sessionStorage.getItem('samenwerking')
     },
-
-    getSubsidies(){
+    getSubsidies() {
       SubsidieService.matchSubsidies(this.sector, this.thema, this.subsidialeActiviteit, this.minimaleBedrag, this.typeOrganisatie, this.projectlocatie, this.cofinancieren, this.samenwerking)
           .then(response => {
             console.log(response)
