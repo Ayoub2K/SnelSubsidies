@@ -464,7 +464,6 @@ section {
   counter-reset:container 0;
   width: 673px;
   height: 20px;
-  background-color: #D9D9D9;
   border-radius: 30px;
 }
 .progress-bar li{
