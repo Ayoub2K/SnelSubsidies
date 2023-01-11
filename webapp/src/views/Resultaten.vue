@@ -45,7 +45,9 @@
             <h3 id="subsidieNaam" @click="subsidiePagina(subsidie)">{{ subsidie.naam }}</h3>
             <p class="info">
               Afkorting: {{ subsidie.afkortingen }}<br>
-              Niveau: {{ subsidie.niveau }}<br></p>
+              Niveau: {{ subsidie.niveau }}<br>
+              Knockout: {{ subsidie.knockout }}<br>
+            </p><br>
 
 
             <div id="appmodal">
@@ -67,7 +69,7 @@
 
 
             <div class="matchingpercentage">
-              <svg viewBox="0 0 80 80" width="80" height="80">
+              <svg viewBox="0 0 80 80" width="80" height="80" id="circle">
                 <circle class="circle" :class="{
                 circleLightGreen: subsidie.matchingPercentage > 85 && subsidie.matchingPercentage <= 100,
                 circleGreen: subsidie.matchingPercentage >70 && subsidie.matchingPercentage <= 85,
@@ -79,9 +81,6 @@
                 {{ subsidie.matchingPercentage }}
               </svg>
             </div>
-
-            knockout: {{ subsidie.knockout }}<br>
-
           </div>
         </div>
       </div>
@@ -216,11 +215,11 @@ main .header {
   text-align: center;
 }
 
-
+#circle {
+}
 .circle {
   box-shadow: 27px 27px 77px #bababa,
   -27px -27px 77px #ffffff;
-  cursor: pointer;
 }
 
 .circleLightGreen {
@@ -294,6 +293,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .resultaten {
@@ -305,10 +305,10 @@ hr {
 }
 
 .matchingpercentage {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1%;
 }
 
 thead {
