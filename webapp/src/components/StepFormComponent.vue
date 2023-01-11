@@ -20,7 +20,7 @@
       <h3 for="sectorr">1. In welke sector werkt u?
         <div class="tooltip">
           <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
-          <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
+          <span class="tooltiptext">Een sector is een onderdeel van maatschappij waarbinnen meerdere typen bedrijven en typen organisatie vallen. Die organisatie en bedrijven zijn een groep die afbranchen van een bepaalde circle met dezelfde doelen en keuzes.</span>
         </div>
       </h3>
       <select v-model="sector" id="sectorr" class="select">
@@ -52,7 +52,7 @@
       <h3>2. Onder welke thema valt uw project?
         <div class="tooltip">
           <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
-          <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
+          <span class="tooltiptext">Een thema is een klein deel die binnen de sector valt. Een sector is een groot gedeelte, en thema’s delen dat grote thema op in kleinere gedeeltes.</span>
         </div>
       </h3>
       <select v-model="thema" class="select">
@@ -81,10 +81,14 @@
     </section>
 
     <section v-if="step === 3">
-      <h3>3. Wat is het uw subsidiale activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+      <h3>3. Wat is het uw subsidiale activiteit?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">Bij activiteit laat je zien wat je binnen de thema doet. Elke thema heeft dezelfde of andere activiteiten en niet elke activiteit is evenveel subsidieerbaar.</span>
+        </div>
       </h3>
       <select v-model="subsidialeActiviteit" class="select">
-        <option disabled value="">subsidiale activiteit</option>
+        <option disabled value="">Subsidiale activiteit</option>
         <option>Onderzoek en ontwikkeling</option>
         <option>Demonstratie en pilots</option>
         <option>Investeren en uitrollen</option>
@@ -99,8 +103,12 @@
     </section>
 
     <section v-if="step === 4">
-      <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link"
-                                                               src="../assets/info_icon.png"></h3>
+      <h3>4. Wat is het minimaal benodigd subsidiebedrag?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">Bij minimaal subsidiebedrag vul je in hoeveel je minimaal wilt krijgen voor je gekozen subsidie. Het kan meer zijn maar niet minder.</span>
+        </div>
+      </h3>
       
       <input v-model="minimaleBedrag" class="select" placeholder="€0"/>
       <div class="buttons">
@@ -110,9 +118,14 @@
     </section>
 
     <section v-if="step === 5">
-      <h3>5. Wat voor type organistatie bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
+      <h3>5. Wat voor type organistatie bent u?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">Type organisatie; zie opties</span>
+        </div>
+      </h3>
       <select v-model="typeOrganisatie" class="select">
-        <option disabled value="">Type Organisatie</option>
+        <option disabled value="">Type organisatie</option>
         <option>Overheid</option>
         <option>Onderwijs</option>
         <option>mkb</option>
@@ -127,7 +140,12 @@
     </section>
 
     <section v-if="step === 6">
-      <h3>6. Wat is de projectlocatie? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
+      <h3>6. Wat is de projectlocatie?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">De locatie waar het project zich plaatsvindt</span>
+        </div>
+      </h3>
       <select v-model="projectlocatie" class="select">
         <option disabled value="">Projectlocatie</option>
         <option>Provinciaal</option>
@@ -141,7 +159,12 @@
     </section>
 
     <section v-if="step === 7">
-      <h3>7. Kunt u cofinancieren? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
+      <h3>7. Kunt u cofinancieren?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">Cofinancieren houdt in dat niet alleen de subsidiegever betaalt, maar ook het bedrijf/persoon die de subsidie aanvraagt.</span>
+        </div>
+      </h3>
       <input type="checkbox" class="select" id="checkbox" v-model="cofinancieren"/>
       <!-- <label for="checkbox">{{ cofinancieren }}</label> -->
       <div class="buttons">
@@ -152,7 +175,12 @@
     </section>
 
     <section v-if="step === 8">
-      <h3>8. Wat is het type samenwerking? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
+      <h3>8. Wat is het type samenwerking?
+        <div class="tooltip">
+          <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
+          <span class="tooltiptext">Type samenwerking; zie opties</span>
+        </div>
+      </h3>
       <select v-model="samenwerking" class="select">
         <option disabled value="">Type samenwerking</option>
         <option>Niet van toepassing</option>
@@ -170,7 +198,7 @@
 
 
     <section v-if="step === 9">
-      <h3>Wij hebben uw vookeuren meegenomen, bekijk uw beste matches! </h3>
+      <h3>Wij hebben uw voorkeuren meegenomen, bekijk uw beste matches! </h3>
 
       <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
       <button class="button btn-next" type="submit">Bekijk subsidies</button>
