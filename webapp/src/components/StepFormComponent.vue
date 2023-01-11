@@ -350,7 +350,7 @@ export default {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 380px;
-  background-color: white;
+  background-color: white !important;
   color: black;
   text-align: left;
   padding: 20px;
