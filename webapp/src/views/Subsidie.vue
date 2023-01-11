@@ -16,8 +16,8 @@
           Afkorting<br>
           Niveau<br>
           Subsidieverstrekker<br>
-          Open datum<br>
-          Sluitings datum<br>
+          Openingsdatum<br>
+          Sluitingsdatum<br>
         </p>
       </div>
       <div id="rechts">
