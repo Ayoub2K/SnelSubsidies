@@ -506,8 +506,10 @@ progress-bar li:before{
 }
 .btn-skip {
   background-color: white;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
   border-radius: 10px;
+  width: 243px;
+  height: 47px;
 }
 .btn-skip:hover {
   cursor: pointer;
