@@ -1,32 +1,5 @@
 <template>
     <main>
-        <div class="progress">   
-            <div class="progress-item active">
-                <p>Sector</p>
-            </div>
-            <div class="progress-item">
-                <p>Thema</p>
-            </div>
-            <div class="progress-item">
-                <p>Activiteit</p>
-            </div>
-            <div class="progress-item">
-                <p>Subsidiebedrag</p>
-            </div>
-            <div class="progress-item">
-                <p>Datums</p>
-            </div>
-            <div class="progress-item">
-                <p>Locatie</p>
-            </div>
-            <div class="progress-item">
-                <p>Cofinancering</p>
-            </div>
-            <div class="progress-item">
-                <p>Samenwerking</p>
-            </div>
-        </div>
-      
         <div class="header">
           <!-- <div>
             <button @click="advanceProgress">Advance Progress</button>

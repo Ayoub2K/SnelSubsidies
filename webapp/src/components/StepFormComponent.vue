@@ -104,7 +104,7 @@
       <h3>4. Wat is het minimaal benodigd subsidiebedrag? <img class="info-icon" alt="Open link"
                                                                src="../assets/info_icon.png"></h3>
       
-      €<input v-model="minimaleBedrag" class="select" placeholder="0"/>
+      <input v-model="minimaleBedrag" class="select" placeholder="€0"/>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
         <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(4)">Volgende Stap</button>
@@ -112,7 +112,7 @@
     </section>
 
     <section v-if="step === 5">
-      <h3>5. Watvoor type organistatie bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
+      <h3>5. Wat voor type organistatie bent u? <img class="info-icon" alt="Open link" src="../assets/info_icon.png"></h3>
       <select v-model="typeOrganisatie" class="select">
         <option disabled value="">Type Organisatie</option>
         <option>Overheid</option>
@@ -451,8 +451,8 @@ section {
 }
 /*before is het bolletje, after is de lijn die de bolletjes verbind*/
 .progress-bar{
-  width: 0px;
 }
+
 .progress-bar li::before{
   content:counter(container);
   position:absolute;
