@@ -43,8 +43,14 @@
         <option>Transport</option>
         <option>Veiligheid</option>
       </select>
+
+      <div id="warning1">
+        <hr class="warningline">
+        <p class="warningtext">Selecteer een optie</p>
+      </div>
+
       <div class="buttons">
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(1)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(1)">Volgende stap</button>
       </div>
     </section>
 
@@ -74,9 +80,15 @@
         <option>Voedsel en voedselveiligheid</option>
         <option>Personeel opleiden</option>
       </select>
+
+      <div id="warning2">
+        <hr class="warningline">
+        <p class="warningtext">Selecteer een optie</p>
+      </div>
+
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(2)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(2)">Volgende stap</button>
       </div>
     </section>
 
@@ -95,10 +107,14 @@
         <option>Netwerkactiviteiten</option>
         <option>Onderwijs</option>
       </select>
+      <div id="warning3">
+        <hr class="warningline">
+        <p class="warningtext">Selecteer een optie</p>
+      </div>
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
         <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="skipStep(3)">Overslaan</button>
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(3)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(3)">Volgende stap</button>
       </div>
     </section>
 
@@ -111,9 +127,15 @@
       </h3>
       
       <input v-model="minimaleBedrag" class="select" placeholder="€0"/>
+
+      <div id="warning4">
+        <hr class="warningline">
+        <p class="warningtext">Vul een bedrag in</p>
+      </div>
+
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(4)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(4)">Volgende stap</button>
       </div>
     </section>
 
@@ -133,9 +155,15 @@
         <option>Kennisinstellingen</option>
         <option>Stichting</option>
       </select>
+
+      <div id="warning5">
+        <hr class="warningline">
+        <p class="warningtext">Selecteer een optie</p>
+      </div>
+
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(5)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(5)">Volgende stap</button>
       </div>
     </section>
 
@@ -152,9 +180,15 @@
         <option>Nationaal</option>
         <option>Europees</option>
       </select>
+
+      <div id="warning6">
+        <hr class="warningline">
+        <p class="warningtext">Selecteer een optie</p>
+      </div>
+
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(6)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(6)">Volgende stap</button>
       </div>
     </section>
 
@@ -167,10 +201,11 @@
       </h3>
       <input type="checkbox" class="select" id="checkbox" v-model="cofinancieren"/>
       <!-- <label for="checkbox">{{ cofinancieren }}</label> -->
+
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
         <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="skipStep(7)">Overslaan</button>
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(7)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(7)">Volgende stap</button>
       </div>
     </section>
 
@@ -189,10 +224,15 @@
         <option>Publiek/Privaat</option>
       </select>
 
+      <div id="warning8">
+        <hr class="warningline">
+        <p class="warningtext">Selecteer een optie</p>
+      </div>
+
       <div class="buttons">
         <button class="button btn-prev" v-if="step !== 1" @click.prevent="prevStep">Vorige Stap</button>
         <button class="button btn-skip" v-if="step !== totalsteps" @click.prevent="skipStep(8)">Overslaan</button>
-        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(8)">Volgende Stap</button>
+        <button class="button btn-next" v-if="step !== totalsteps" @click.prevent="nextStep(8)">Volgende stap</button>
       </div>
     </section>
 
@@ -272,58 +312,53 @@ export default {
       // checkt of vraag is ingevuld
       if (vraagnummer === 1) {
         if (this.sector === '') {
-          //mexx- hier css class added, voor input voorbeeld: line 223
-          alert("Vul aub deze vraag in")
-        }else {
+          document.getElementById("warning1").style.visibility = "visible";
+        } else {
           this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 2) {
         if (this.thema === ''){
-          alert("Vul aub deze vraag in")
+          document.getElementById("warning2").style.visibility = "visible";
         }else {
           this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 3) {
         if (this.subsidialeActiviteit === '') {
-          alert("Vul aub deze vraag in");
+          document.getElementById("warning3").style.visibility = "visible";
         } else {
           this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 4) {
         if (this.minimaleBedrag === '') {
-          alert("Vul aub deze vraag in")
+          document.getElementById("warning4").style.visibility = "visible";
         } else {
           this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 5) {
         if (this.typeOrganisatie === '') {
-          alert("Vul aub deze vraag in")
+          document.getElementById("warning5").style.visibility = "visible";
         } else {
           this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 6) {
         if (this.projectlocatie === '') {
-          alert("Vul aub deze vraag in")
+          document.getElementById("warning6").style.visibility = "visible";
         } else {
           this.updateProgress(vraagnummer);
           this.step++
         }
       } else if (vraagnummer === 7) {
-        if (this.cofinancieren === null) {
-          alert("Vul aub deze vraag in")
-        } else {
           this.updateProgress(vraagnummer);
           this.step++
         }
-      }
       else if (vraagnummer === 8) {
         if (this.samenwerking === '') {
-          alert("Vul aub deze vraag in")
+          document.getElementById("warning8").style.visibility = "visible";
         } else {
           this.updateProgress(vraagnummer);
           this.step++
@@ -378,6 +413,21 @@ h3 {
   font-weight: 400;
   color: #102932;
 }
+
+#warning1, #warning2, #warning3, #warning4, #warning5, #warning6, #warning8 {
+  visibility: hidden;
+}
+
+.warningline {
+  border-top: 2px solid darkred;
+  width: 360px;
+}
+
+.warningtext {
+  margin-top: 1%;
+  color:darkred;
+}
+
 p {
   color: #102932;
 }
@@ -458,6 +508,10 @@ section {
   cursor: pointer;
   background-color: #6c9fc4;
 }
+#progress-bar {
+  width: 60%;
+}
+
 .progress-bar{
   display:flex;
   list-style:none;
