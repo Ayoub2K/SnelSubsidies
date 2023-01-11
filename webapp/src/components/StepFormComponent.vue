@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div id="progress-bar">
 <!--      <div :style="{ width: progress + '%' }" id="progress"></div>-->
       <ul class="progress-bar">
@@ -16,7 +15,6 @@
     </div>
     <!-- <br><br>
     <p>Progress: {{ progress }}%</p> -->
-  </div>
   <form @submit.prevent="submit" class="vragenForm">
     <section v-if="step === 1">
       <h3 for="sectorr">1. In welke sector werkt u?

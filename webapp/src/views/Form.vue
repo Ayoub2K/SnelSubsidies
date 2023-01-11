@@ -9,7 +9,7 @@
             <br><br>
             <p>Progress: {{ progress }}%</p>
           </div> -->
-              <step-form-component></step-form-component>
+          <step-form-component></step-form-component>
         </div>
         
     </main>
