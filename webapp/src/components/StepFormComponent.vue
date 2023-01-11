@@ -23,7 +23,7 @@
           <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
         </div>
       </h3>
-      <select v-model="sector" id="sectorr" class="select" multiple>
+      <select v-model="sector" id="sectorr" class="select">
         <option disabled value="">Kies een sector</option>
         <option>Arbeid en arbeidsmarkt</option>
         <option>Bouw en ruimtelijke ordening</option>
@@ -55,7 +55,7 @@
           <span class="tooltiptext">Robin moet dit nog vullen maar hij is te druk bezig met spdir modellen maken DanOfJudgement</span>
         </div>
       </h3>
-      <select v-model="thema" class="select" multiple>
+      <select v-model="thema" class="select">
         <option disabled value="">Kies een thema</option>
         <option>Duurzaamheid en circulariteit</option>
         <option>Digitalisering</option>
@@ -83,7 +83,7 @@
     <section v-if="step === 3">
       <h3>3. Wat is het uw subsidiale activiteit? <img class="info-icon" alt="Open link" src="../assets/info_icon.png">
       </h3>
-      <select v-model="subsidialeActiviteit" class="select" multiple>
+      <select v-model="subsidialeActiviteit" class="select">
         <option disabled value="">subsidiale activiteit</option>
         <option>Onderzoek en ontwikkeling</option>
         <option>Demonstratie en pilots</option>
