@@ -3,6 +3,8 @@ import Home from '../views/Home.vue';
 import Form from '../views/Form.vue';
 import Resultaten from "@/views/Resultaten";
 import Subsidie from "@/views/Subsidie";
+import Login from "@/views/Login";
+import Profile from "@/views/Profile";
 
 const routes = [
     {
@@ -20,6 +22,14 @@ const routes = [
     {
         path: '/subsidie/:id',
         component: Subsidie
+    },
+    {
+        path: '/login',
+        component: Login
+    },
+    {
+        path: '/profile',
+        component: Profile
     }
 ]
 

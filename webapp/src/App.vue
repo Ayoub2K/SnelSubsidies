@@ -9,7 +9,7 @@
             <li><a><router-link to="/resultaten"><i class="fa-solid fa-star"></i>Subsidie</router-link></a></li>
             <li><a href=""><i class="fa-regular fa-bell"></i>Meldingen</a></li>
             <li class="user">
-                <a href="">Inloggen/Registreren <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" /></a>
+                <a href="/login">Log in/registreer <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" /></a>
             </li>
         </ul>
     </nav>
