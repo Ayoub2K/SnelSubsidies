@@ -14,7 +14,7 @@ public class scriptRunner {
         //Registering the Driver
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         //Getting the connection
-        String mysqlUrl = "jdbc:postgresql://wl-web-db:15432/subsidie-radar";
+        String mysqlUrl = "jdbc:postgresql://localhost:15432/subsidie-radar";
         Connection con = DriverManager.getConnection(mysqlUrl, "subsidie-radar", "subsidie-radar");
         System.out.println("Connection established......");
         //Initialize the script runner
