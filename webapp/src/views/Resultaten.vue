@@ -49,7 +49,6 @@
               Knockout: {{ subsidie.knockout }}<br>
             </p><br>
 
-
             <div id="appmodal">
               <button
                   type="button"
@@ -134,6 +133,8 @@ export default {
           .then(response => {
             console.log(response)
             this.subsidies = response.data.subsidieList;
+            this.subsidies.sort((a, b) => (a.matchingPercentage < b.matchingPercentage) ? 1 : -1)
+            console.log(this.subsidies)
           });
     },
     subsidiePagina(sub) {
