@@ -5,9 +5,12 @@
             <li class="logo">
                 <a href="../"><img src="../src/assets/logo-black.png" alt="logo" /></a>
             </li>
-            <li><a><router-link to="/form"><i class="fa-regular fa-bookmark"></i>Zoekopdrachten</router-link></a></li>
-            <li><a><router-link to="/resultaten"><i class="fa-solid fa-star"></i>Subsidie</router-link></a></li>
-            <li><a href=""><i class="fa-regular fa-bell"></i>Meldingen</a></li>
+            <div class="middlenav">
+              <li><a><router-link to="/form"><i class="fa-regular fa-bookmark"></i>Zoekopdrachten</router-link></a></li>
+              <li><a><router-link to="/resultaten"><i class="fa-solid fa-star"></i>Subsidie</router-link></a></li>
+              <li><a href=""><i class="fa-regular fa-bell"></i>Meldingen</a></li>
+            </div>
+            
             <li class="user">
                 <a href="">Inloggen/Registreren <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" /></a>
             </li>
@@ -44,6 +47,18 @@ ul {
 ol,
 ul {
   list-style: none;
+}
+
+.middlenav {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 6px 12px rgb(27 35 43 / 8%), 0 2px 6px rgb(27 35 43 / 20%);
+  border-radius: 30px;
 }
 
 img {

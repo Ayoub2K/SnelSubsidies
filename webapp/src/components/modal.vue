@@ -19,6 +19,7 @@
           <slot name="body">
             body
           </slot>
+          <img src="../assets/placeholder.png" alt="">
         </section>
 
         <footer class="modal-footer">
@@ -54,7 +55,7 @@ export default {
 
 .modal-fade-enter-active,
 .modal-fade-leave-active {
-  transition: opacity .5s ease;
+  transition: opacity .1s ease;
 }
 
 .modal-backdrop {
@@ -63,7 +64,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.041);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,10 +72,11 @@ export default {
 
 .modal {
   background: #FFFFFF;
-  box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
   display: flex;
   flex-direction: column;
+  width: 50%;
+  height: 55vh;
 }
 
 .modal-header,

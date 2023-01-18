@@ -171,6 +171,7 @@ main {
   border-radius: var(--default-border-radius);
   width: 90%;
   height: 80vh;
+  
   padding-bottom: 50px;
   margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
   margin-left: auto;
@@ -297,11 +298,13 @@ hr {
 }
 
 .resultaten {
+  height: 70vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 30px;
   grid-column-gap: 30px;
   padding: 0px 50px 0px 50px;
+  overflow: auto;
 }
 
 .matchingpercentage {
