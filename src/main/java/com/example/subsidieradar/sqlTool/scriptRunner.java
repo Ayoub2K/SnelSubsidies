@@ -21,7 +21,7 @@ public class scriptRunner {
         ScriptRunner sr = new ScriptRunner(con);
         //Creating a reader object
         System.out.println("Running script......");
-        Reader reader = new BufferedReader(new FileReader("C:\\Users\\mayou\\IdeaProjects\\SubsidieRadar\\data\\fill-Database-Citydeals.sql"));
+        Reader reader = new BufferedReader(new FileReader("data/fill-Database-Citydeals.sql"));
         //Running the script
         sr.runScript(reader);
     }
