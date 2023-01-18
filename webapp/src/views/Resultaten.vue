@@ -23,16 +23,13 @@
 
         <div class="filters">
           <div class="status">
-            <p id="title"><b>Placeholder</b></p>
+            <p id="title"><b>Co-financering</b></p>
             <div class="checkboxes">
-              <input type="checkbox" class="checkmark" id="Groen" name="Groen" value="Groen">
-              <label for="Groen"> Placeholder</label><br>
+              <input type="checkbox" class="checkmark" id="Ja" name="Ja" value="Ja">
+              <label for="Ja"> Ja</label><br>
 
-              <input type="checkbox" id="Oranje" name="Oranje" value="Oranje">
-              <label for="Oranje"> Placeholder</label><br>
-
-              <input type="checkbox" id="Rood" name="Rood" value="Rood">
-              <label for="Rood"> Placeholder</label><br><br>
+              <input type="checkbox" id="Nee" name="Nee" value="Nee">
+              <label for="Nee"> Nee</label><br>
             </div>
           </div>
         </div>
@@ -44,9 +41,9 @@
           <div class="subsidie" v-for="subsidie in subsidies" v-bind:style= "[subsidie.knockout ? {'background': '#1b154a'} : {'background': '#463c95'}]" :key="subsidie.id">
             <h3 id="subsidieNaam" @click="subsidiePagina(subsidie)">{{ subsidie.naam }}</h3>
             <p class="info">
-              Afkorting: {{ subsidie.afkortingen }}<br>
-              Niveau: {{ subsidie.niveau }}<br>
-              Knockout: {{ subsidie.knockout }}<br>
+              Locatie: {{ subsidie.locatie }}<br>
+              Bedrag: {{ subsidie.subsidiebedrag }}<br>
+              Eind datum: {{ subsidie.datum_sluit }}<br>
             </p><br>
 
             <div id="appmodal">
@@ -159,9 +156,8 @@ hr {
 }
 
 .resultaten_box {
-  height: auto;
+  height: 96.5%;
   width: 100%;
-  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -173,7 +169,8 @@ main {
   border-radius: var(--default-border-radius);
   width: 90%;
   height: 80vh;
-  
+  display: flex;
+  flex-direction: column;
   padding-bottom: 50px;
   margin-top: 13vh; /* nav min-height = 10vh, dus altijd 3vh afstand van nav nu */
   margin-left: auto;
@@ -300,12 +297,15 @@ hr {
 }
 
 .resultaten {
-  height: 70vh;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 30px;
   grid-column-gap: 30px;
   padding: 0px 50px 0px 50px;
+  overflow: auto;
+  grid-area: child;
+  min-height: 0;
   overflow: auto;
 }
 
