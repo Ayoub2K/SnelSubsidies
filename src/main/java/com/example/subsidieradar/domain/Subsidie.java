@@ -16,12 +16,15 @@ public class Subsidie implements Serializable {
     String doel;
     String sector;
     String themas;
+    @Column(length = 999)
     String thema_verdieping;
+    @Column(length = 999)
     String subsidiabele_activiteiten;
     @Column(length = 999)
     String subsidiabele_activiteiten_output;
     String locatie;
     String soort_organisatie;
+    @Column(length = 999)
     String soort_organisatie_output;
     String samenwerking;
     String samenwerking_matching;

@@ -2,6 +2,7 @@ package com.example.subsidieradar.application;
 
 import com.example.subsidieradar.data.SubsidieRepository;
 import com.example.subsidieradar.domain.Subsidie;
+import com.example.subsidieradar.sqlTool.scriptRunner;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -34,15 +35,15 @@ public class SubsidieService {
         }
     }
 
-    public void fillWithTestdata() throws ParseException {
+    public static void fillWithTestdata() throws Exception {
 //        //TODO: SQL functie hier runnen
-        List<Subsidie> subsidieList = new ArrayList<>();
-//        subsidieBuilder.build(subsidieList);
+//        List<Subsidie> subsidieList = new ArrayList<>();
+//
+//        this.subsidieRadarRepository.deleteAll();
+//        this.subsidieRadarRepository.saveAll(subsidieList);
 
-        this.subsidieRadarRepository.deleteAll();
-        this.subsidieRadarRepository.saveAll(subsidieList);
-
-        System.out.println("Filled dummy data");
+        System.out.println("ScriptRunner aangeroept");
+        scriptRunner.RunScript();
     }
 
 }
