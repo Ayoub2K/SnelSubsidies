@@ -3,7 +3,7 @@
     <HelloWorld msg="Login"/>
   </div>
 
-  <button href="/profile" onclick="console.log("hoi")">hier kun je doorklikken</button>
+  <button href="/profile">hier kun je doorklikken</button>
 </template>
 
 <style scoped>
