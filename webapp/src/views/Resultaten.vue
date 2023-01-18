@@ -41,14 +41,13 @@
 
       <div id="breed">
         <div class="resultaten">
-          <div class="subsidie" v-for="subsidie in subsidies" :key="subsidie.id">
+          <div class="subsidie" v-for="subsidie in subsidies" v-bind:style= "[subsidie.knockout ? {'background': '#1b154a'} : {'background': '#463c95'}]" :key="subsidie.id">
             <h3 id="subsidieNaam" @click="subsidiePagina(subsidie)">{{ subsidie.naam }}</h3>
             <p class="info">
               Afkorting: {{ subsidie.afkortingen }}<br>
               Niveau: {{ subsidie.niveau }}<br>
               Knockout: {{ subsidie.knockout }}<br>
             </p><br>
-
 
             <div id="appmodal">
               <button
@@ -134,6 +133,9 @@ export default {
           .then(response => {
             console.log(response)
             this.subsidies = response.data.subsidieList;
+            this.subsidies.sort((a, b) => (a.matchingPercentage > b.matchingPercentage) ? 1 : -1)
+            this.subsidies.sort((c, d) => (c.knockout > d.knockout) ? 1 : -1)
+            console.log(this.subsidies)
           });
     },
     subsidiePagina(sub) {
