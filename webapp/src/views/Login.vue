@@ -55,7 +55,8 @@
           </div>
 
           <div class="onebutton">
-            <button type="text" class="submit">Aanmelden</button>
+            <a href="/profile">
+            <button href="/profile" type="text" class="submit">Aanmelden</button> </a>
           </div>
           
         </div>
@@ -63,18 +64,6 @@
       </div>
     </div>
   </main>
-  
-  
-  
-  
-  
-  
-  
-  <div class="login">
-    <HelloWorld msg="Login"/>
-  </div>
-
-  <button href="/profile">hier kun je doorklikken</button>
 </template>
 
 <style scoped>
@@ -211,7 +200,6 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
 .submit {
@@ -226,7 +214,7 @@ button {
   margin-top: 68px;
   outline: 0;
   text-align: center;
-  width: 50%;
+  width: 250%;
   box-shadow: 0 6px 12px rgb(27 35 43 / 8%), 0 2px 6px rgb(27 35 43 / 20%);
   font-weight: bold;
 }
@@ -234,10 +222,6 @@ button {
 .submit:hover {
   background-color: #5f51c9;
   transition: ease-in 0.15s;
-}
-
-.submit:active {
-  background-color: #15172b;
 }
 
 .twobuttons {

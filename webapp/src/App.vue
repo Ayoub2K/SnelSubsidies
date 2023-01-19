@@ -1,14 +1,17 @@
 <template>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <nav>
         <ul>
             <li class="logo">
                 <a href="../"><img src="../src/assets/logo-black.png" alt="logo" /></a>
             </li>
             <div class="middlenav">
-              <li><a><router-link to="/form"><i class="fa-regular fa-bookmark"></i>Zoekopdrachten</router-link></a></li>
-              <li><a><router-link to="/resultaten"><i class="fa-solid fa-star"></i>Subsidie</router-link></a></li>
-              <li><a href=""><i class="fa-regular fa-bell"></i>Meldingen</a></li>
+              <i class="fa fa-search" style="font-size: 22px; margin-right: -20px"></i>
+              <li><input type="text" placeholder="Zoeken..."></li>
+              <li><a><router-link to="/form">Zoekopdrachten</router-link></a></li>
+              <li><a><router-link to="/resultaten">Subsidie</router-link></a></li>
+              <li><a href="/profile">Bedrijfsportaal</a></li>
             </div>
             
             <li class="user">
@@ -61,6 +64,16 @@ ul {
   border-radius: 30px;
 }
 
+.middlenav input[type="text"] {
+  padding: 10px;
+  padding-right: 130px;
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  border-radius: 30px;
+}
+
+
 img {
   max-width: 50%;
   height: auto;
@@ -96,10 +109,6 @@ nav ul {
   justify-content: space-between;
 }
 
-nav ul li {
-  margin-left: 20px;
-  margin-right: 20px;
-}
 
 nav ul li a {
   text-decoration: none;
@@ -114,18 +123,11 @@ nav ul li a i {
   font-size: 1.3rem;
 }
 
-nav ul li.logo {
-  margin-right: auto;
-}
-
 nav ul li.logo a img {
   height: 10%;
   width: 220px;
 }
 
-nav ul li.user {
-  margin-left: auto;
-}
 
 nav ul li.user a img {
   margin-left: 10px;
