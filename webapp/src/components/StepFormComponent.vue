@@ -150,7 +150,7 @@
         <option disabled value="">Type organisatie</option>
         <option>Overheid</option>
         <option>Onderwijs</option>
-        <option>mkb</option>
+        <option>MKB</option>
         <option>Groot bedrijf</option>
         <option>Kennisinstellingen</option>
         <option>Stichting</option>
@@ -522,6 +522,7 @@ section {
 }
 .progress-bar li{
   display:flex;
+  justify-content: center;
   list-style:none;
   counter-increment:container 1;
   position:relative;
@@ -554,7 +555,7 @@ section {
   right:-10px;
 }
 .progress-bar li:active{
-  background-color:green;
+  background-color: #463c95;
   border:none;
   color:green;
 }
@@ -562,10 +563,10 @@ progress-bar li:before{
   background-color:grey ;
 }
 .progress-bar li.active:after{
-  background-color:green !important;
+  background-color:#463c95 !important;
 }
 .progress-bar li.active::before{
-  background-color: green;
+  background-color: #463c95;
   border:none;
   color:#fff;
 }
