@@ -2,15 +2,14 @@
     <div id="progress-bar">
 <!--      <div :style="{ width: progress + '%' }" id="progress"></div>-->
       <ul class="progress-bar">
-<!--        <li class="active"></li>-->
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li class="sector-li"></li>
+        <li class="thema-li"></li>
+        <li class="activiteit-li"></li>
+        <li class="subsidiebedrag-li"></li>
+        <li class="organisatietype-li"></li>
+        <li class="projectlocatie-li"></li>
+        <li class="cofinancieren-li"></li>
+        <li class="samenwerking-li"></li>
       </ul>
     </div>
     <!-- <br><br>
@@ -80,6 +79,140 @@
         <option>Voedsel en voedselveiligheid</option>
         <option>Personeel opleiden</option>
       </select>
+
+<!--      <h3>2.1 Welk thema verdieping hoort hierbij?</h3>-->
+<!--      <select v-model="thema" class="select-2">-->
+<!--        <option disabled value="">Kies een thema verdieping</option>-->
+<!--          <optgroup label="duurzaamheid-en-circularieit">-->
+<!--            <option>Circulair ontwerpen</option>-->
+<!--            <option>Circulair produceren</option>-->
+<!--            <option>Circulair organiseren</option>-->
+<!--            <option>Recycling</option>-->
+<!--            <option>Hergebruik afval</option>-->
+<!--            <option>Reparatie</option>-->
+<!--            <option>Biobased grondstoffen</option>-->
+<!--            <option>CO2 reductie</option>-->
+<!--            <option>Limaatneutrale landbouw en voedselproductie</option>-->
+<!--            <option>Duurzame landbouw Klimaatbestendig landelijk en stedelijk gebied</option>-->
+<!--            <option>Duurzame mobiliteit</option>-->
+<!--            <option>Circulaire economie</option>-->
+<!--            <option>Ontwikkeling van duurzame en gezonde voedingsproducten</option>-->
+<!--            <option>Duurzame en veilige Noordzee en andere wateren</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="digiatlisering">-->
+<!--            <option>Digitale vaardigheid</option>-->
+<!--            <option>ICT</option>-->
+<!--            <option>Kunstmatige intelligentie</option>-->
+<!--            <option>Cyber Security</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="economische-gevolgen-coronavirus">-->
+<!--            <option>Economische gevolgen Coronavirus</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="energie-besparen">-->
+<!--            <option>CO2 reductie</option>-->
+<!--            <option>Duurzame mobiliteit</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="energie-produceren">-->
+<!--            <option>Energie Produceren</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="gebouwen-renoveren-en-bouwen">-->
+<!--            <option>Circulair bouwen</option>-->
+<!--            <option>Prefab bouwen</option>-->
+<!--            <option>Industrieel bouwen</option>-->
+<!--            <option>Biobased grondstoffen</option>-->
+<!--            <option>Klimaatbestendig landelijk en stedelijk gebied</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="infrastructuur-verbeteren">-->
+<!--            <option>CO2 reductie</option>-->
+<!--            <option>15 minute city</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="recycling">-->
+<!--            <option>Afval hergebruiken</option>-->
+<!--            <option>Circulariteit</option>-->
+<!--            <option>CO2 reductie</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="landbouw-interventies">-->
+<!--            <option>Economisch vitale landbouw</option>-->
+<!--            <option>Agrarisch</option>-->
+<!--            <option>Limaatneutrale landbouw en voedselproductie</option>-->
+<!--            <option>Kringlooplandbouw</option>-->
+<!--            <option>Landbouw met ruimte voor biodiversiteit</option>-->
+<!--            <option>Water</option>-->
+<!--            <option>Landschap</option>-->
+<!--            <option>Landbouw met oog voor regionaal voedselsysteem</option>-->
+<!--            <option>Platteland</option>-->
+<!--            <option>Duurzame landbouw</option>-->
+<!--            <option>Ontwikkeling van duurzame en gezonde voedingsproducten</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="maatschappelijke-vraagstukken">-->
+<!--            <option>CO2 reductie</option>-->
+<!--            <option>15 minute city</option>-->
+<!--            <option>Efficiënt bronnengebruik</option>-->
+<!--            <option>Invloed van omgeving op gezond keuzegedrag</option>-->
+<!--            <option>Voedig en gezondheid bij verschillende bevolkingsgroepen</option>-->
+<!--            <option>Nederland is en blijft de best beschermde en leefbare delta</option>-->
+<!--            <option>Veiligheid</option>-->
+<!--            <option>Maatschappelijke verdienvermogen</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="milieu-en-natuur-beschermen-of-beheren">-->
+<!--            <option>Economisch vitale landbouw</option>-->
+<!--            <option>Nederland is en blijft de best beschermde delta</option>-->
+<!--            <option>Kringlooplandbouw</option>-->
+<!--            <option>Landbouw met ruimte voor biodiversiteit</option>-->
+<!--            <option>Water</option>-->
+<!--            <option>Landschap</option>-->
+<!--            <option>Landbouw met oog voor regionaal voedselsysteem</option>-->
+<!--            <option>Korte ketens</option>-->
+<!--            <option>Voedsel van dichtbij</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="onderzoek-en-ontwikkeling">-->
+<!--            <option>Invloed van omgeving op gezond keuzegedrag</option>-->
+<!--            <option>Living Labs</option>-->
+<!--            <option>Innovatie</option>-->
+<!--            <option>Sleuteltechnologieën ontwikkeling van duurzame en gezonde voedingsproducten</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="overnemen-van-een-bedrijf">-->
+<!--            <option>Overnemen van een bedrijf</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="mobiliteit">-->
+<!--            <option>CO2 reductie</option>-->
+<!--            <option>Slimme mobiliteit</option>-->
+<!--            <option>Verduurzaming vervoer</option>-->
+<!--            <option>Mobiliteitshubs</option>-->
+<!--            <option>Deelmobiliteit</option>-->
+<!--            <option>15 minute city</option>-->
+<!--          </optgroup>-->
+
+<!--          <optgroup label="voedsel-en-veiligheid">-->
+<!--            <option>Landbouw met oog voor regionaal voedselsysteem</option>-->
+<!--            <option>Voeding en gezondheid bij verschillende bevolkingsgroepen</option>-->
+<!--            <option>Invloed van omgeving op gezond keuzegedrag</option>-->
+<!--            <option>Ontwikkeling van duurzame en gezonde voedingsproducten</option>-->
+<!--            <option>Gezond en veilig voedsel Voedselveiligheid</option>-->
+<!--            <option>Leefomgeving en gezondheid</option>-->
+<!--            <option>Klimaatneutrale landbouw en voedselproductie</option>-->
+<!--            <option>Voedsel</option>-->
+
+<!--          </optgroup>-->
+
+<!--          <optgroup label="personeel-opleiden">-->
+<!--            <option>Digitale vaardigheid</option>-->
+<!--            <option>Human capital</option>-->
+<!--          </optgroup>-->
+<!--      </select>-->
 
       <div id="warning2">
         <hr class="warningline">
@@ -409,6 +542,7 @@ export default {
   visibility: visible;
 }
 h3 {
+  padding-top: 15px;
   font-size: 4vh;
   font-weight: 400;
   color: #102932;
@@ -434,11 +568,11 @@ p {
 form {
   padding-top: 50px;
 }
-.select {
+.select{
   width: 374px;
   height: 66px;
   border-radius: 10px;
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 2vh;
   text-align: center;
 }
@@ -452,7 +586,7 @@ form {
 }
 .buttons {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 25px;
 }
 .vragenForm {
   padding-top: 5%;
@@ -464,6 +598,7 @@ form {
   cursor: pointer;
 }
 h3 {
+  line-height: 34px;
   text-align: center;
   font-size: 25px;
 }
@@ -509,49 +644,46 @@ section {
   background-color: #6c9fc4;
 }
 #progress-bar {
-  width: 60%;
+  width: 100%;
 }
-
 .progress-bar{
   display:flex;
   list-style:none;
   counter-reset:container 0;
-  width: 673px;
+  width: 80px;
   height: 20px;
   border-radius: 30px;
 }
 .progress-bar li{
   display:flex;
   list-style:none;
-  counter-increment:container 1;
   position:relative;
-  margin-right:133px;
-  margin-top:20px;
+  margin-right:185px;
+  margin-top:5px;
 }
 /*before is het bolletje, after is de lijn die de bolletjes verbind*/
 .progress-bar{
 }
-
 .progress-bar li::before{
-  content:counter(container);
+  /*content:;*/
   position:absolute;
-  height:25px;
-  width:25px;
-  border-radius:50%;
-  border:1px solid #eef1f7;
+  height:35px;
+  width:130px;
+  border-radius:15%;
+  border:1px solid grey;
   text-align:center;
-  line-height:26px;
+  line-height:35px;
   z-index:10;
-  background-color:#fff;
+  background-color:white;
 }
 .progress-bar li::after{
   content:'';
   position:absolute;
   height:2px;
-  width:140px;
+  width:200px;
   background-color:#f5f7fa;
   top:12px;
-  right:-10px;
+  right:-80px;
 }
 .progress-bar li:active{
   background-color:green;
@@ -560,6 +692,30 @@ section {
 }
 progress-bar li:before{
   background-color:grey ;
+}
+.sector-li::before{
+  content:"Sector";
+}
+.thema-li::before{
+  content:"Thema";
+}
+.activiteit-li::before{
+  content:"Activiteit";
+}
+.subsidiebedrag-li::before{
+  content:"Subsidiebedrag";
+}
+.organisatietype-li::before{
+  content:"Organisatietype";
+}
+.projectlocatie-li::before{
+  content:"Projectlocatie";
+}
+.cofinancieren-li::before{
+  content:"Cofinanciëren";
+}
+.samenwerking-li::before{
+  content:"Samenwerking";
 }
 .progress-bar li.active:after{
   background-color:green !important;
@@ -571,11 +727,6 @@ progress-bar li:before{
 }
 .progress-bar li:first-child:after{
   display:none;
-}
-#progress {
-  height: 100%;
-  background-color: #86C2EE;
-  border-radius: 30px;
 }
 .btn-prev:hover {
   cursor: pointer;
