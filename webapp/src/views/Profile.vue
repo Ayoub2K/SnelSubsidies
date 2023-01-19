@@ -15,21 +15,21 @@
         <div class="profiles">
 
           <div class="profile" id="profile-1">
-            <a href="/home" class="profile" id="profile-1">
+            <a href="/dashboard" class="profile" id="profile-1">
             <img src="../assets/avatar.png" alt="Profile 1">
             </a>
             <h2>Elena</h2>
           </div>
 
           <div class="profile" id="profile-2">
-            <a href="/home" class="profile" id="profile-2">
+            <a href="/dashboard" class="profile" id="profile-2">
             <img src="../assets/avatar.png" alt="Profile 2">
             </a>
             <h2>Anouk</h2>
           </div>
 
           <div class="profile" id="profile-3">
-            <a href="/home" class="profile" id="profile-3">
+            <a href="/dashboard" class="profile" id="profile-3">
             <img src="../assets/avatar.png" alt="Profile 3">
             </a>
             <h2>Anne</h2>

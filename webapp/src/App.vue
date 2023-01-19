@@ -15,7 +15,7 @@
             </div>
             
             <li class="user">
-                <a href="/login">Bedrijfsnaam <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" /></a>
+                <a href="/login">WE Labs <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" /></a>
             </li>
         </ul>
     </nav>

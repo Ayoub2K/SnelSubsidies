@@ -23,13 +23,10 @@
 
         <div class="filters">
           <div class="status">
-            <p id="title"><b>Co-financering</b></p>
+            <p id="title"><b>Knock-out</b></p>
             <div class="checkboxes">
-              <input type="checkbox" class="checkmark" id="Ja" name="Ja" value="Ja">
-              <label for="Ja"> Ja</label><br>
-
-              <input type="checkbox" id="Nee" name="Nee" value="Nee">
-              <label for="Nee"> Nee</label><br>
+              <input type="checkbox" class="checkmark" id="Knockout" name="Knockout" value="Knockout">
+              <label for="Knockout"> Verberg</label><br>
             </div>
           </div>
         </div>
@@ -42,7 +39,7 @@
             <h3 id="subsidieNaam" @click="subsidiePagina(subsidie)">{{ subsidie.naam }}</h3>
             <p class="info">
               Locatie: {{ subsidie.locatie }}<br>
-              Bedrag: {{ subsidie.subsidiebedrag }}<br>
+              Bedrag: €{{ subsidie.subsidiebedrag }}<br>
               Eind datum: {{ subsidie.datum_sluit }}<br>
             </p><br>
 
