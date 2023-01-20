@@ -12,6 +12,8 @@
         <li class="samenwerking-li"></li>
       </ul>
     </div>
+
+    
     <!-- <br><br>
     <p>Progress: {{ progress }}%</p> -->
   <form @submit.prevent="submit" class="vragenForm">
@@ -644,7 +646,7 @@ section {
   background-color: #6c9fc4;
 }
 #progress-bar {
-  width: 100%;
+  width: 90%;
 }
 .progress-bar{
   display:flex;
@@ -663,6 +665,8 @@ section {
   margin-top:5px;
 }
 /*before is het bolletje, after is de lijn die de bolletjes verbind*/
+
+
 .progress-bar{
 }
 .progress-bar li::before{
@@ -670,7 +674,7 @@ section {
   position:absolute;
   height:35px;
   width:130px;
-  border-radius:15%;
+  border-radius: 30px;
   border:1px solid grey;
   text-align:center;
   line-height:35px;
@@ -683,8 +687,8 @@ section {
   height:2px;
   width:200px;
   background-color:#f5f7fa;
-  top:12px;
-  right:-80px;
+  top:15px;
+  right:-20px;
 }
 .progress-bar li:active{
   background-color: #463c95;
