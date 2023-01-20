@@ -40,7 +40,7 @@
             <p class="info">
               Locatie: {{ subsidie.locatie }}<br>
               Bedrag: €{{ subsidie.subsidiebedrag }}<br>
-              Eind datum: {{ subsidie.datum_sluit }}<br>
+              Einddatum: {{ subsidie.datum_sluit }}<br>
             </p><br>
 
 
