@@ -1,14 +1,41 @@
 version: "3.7"
 services:
-  db:
-    build: development/db
+  wl-web-db:
+    image: welabstest/subsidieradartest1:dbmex
+    container_name: wl-web-db
+    volumes:
+      - db_data:/var/data/db
+    restart: always
     ports:
-      - "15432:5432"
+      - 5432:5432
     environment:
       - POSTGRES_USER=subsidie-radar
       - POSTGRES_PASSWORD=subsidie-radar
       - DB_APP_NAME=subsidie-radar
       - DB_APP_USER=subsidie-radar
       - DB_APP_PASS=subsidie-radar
-    volumes:
-      - "./data:/var/data/db"
+
+  wl-web-frontend:
+    image: welabstest/subsidieradartest1:frontendmex
+    container_name: wl-web-frontend
+    restart: always
+    environment:
+      PORT: 80
+    ports:
+      - 80:80
+
+  wl-web-backend:
+    image: welabstest/subsidieradartest1:backendmexx
+    depends_on:
+      - wl-web-db
+    container_name: wl-web-backend
+    restart: always
+    environment:
+      - spring.datasource.url=jdbc:postgresql://wl-web-db:5432/subsidie-radar
+      - spring.datasource.username=subsidie-radar
+      - spring.datasource.password=subsidie-radar
+    ports:
+      - 8081:8081
+
+volumes:
+  db_data:
