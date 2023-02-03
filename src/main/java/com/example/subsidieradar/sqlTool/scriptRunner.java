@@ -14,14 +14,14 @@ public class scriptRunner {
         //Registering the Driver
         DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
         //Getting the connection
-        String mysqlUrl = "jdbc:postgresql://localhost:15432/subsidie-radar";
+        String mysqlUrl = "jdbc:postgresql://wl-web-db:5432/subsidie-radar";
         Connection con = DriverManager.getConnection(mysqlUrl, "subsidie-radar", "subsidie-radar");
         System.out.println("Connection established......");
         //Initialize the script runner
         ScriptRunner sr = new ScriptRunner(con);
         //Creating a reader object
         System.out.println("Running script......");
-        Reader reader = new BufferedReader(new FileReader("data/fill-Database-Citydeals.sql"));
+        Reader reader = new BufferedReader(new FileReader("/SubsidieRadar/data/fill-Database-Citydeals.sql"));
         //Running the script
         sr.runScript(reader);
     }
