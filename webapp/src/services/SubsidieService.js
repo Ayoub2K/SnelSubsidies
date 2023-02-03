@@ -11,7 +11,7 @@ class SubsidieService {
 
     matchSubsidies(sector, thema, subsidialeActiviteit, minimaleBedrag, typeOrganisatie, projectlocatie, cofinancieren, samenwerking){
         return axios.post(
-            `http://localhost:8081/match?sector=${sector}&thema=${thema}&typeActiviteit=${subsidialeActiviteit}&budget=${minimaleBedrag}&typeAanvrager=${typeOrganisatie}&projectlocatie=${projectlocatie}&bijdrage=${cofinancieren}&samenwerking=${samenwerking}`
+            `http://wl-web-backend:8081/match?sector=${sector}&thema=${thema}&typeActiviteit=${subsidialeActiviteit}&budget=${minimaleBedrag}&typeAanvrager=${typeOrganisatie}&projectlocatie=${projectlocatie}&bijdrage=${cofinancieren}&samenwerking=${samenwerking}`
         )
     }
 }
