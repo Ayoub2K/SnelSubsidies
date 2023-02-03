@@ -1,13 +1,10 @@
 FROM openjdk:17
 
-RUN mkdir -p /webapp
+COPY . .
+WORKDIR /SubsidieRadar
+RUN ./mvnw -DskipTests
 
-WORKDIR /webapp
-
-COPY SubsidieRadar.jar ./app.jar
-COPY fill-Database-Citydeals.sql .
-COPY application.properties .
+WORKDIR /SubsidieRadar/target
+ENTRYPOINT ["java", "-jar", "SubsidieRadar-0.0.1-SNAPSHOT.jar"]
 
 EXPOSE 8081
-
-CMD ["java", "-jar", "./app.jar"] 
