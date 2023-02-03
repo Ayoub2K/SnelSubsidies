@@ -2,11 +2,11 @@ import axios from "axios";
 
 class SubsidieService {
     getSubsidies() {
-        return axios.get('http://localhost:8081/subsidie');
+        return axios.get('http://wl-web-backend:8081/subsidie');
     }
 
     getSubsidie(subsidie) {
-        return axios.get(`http://localhost:8081/subsidie/${subsidie}`);
+        return axios.get(`http://wl-web-backend:8081/subsidie/${subsidie}`);
     }
 
     matchSubsidies(sector, thema, subsidialeActiviteit, minimaleBedrag, typeOrganisatie, projectlocatie, cofinancieren, samenwerking){
