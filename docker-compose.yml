@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   wl-web-db:
-    image: welabstest/subsidieradartest1:dbmex
+    image: welabstest/subsidieradartest1:dbnieuw
     container_name: wl-web-db
     volumes:
       - db_data:/var/data/db
@@ -16,7 +16,7 @@ services:
       - DB_APP_PASS=subsidie-radar
 
   wl-web-frontend:
-    image: welabstest/subsidieradartest1:frontendmex
+    image: welabstest/subsidieradartest1:frontendnieuw
     container_name: wl-web-frontend
     restart: always
     environment:
@@ -25,7 +25,7 @@ services:
       - 80:80
 
   wl-web-backend:
-    image: welabstest/subsidieradartest1:backendmexx
+    image: welabstest/subsidieradartest1:backendnieuw
     depends_on:
       - wl-web-db
     container_name: wl-web-backend
