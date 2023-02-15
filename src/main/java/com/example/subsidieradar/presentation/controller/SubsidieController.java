@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080/")
+@CrossOrigin(origins = "http://wl-web-frontend:80/")
 @RequestMapping("/subsidie")
 public class SubsidieController {
     private final SubsidieService subsidieService;
