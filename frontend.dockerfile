@@ -6,4 +6,4 @@ RUN npm install
 
 CMD ["npm", "run", "serve"]
 
-EXPOSE 8080
+EXPOSE 80 8080 443
