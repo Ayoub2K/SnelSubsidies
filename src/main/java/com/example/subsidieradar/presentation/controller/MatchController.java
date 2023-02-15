@@ -6,7 +6,7 @@ import com.example.subsidieradar.presentation.dto.MatchDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8080/")
+@CrossOrigin(origins = "http://wl-web-frontend:80/")
 @RequestMapping("/match")
 public class MatchController {
     private final MatchService matchService;
