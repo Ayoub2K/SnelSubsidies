@@ -4,7 +4,7 @@
     <div id="sidebar">
 
       <div class="sidebar-logo">
-        <a href="../"><img src="../assets/logo-black.png" alt="logo" /></a>
+        <a href="../"><img src="../assets/newlogo-black.png" alt="logo" /></a>
       </div>
 
       <div class="sidebar-buttons">

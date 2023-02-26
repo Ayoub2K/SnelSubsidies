@@ -4,7 +4,7 @@
    <nav>
         <ul>
             <li class="logo">
-                <a href="../"><img src="../src/assets/logo-black.png" alt="logo" /></a>
+                <a href="../"><img src="../src/assets/newlogo-black.png" alt="logo" /></a>
             </li>
             <div class="middlenav">
               <i class="fa fa-search" style="font-size: 22px; margin-right: -20px"></i>
