@@ -3,6 +3,7 @@ This project is part of an assignment for the
 course Innovation (INNO 2022/23) at the
 Hogeschool Utrecht, University of Applied Sciences.
 
+![Image](https://github.com/Ayoub2K/SnelSubsidies/blob/main/image%20(1).png)
 
 ## Starter project
 This starter project contains the following:
