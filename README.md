@@ -1,4 +1,4 @@
-# SubsidieRadar Project
+# SnelSubsidies Project
 This project is part of an assignment for the
 course Innovation (INNO 2022/23) at the
 Hogeschool Utrecht, University of Applied Sciences.
