@@ -3,7 +3,8 @@ This project is part of an assignment for the
 course Innovation (INNO 2022/23) at the
 Hogeschool Utrecht, University of Applied Sciences.
 
-![screenshot-presentation](https://user-images.githubusercontent.com/38209147/222377069-5205ce82-e41a-430f-bc34-10deef1ed7b5.png)
+![image (1)](https://user-images.githubusercontent.com/38209147/222381865-faff8f29-e499-403f-80ad-3f16a4858d81.png)
+
 
 ## Starter project
 This starter project contains the following:
